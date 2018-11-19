@@ -40,15 +40,24 @@ public class Launcher {
 
     }
 
+    /**
+     *
+     * @param word
+     */
     public void generatePhoneticSpelling(String word) {
         try {
             String url = API_URL_1 + word + API_URL_2;
             BufferedInputStream jsonStream = new BufferedInputStream(new URL(url).openStream());
+            
         } catch (IOException E) {
             // handle pls
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public String getPhoneticSpelling() {
         return phoneticSpelling;
     }
