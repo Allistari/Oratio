@@ -1,5 +1,8 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.net.URL;
 
 /**
  * Launcher.java
@@ -15,6 +18,12 @@ import java.awt.event.ActionListener;
 public class Launcher {
     private String phoneticSpelling;
     private int preset;
+
+    private static final String API_KEY = "ca3d251b-437c-4dea-be54-f29594e632fb";
+    private static final String API_URL_1 = "https://www.dictionaryapi.com/api/v3/references/collegiate/json/";
+    private static final String API_URL_2 = "?key=" + API_KEY;
+    // concatenate API_URL_1 with word and then API_URL_2
+    // e.g. new URL(API_URL_1 + word + API_URL_2)
 
     /**
      * main method
@@ -32,7 +41,12 @@ public class Launcher {
     }
 
     public void generatePhoneticSpelling(String word) {
-
+        try {
+            String url = API_URL_1 + word + API_URL_2;
+            BufferedInputStream jsonStream = new BufferedInputStream(new URL(url).openStream());
+        } catch (IOException E) {
+            // handle pls
+        }
     }
 
     public String getPhoneticSpelling() {
