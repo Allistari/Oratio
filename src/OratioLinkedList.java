@@ -1,16 +1,15 @@
-public class OratioLinkedList<E> {
-    private OratioNode<E> head;
-    private int sizeOfList;
+public class OratioLinkedList<T> {
+    private OratioNode<T> head;
 
     public OratioLinkedList() {
 
     }
 
-    public boolean add(E item) {
-        OratioNode<E> tempNode = head;
+    public boolean add(T item) {
+        OratioNode<T> tempNode = head;
 
         if (head==null) {
-            head=new OratioNode<E>(item,null);
+            head=new OratioNode<T>(item,null);
             return true;
         }
 
@@ -18,19 +17,19 @@ public class OratioLinkedList<E> {
             tempNode = tempNode.getNext();
         }
 
-        tempNode.setNext(new OratioNode<E>(item,null));
+        tempNode.setNext(new OratioNode<T>(item,null));
         return true;
 
     }
 
-    public boolean add(E item, int index) {
+    public boolean add(T item, int index) {
 
         int counter = 0;
-        OratioNode<E> tempNode = head;
-        OratioNode<E> tempNode2;
+        OratioNode<T> tempNode = head;
+        OratioNode<T> tempNode2;
 
         if (head==null) {
-            head=new OratioNode<E>(item,null);
+            head=new OratioNode<T>(item,null);
             return true;
         }
 
@@ -46,13 +45,13 @@ public class OratioLinkedList<E> {
         }
 
         tempNode2 = tempNode.getNext();
-        tempNode.setNext(new OratioNode<E>(item,null));
+        tempNode.setNext(new OratioNode<T>(item,null));
         tempNode.getNext().setNext(tempNode2);
         return true;
     }
 
-    public E get(int index) {
-        OratioNode<E> tempNode = head;
+    public T get(int index) {
+        OratioNode<T> tempNode = head;
 
         for(int i = 0; i < index; i++) {
             tempNode = tempNode.getNext();
@@ -62,8 +61,8 @@ public class OratioLinkedList<E> {
         return tempNode.getItem();
     }
 
-    public int indexOf(E item) {
-        OratioNode<E> tempNode = head;
+    public int indexOf(T item) {
+        OratioNode<T> tempNode = head;
         int counter = 0;
 
         while(tempNode.getNext()!= null) {
@@ -77,9 +76,9 @@ public class OratioLinkedList<E> {
         return -1;
     }
 
-    public E remove(int index) {
-        OratioNode<E> tempNode = head;
-        E item;
+    public T remove(int index) {
+        OratioNode<T> tempNode = head;
+        T item;
 
         for(int i = 0; i < index-1; i++) {
             tempNode = tempNode.getNext();
@@ -91,7 +90,7 @@ public class OratioLinkedList<E> {
         return item;
     }
 
-    //  public boolean remove(E) {
+    //  public boolean remove(T) {
     //  }
 
     public void clear() {
@@ -100,7 +99,7 @@ public class OratioLinkedList<E> {
 
     public int size() {
 
-        OratioNode<E> tempNode = head;
+        OratioNode<T> tempNode = head;
 
         int counter = 0;
 
