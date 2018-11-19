@@ -1,7 +1,10 @@
+import jdk.internal.util.xml.impl.Input;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 
 /**
@@ -38,6 +41,7 @@ public class Launcher {
 
         //new OratioTree;
 
+        generatePhoneticSpelling("test");
     }
 
     /**
@@ -47,10 +51,14 @@ public class Launcher {
     public void generatePhoneticSpelling(String word) {
         try {
             String url = API_URL_1 + word + API_URL_2;
-            BufferedInputStream jsonStream = new BufferedInputStream(new URL(url).openStream());
-            
+            InputStream jsonStream = new URL(url).openStream();
+            while ( (jsonStream.read()) != -1) {
+                System.out.println((String) jsonStream.read());
+            }
         } catch (IOException E) {
-            // handle pls
+            System.err.println("cant get url");
+        } catch (Exception E) {
+            System.err.println("some other error");
         }
     }
 
