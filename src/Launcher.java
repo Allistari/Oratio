@@ -40,27 +40,8 @@ public class Launcher {
         //new Display();
 
         //new OratioTree;
-
-        generatePhoneticSpelling("test");
     }
 
-    /**
-     *
-     * @param word
-     */
-    public void generatePhoneticSpelling(String word) {
-        try {
-            String url = API_URL_1 + word + API_URL_2;
-            InputStream jsonStream = new URL(url).openStream();
-            while ( (jsonStream.read()) != -1) {
-                System.out.println((String) jsonStream.read());
-            }
-        } catch (IOException E) {
-            System.err.println("cant get url");
-        } catch (Exception E) {
-            System.err.println("some other error");
-        }
-    }
 
     /**
      *

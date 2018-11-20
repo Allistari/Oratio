@@ -12,7 +12,22 @@ public class PhoneticTranslator {
     private final String URL2 = "&md=r&ipa=1&max=1";
 
 
-    public String phoneticPronounciation(String search) throws IOException {
+    public String getPronounciation(String search) {
+
+        Word word = null;
+
+        try {
+            word = getWord(search);
+        } catch(Exception e) {
+            System.out.println("Error getting word");
+        }
+
+        return word.getIPAPronounce();
+
+    }
+
+
+    private Word getWord(String search) throws IOException {
         java.net.URL wordURL = new URL(URL + search + URL2); //wynnapi url
         URLConnection yc = wordURL.openConnection();
         BufferedReader in = new BufferedReader(new InputStreamReader(yc.getInputStream()));
@@ -20,6 +35,11 @@ public class PhoneticTranslator {
         inputLine = in.readLine();
 
         Gson gson = new Gson();
+
+        Word word = gson.fromJson(inputLine, Word.class);
+
+        return word;
+
 
     }
 
