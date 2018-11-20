@@ -1,5 +1,5 @@
 public class OratioLinkedList<T> {
-    private OratioNode<T> head;
+    private LinkedListNode<T> head;
 
     public OratioLinkedList() {
 
@@ -10,10 +10,10 @@ public class OratioLinkedList<T> {
      * @param item the item to add to the list
      */
     public void add(T item) {
-        OratioNode<T> tempNode = head;
+        LinkedListNode<T> tempNode = head;
 
         if (head==null) {
-            head=new OratioNode<T>(item,null);
+            head=new LinkedListNode<T>(item,null);
             return;
         }
 
@@ -21,7 +21,7 @@ public class OratioLinkedList<T> {
             tempNode = tempNode.getNext();
         }
 
-        tempNode.setNext(new OratioNode<T>(item,null));
+        tempNode.setNext(new LinkedListNode<T>(item,null));
     }
 
     /**
@@ -32,16 +32,16 @@ public class OratioLinkedList<T> {
     public void add(T item, int index) {
 
         int counter = 0;
-        OratioNode<T> tempNode = head;
-        OratioNode<T> tempNode2;
+        LinkedListNode<T> tempNode = head;
+        LinkedListNode<T> tempNode2;
 
         if (head==null) {
-            head=new OratioNode<T>(item,null);
+            head=new LinkedListNode<T>(item,null);
             return;
         }
 
         else if(index == 0) {
-            tempNode2 = new OratioNode(item, head);
+            tempNode2 = new LinkedListNode(item, head);
             head = tempNode2;
             return;
         }
@@ -52,7 +52,7 @@ public class OratioLinkedList<T> {
         }
 
         tempNode2 = tempNode.getNext();
-        tempNode.setNext(new OratioNode<T>(item,null));
+        tempNode.setNext(new LinkedListNode<T>(item,null));
         tempNode.getNext().setNext(tempNode2);
     }
 
@@ -63,7 +63,7 @@ public class OratioLinkedList<T> {
      * @return an object
      */
     public T get(int index) {
-        OratioNode<T> tempNode = head;
+        LinkedListNode<T> tempNode = head;
 
         for(int i = 0; i < index; i++) {
             tempNode = tempNode.getNext();
@@ -79,7 +79,7 @@ public class OratioLinkedList<T> {
      * @return index of item
      */
     public int indexOf(T item) {
-        OratioNode<T> tempNode = head;
+        LinkedListNode<T> tempNode = head;
         int counter = 0;
 
         while(tempNode.getNext()!= null) {
@@ -99,7 +99,7 @@ public class OratioLinkedList<T> {
      * @return the object that was removed
      */
     public T remove(int index) {
-        OratioNode<T> tempNode = head;
+        LinkedListNode<T> tempNode = head;
         T item;
 
         if(index == 0) {
@@ -131,7 +131,7 @@ public class OratioLinkedList<T> {
      */
     public int size() {
 
-        OratioNode<T> tempNode = head;
+        LinkedListNode<T> tempNode = head;
 
         int counter = 0;
 
