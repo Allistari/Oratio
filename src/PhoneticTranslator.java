@@ -12,7 +12,7 @@ public class PhoneticTranslator {
     private final String URL2 = "&md=r&ipa=1&max=1";
 
 
-    public String getPronounciation(String search) {
+    public String getPronounce(String search) {
 
         Word word = null;
 
