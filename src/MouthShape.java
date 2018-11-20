@@ -5,6 +5,6 @@ public class MouthShape {
     String fileName;
     ImageIcon image;
 
-    public MouthShape(){
+    public MouthShape(String fileName){
     }
 }
