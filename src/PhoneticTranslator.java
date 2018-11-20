@@ -12,27 +12,36 @@ public class PhoneticTranslator {
     private final String URL2 = "&md=r&ipa=1&max=1";
 
 
-    public String getPronounciation(String search) {
+    /**
+     * Gets the IPA phonetic spelling of a word
+     * @param search the word to get the pronunciation of
+     * @return the pronunciation of the word
+     */
+    public String getPronounce(String search) {
 
         Word word = null;
 
         try {
             word = getWord(search);
+            return word.getIPAPronounce();
         } catch(Exception e) {
             System.out.println("Error getting word");
+            return null;
         }
-
-        return word.getIPAPronounce();
-
     }
 
 
     private Word getWord(String search) throws IOException {
-        java.net.URL wordURL = new URL(URL + search + URL2); //wynnapi url
+
+        java.net.URL wordURL = new URL(URL + search + URL2);
+        System.out.println(URL + search + URL2);
         URLConnection yc = wordURL.openConnection();
         BufferedReader in = new BufferedReader(new InputStreamReader(yc.getInputStream()));
         String inputLine;
         inputLine = in.readLine();
+
+        inputLine = inputLine.substring(1,inputLine.length()-1); //the string has weird square brackets so we gotta clean it
+
 
         Gson gson = new Gson();
 

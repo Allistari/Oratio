@@ -23,7 +23,7 @@ public class TestFile {
             System.out.println(myList.get(i));
         }
 
-        System.out.println(pt.getPronounciation("explosives"));
+        System.out.println(pt.getPronounce("explosives"));
 
 
     }
