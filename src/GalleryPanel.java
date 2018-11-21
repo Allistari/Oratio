@@ -2,6 +2,18 @@ import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
 
+/**
+ * GalleryPanel.java
+ * gallery panel class which holds all the components in the gallery panel
+ * @author Joey Chik
+ * @author Michael Tatsiopoulos
+ * @author Angelina Zhang
+ * @author Eric Ke
+ * @author Kyle To
+ * created 2018-11-20
+ * last modified 2018-11-21
+ */
+
 public class GalleryPanel extends JPanel{
     JPanel panel;
     TitledBorder title;
