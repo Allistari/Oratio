@@ -19,14 +19,13 @@ import java.net.URL;
  */
 
 public class Launcher {
+    private PhoneticTranslator phoneticTranslator;
+
+    // GUI
+    //private Display display;
+
     private String phoneticSpelling;
     private int preset;
-
-    private static final String API_KEY = "ca3d251b-437c-4dea-be54-f29594e632fb";
-    private static final String API_URL_1 = "https://www.dictionaryapi.com/api/v3/references/collegiate/json/";
-    private static final String API_URL_2 = "?key=" + API_KEY;
-    // concatenate API_URL_1 with word and then API_URL_2
-    // e.g. new URL(API_URL_1 + word + API_URL_2)
 
     /**
      * main method
@@ -37,9 +36,12 @@ public class Launcher {
     }
 
     Launcher() {
-        //new Display();
+        //this.display = new Display();
 
-        //new OratioTree;
+        // generate data structures
+        // load info into data structures
+
+        this.phoneticTranslator = new PhoneticTranslator();
     }
 
 
@@ -54,7 +56,9 @@ public class Launcher {
     private class InputPanelListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-
+            //String word = display.getInputPanel().getTextField().getText();
+            
+            //phoneticSpelling = phoneticTranslator.getPronounciation(word);
         }
     }
 }
