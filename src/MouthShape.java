@@ -1,4 +1,4 @@
-java.awt.image.BufferedImage;
+import javax.swing.*;
 
 public class MouthShape {
     String [] spelling;
