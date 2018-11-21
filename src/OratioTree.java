@@ -13,12 +13,18 @@ public class OratioTree<T> {
     public OratioTree() {
     }
 
+
+    /**
+     * add an item to the tree
+     * @param item the object to be added
+     * @param name the name of the object so it can be retrieved
+     */
     public void add(T item, String name) {
 
         OratioDEQueue<TreeNode<T>> queue = new OratioDEQueue<>();
 
         if(root == null) {
-            root = new TreeNode<T>(item);
+            root = new TreeNode<T>(item, name);
             return;
         } else {
 
