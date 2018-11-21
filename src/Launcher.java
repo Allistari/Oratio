@@ -56,7 +56,9 @@ public class Launcher {
     private class InputPanelListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            //phoneticSpelling = phoneticTranslator.getPronounciation();
+            //String word = display.getInputPanel().getTextField().getText();
+            
+            //phoneticSpelling = phoneticTranslator.getPronounciation(word);
         }
     }
 }
