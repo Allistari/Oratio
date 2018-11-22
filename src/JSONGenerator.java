@@ -15,31 +15,33 @@ public class JSONGenerator {
     
     /**
      *
-     * @param m
+     * @param mArray
      * @param file
      * @return
      */
-    public boolean generateJSON(MouthShape[] mArray, File file) {
+    public boolean generateJSON(MouthShape[] mArray, File file) throws IOException {
+        JsonWriter writer;
         try {
-            JsonWriter writer = new JsonWriter(new FileWriter(file));
-        } catch(IOException e) {
+            writer = new JsonWriter(new FileWriter(file));
+        } catch (IOException e) {
             return false;
         }
-        
+
         writer.beginArray();
-        
+
         for (MouthShape m : mArray) {
             writeMouthShape(writer, m);
         }
-        
+
         writer.endArray();
-        
+
         writer.close();
-        
+
         return true;
     }
     
-    private void writeMouthShape(JsonWriter writer, MouthShape m) {
+    private void writeMouthShape(JsonWriter writer, MouthShape m) throws IOException
+    {
         writer.beginObject();
         
         writer.name("fileName").value(m.getFileName());
@@ -49,7 +51,7 @@ public class JSONGenerator {
         writer.endObject();
     }
     
-    private void writeArray(JsonWriter writer, String[] strings) {
+    private void writeArray(JsonWriter writer, String[] strings) throws IOException {
         writer.beginArray();
         
         for (String string : strings) {
