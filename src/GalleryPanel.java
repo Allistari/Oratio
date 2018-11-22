@@ -30,7 +30,7 @@ public class GalleryPanel extends JPanel{
         c.gridwidth = 1;   //2 columns wide
         c.gridheight = 2;
         c.gridy = 0;       //first row
-        title = BorderFactory.createTitledBorder("Preview");
+        title = BorderFactory.createTitledBorder("Gallery");
         panel.setBorder(title);
         pane.add(panel, c);
     }
