@@ -22,7 +22,9 @@ public class InputPanel extends JPanel{
     GridBagConstraints c;
     JButton animateButton;
     JTextField textField;
-    JTextPane spelling;
+    JLabel spelling;
+    JButton reAnimateButton;
+    JButton resetButton;
     String text;
     boolean changed = false;
 
@@ -55,16 +57,16 @@ public class InputPanel extends JPanel{
         return this.panel;
     }
 
-    public JTextPane createTextPane(JPanel panel){
-        spelling = new JTextPane();
-        c.fill = GridBagConstraints.HORIZONTAL;
+    public JLabel createTextLabel(JPanel panel){
+        spelling = new JLabel();
+        //c.fill = GridBagConstraints.HORIZONTAL;
         c.ipady = 0;       //reset to default
         c.weightx = 1.0;
         c.weighty = 0.0;   //request any extra vertical space
         c.anchor = GridBagConstraints.PAGE_END; //bottom of space
         c.gridx = 0;       //aligned with button 1
-        c.gridwidth = 2;   //2 columns wide
-        c.gridy = 1;       //third row
+        c.gridwidth = 1;   //2 columns wide
+        c.gridy = 0;       //third row
         return spelling;
     }
 
@@ -77,20 +79,25 @@ public class InputPanel extends JPanel{
         c.anchor = GridBagConstraints.PAGE_END; //bottom of space
         c.gridx = 2;       //aligned with button 3
         c.gridwidth = 1;   //1 columns wide
-        c.gridy = 1;       //third row
+        c.gridy = 0;       //third row
         animateButton.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent E){
-                if (!changed) {
+                //if (!changed) {
                     text = textField.getText();
                     panel.remove(textField);
-                    spelling = createTextPane(panel);
+                    spelling = createTextLabel(panel);
                     spelling.setText(text);
                     panel.add(spelling);
+                    panel.remove(animateButton);
+                    reAnimateButton = createReAnimateButton(panel);
+                    resetButton = createResetButton(panel);
+                    panel.add(reAnimateButton,c);
+                    panel.add(resetButton, c);
                     panel.validate();
                     panel.repaint();
-                }
-                changed = true;
+                //}
+                //changed = true;
 
             }
         });
@@ -106,8 +113,40 @@ public class InputPanel extends JPanel{
         c.anchor = GridBagConstraints.PAGE_END; //bottom of space
         c.gridx = 0;       //aligned with button 1
         c.gridwidth = 2;   //2 columns wide
-        c.gridy = 1;       //third row
+        c.gridy = 0;       //third row
         return textField;
+    }
+
+    public JButton createReAnimateButton(JPanel panel){
+        reAnimateButton = new JButton("ReAnimate");
+        //c.fill = GridBagConstraints.HORIZONTAL;
+        c.ipady = 0;       //reset to default
+        c.weightx = 0;
+        c.weighty = 0.0;   //request any extra vertical space
+        c.anchor = GridBagConstraints.PAGE_END; //bottom of space
+        c.gridx = 1;       //aligned with button 3
+        c.gridwidth = 1;   //1 columns wide
+        c.gridy = 0;       //third row
+        return reAnimateButton;
+    }
+
+    public JButton createResetButton(JPanel panel){
+        resetButton = new JButton("Reset");
+        //c.fill = GridBagConstraints.HORIZONTAL;
+        c.ipady = 0;       //reset to default
+        c.weightx = 0;
+        c.weighty = 0.0;   //request any extra vertical space
+        c.anchor = GridBagConstraints.PAGE_END; //bottom of space
+        c.gridx = 2;       //aligned with button 3
+        c.gridwidth = 1;   //1 columns wide
+        c.gridy = 0;       //third row
+        resetButton.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent E){
+
+            }
+        });
+        return resetButton;
     }
 
 }
