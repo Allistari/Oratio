@@ -26,7 +26,6 @@ public class TestFile {
 
         System.out.println(tree.altGet("lmao"));
         System.out.println(tree.get("t"));
-        System.out.println(tree.altGet("tt"));
         System.out.println(tree.get("tttt"));
 
 
