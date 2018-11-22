@@ -1,25 +1,33 @@
-public class OratioDEQueue<E> {
+public class OratioDEQueue<T> {
 
-    private OratioLinkedList<E> stuffQueue = new OratioLinkedList<>();
+    private OratioLinkedList<T> stuffQueue = new OratioLinkedList<>();
 
     public OratioDEQueue() {
 
     }
 
-    public void addFirst(E item) {
+    public void addFirst(T item) {
         stuffQueue.add(item, 0);
     }
 
-    public void addLast(E item) {
+    public void addLast(T item) {
         stuffQueue.add(item);
     }
 
-    public E pollFirst() {
+    public T pollFirst() {
         return stuffQueue.remove(0);
     }
 
-    public E pollLast() {
+    public T pollLast() {
         return stuffQueue.remove(stuffQueue.size()-1);
+    }
+
+    public boolean isEmpty() {
+        if (stuffQueue.size() < 1) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }

@@ -1,43 +1,49 @@
-public class OratioLinkedList<E> {
-    private OratioNode<E> head;
-    private int sizeOfList;
+public class OratioLinkedList<T> {
+    private LinkedListNode<T> head;
 
     public OratioLinkedList() {
 
     }
 
-    public boolean add(E item) {
-        OratioNode<E> tempNode = head;
+    /**
+     * Adds an item to the end of list
+     * @param item the item to add to the list
+     */
+    public void add(T item) {
+        LinkedListNode<T> tempNode = head;
 
         if (head==null) {
-            head=new OratioNode<E>(item,null);
-            return true;
+            head=new LinkedListNode<T>(item,null);
+            return;
         }
 
         while(tempNode.getNext()!=null) {
             tempNode = tempNode.getNext();
         }
 
-        tempNode.setNext(new OratioNode<E>(item,null));
-        return true;
-
+        tempNode.setNext(new LinkedListNode<T>(item,null));
     }
 
-    public boolean add(E item, int index) {
+    /**
+     * Adds an item to a specific index on the list
+     * @param item the item to be added
+     * @param index the index to add the item to
+     */
+    public void add(T item, int index) {
 
         int counter = 0;
-        OratioNode<E> tempNode = head;
-        OratioNode<E> tempNode2;
+        LinkedListNode<T> tempNode = head;
+        LinkedListNode<T> tempNode2;
 
         if (head==null) {
-            head=new OratioNode<E>(item,null);
-            return true;
+            head=new LinkedListNode<T>(item,null);
+            return;
         }
 
         else if(index == 0) {
-            tempNode2 = new OratioNode(item, head);
+            tempNode2 = new LinkedListNode(item, head);
             head = tempNode2;
-            return true;
+            return;
         }
 
         while(tempNode.getNext()!=null && counter <= index) {
@@ -46,13 +52,18 @@ public class OratioLinkedList<E> {
         }
 
         tempNode2 = tempNode.getNext();
-        tempNode.setNext(new OratioNode<E>(item,null));
+        tempNode.setNext(new LinkedListNode<T>(item,null));
         tempNode.getNext().setNext(tempNode2);
-        return true;
     }
 
-    public E get(int index) {
-        OratioNode<E> tempNode = head;
+
+    /**
+     * gets an object
+     * @param index index of the item
+     * @return an object
+     */
+    public T get(int index) {
+        LinkedListNode<T> tempNode = head;
 
         for(int i = 0; i < index; i++) {
             tempNode = tempNode.getNext();
@@ -62,8 +73,13 @@ public class OratioLinkedList<E> {
         return tempNode.getItem();
     }
 
-    public int indexOf(E item) {
-        OratioNode<E> tempNode = head;
+    /**
+     * gets index of a specific item
+     * @param item the item
+     * @return index of item
+     */
+    public int indexOf(T item) {
+        LinkedListNode<T> tempNode = head;
         int counter = 0;
 
         while(tempNode.getNext()!= null) {
@@ -77,9 +93,20 @@ public class OratioLinkedList<E> {
         return -1;
     }
 
-    public E remove(int index) {
-        OratioNode<E> tempNode = head;
-        E item;
+    /**
+     * Removes whatever's in the specified index
+     * @param index index of object
+     * @return the object that was removed
+     */
+    public T remove(int index) {
+        LinkedListNode<T> tempNode = head;
+        T item;
+
+        if(index == 0) {
+            item = head.getItem();
+            head = head.getNext();
+            return item;
+        }
 
         for(int i = 0; i < index-1; i++) {
             tempNode = tempNode.getNext();
@@ -91,16 +118,20 @@ public class OratioLinkedList<E> {
         return item;
     }
 
-    //  public boolean remove(E) {
-    //  }
-
+    /**
+     * clear the whole list
+     */
     public void clear() {
         this.head.setNext(null);
     }
 
+    /**
+     * gets size of list
+     * @return the size of the list
+     */
     public int size() {
 
-        OratioNode<E> tempNode = head;
+        LinkedListNode<T> tempNode = head;
 
         int counter = 0;
 
