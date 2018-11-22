@@ -1,3 +1,10 @@
+/**
+ * TreeNode
+ * Node for trees
+ * @author Eric Ke
+ * Created: 2018-11-19
+ * Last Modified: 2018-11-21
+ */
 public class TreeNode<T> {
 
     private T item;

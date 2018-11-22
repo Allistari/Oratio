@@ -1,3 +1,10 @@
+/**
+ * OratioLinkedList
+ * Stores items via nodes linked to each other
+ * @author Eric Ke
+ * Created: 2018-11-16
+ * Last Modified: 2018-11-20
+ */
 public class OratioLinkedList<T> {
     private LinkedListNode<T> head;
 

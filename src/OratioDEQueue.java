@@ -1,3 +1,10 @@
+/**
+ * OratioDEQueue
+ * A custom double ended queue
+ * @author Eric Ke
+ * Created: 2018-11-16
+ * Last Modified: 2018-11-21
+ */
 public class OratioDEQueue<T> {
 
     private OratioLinkedList<T> stuffQueue = new OratioLinkedList<>();

@@ -1,6 +1,9 @@
 /**
- * LinkedListNode.java
- * Node
+ * LinkedListNode
+ * Node for linked lists
+ * @author Eric Ke
+ * Created: 2018-11-19
+ * Last Modified: 2018-11-21
  */
 public class LinkedListNode<T> {
     private T item;

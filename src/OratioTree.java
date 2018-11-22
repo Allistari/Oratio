@@ -1,10 +1,9 @@
-
-
 /**
- * OratioTree.java
+ * OratioTree
  * Modular tree data structure for the Oratio program
  * @author Eric Ke
- * Last Updated: 2018/11/16
+ * Created: 2018-11-16
+ * Last Modified: 2018-11-21
  */
 public class OratioTree<T> {
 
