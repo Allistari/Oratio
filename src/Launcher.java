@@ -15,7 +15,7 @@ import java.net.URL;
  * @author Angelina Zhang
  * @author Eric Ke
  * created 2018-11-15
- * last modified 2018-11-18
+ * last modified 2018-11-22
  */
 
 public class Launcher {
