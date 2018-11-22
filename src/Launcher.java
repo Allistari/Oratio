@@ -15,28 +15,28 @@ import java.net.URL;
  * @author Angelina Zhang
  * @author Eric Ke
  * created 2018-11-15
- * last modified 2018-11-18
+ * last modified 2018-11-22
  */
 
 public class Launcher {
     private PhoneticTranslator phoneticTranslator;
 
     // GUI
-    //private Display display;
+    private OratioDisplay display;
 
     private String phoneticSpelling;
     private int preset;
 
     /**
      * main method
-     * @param args
+     * @param args idk what this actually does
      */
     public static void main(String[] args) {
         new Launcher();
     }
 
-    Launcher() {
-        //this.display = new Display();
+    private Launcher() {
+        this.display = new OratioDisplay();
 
         // generate data structures
         // load info into data structures
@@ -46,18 +46,20 @@ public class Launcher {
 
 
     /**
-     *
-     * @return
+     * Returns the phonetic spelling.
+     * @return String containing the phonetic spelling in ARPABET symbols
      */
     public String getPhoneticSpelling() {
         return phoneticSpelling;
     }
 
+
+
     private class InputPanelListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             //String word = display.getInputPanel().getTextField().getText();
-            
+
             //phoneticSpelling = phoneticTranslator.getPronounciation(word);
         }
     }

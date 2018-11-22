@@ -13,6 +13,7 @@ import java.awt.*;
  * created 2018-11-20
  * last modified 2018-11-21
  */
+
 public class GalleryPanel extends JPanel{
     JPanel panel;
     TitledBorder title;

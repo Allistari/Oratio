@@ -1,5 +1,5 @@
 import javax.swing.*;
-import java.awt.image.BufferedImage;
+import java.awt.Image;
 
 public class MouthShape {
     String [] spelling;
@@ -7,5 +7,9 @@ public class MouthShape {
     ImageIcon image;
 
     public MouthShape(String fileName){
+    }
+
+    public Image getImage() {
+        return image.getImage();
     }
 }
