@@ -18,6 +18,7 @@ public class PreviewPanel extends JPanel{
     JPanel panel;
     TitledBorder title;
     GridBagConstraints c;
+    //OratioDEQueue gueue;
 
     public PreviewPanel(Container pane, GridBagConstraints constraints){
         panel = new JPanel();
@@ -38,4 +39,8 @@ public class PreviewPanel extends JPanel{
     public JPanel get(){
         return this.panel;
     }
+
+    /*public void setQueue(OratioDEQueue queue){
+        this.queue = queue;
+    }*/
 }

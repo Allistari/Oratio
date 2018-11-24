@@ -12,4 +12,12 @@ public class MouthShape {
     public Image getImage() {
         return image.getImage();
     }
+
+    public String[] getSpelling() {
+        return spelling;
+    }
+
+    public String getFileName() {
+        return fileName;
+    }
 }
