@@ -1,3 +1,8 @@
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
+import java.util.Scanner;
+
 /**
  * Launcher.java
  * Creates OratioTree objects from a custom JSON file which contains the data and image url for each mouth shape
@@ -7,7 +12,19 @@
  */
 
 public class OratioTreeGenerator {
+
+
     public OratioTree generateTree(String jsonURL) {
-        return new OratioTree();
+        try {
+            Scanner scanner = new Scanner(new File(jsonURL));
+        } catch(IOException e) {
+            return null;
+        }
+
+        OratioTree<MouthShape> tree = new OratioTree<>();
+
+
+
+        return tree;
     }
 }
