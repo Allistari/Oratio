@@ -7,10 +7,6 @@ import java.awt.event.ActionListener;
 /**
  * InputPanel.java
  * input panel class which holds all the components in the input panel
- * @author Joey Chik
- * @author Michael Tatsiopoulos
- * @author Angelina Zhang
- * @author Eric Ke
  * @author Kyle To
  * created 2018-11-20
  * last modified 2018-11-21
@@ -71,6 +67,14 @@ public class InputPanel extends JPanel{
         c.gridx = 2;       //3rd column
         c.gridy = 0;
         c.gridwidth = 1;   //1 columns wide
+        /**
+         * Action Listener
+         * Action listener for the animate button
+         * @author Kyle To
+         * @author Michael Tatsiopoulos
+         * created 2018-11-20
+         * last modified 2018-11-21
+         */
         animateButton.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent E){
@@ -102,7 +106,7 @@ public class InputPanel extends JPanel{
     }
 
     public JButton createReAnimateButton(JPanel panel){
-        reAnimateButton = new JButton("ReAnimate");
+        reAnimateButton = new JButton("Reanimate");
         c.weightx = 0.5;   //request extra horizontal space
         c.weighty = 0.0;
         c.anchor = GridBagConstraints.CENTER; //center of space
