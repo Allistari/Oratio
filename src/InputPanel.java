@@ -67,6 +67,14 @@ public class InputPanel extends JPanel{
         c.gridx = 2;       //3rd column
         c.gridy = 0;
         c.gridwidth = 1;   //1 columns wide
+        /**
+         * Action Listener
+         * Action listener for the animate button
+         * @author Kyle To
+         * @author Michael Tatsiopoulos
+         * created 2018-11-20
+         * last modified 2018-11-21
+         */
         animateButton.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent E){
