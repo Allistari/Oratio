@@ -1,43 +1,35 @@
-import com.google.gson.Gson;
 import com.google.gson.stream.JsonWriter;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.List;
 
-public class JSONGenerator {
-    private Gson gson;
-    
-    JSONGenerator() {
-        this.gson = new Gson();
-    }
-    
+/**
+ * JsonGenerator.java
+ * Creates a JSON file representing an array of MouthShape objects
+ * @author Joey
+ * created 2018-11-15
+ * last modified 2018-11-25
+ */
+public class JsonGenerator {
     /**
-     *
-     * @param mList
-     * @param file
-     * @return
+     * generates a JSON file containing an array of MouthShapes
+     * @param mList an OratioLinkedList of MouthShapes
+     * @param file the file object to write to
      */
-    public boolean generateJSON(List<MouthShape> mList, File file) throws IOException {
+    public void generateJSON(OratioLinkedList<MouthShape> mList, File file) throws IOException {
         JsonWriter writer;
-        try {
-            writer = new JsonWriter(new FileWriter(file));
-        } catch (IOException e) {
-            return false;
-        }
+        writer = new JsonWriter(new FileWriter(file));
 
         writer.beginArray();
 
-        for (MouthShape m : mList) {
-            writeMouthShape(writer, m);
+        for (int i = 0; i < mList.size(); i++) {
+            writeMouthShape(writer, mList.get(i));
         }
 
         writer.endArray();
 
         writer.close();
-
-        return true;
     }
     
     private void writeMouthShape(JsonWriter writer, MouthShape m) throws IOException

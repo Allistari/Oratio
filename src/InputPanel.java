@@ -13,15 +13,14 @@ import java.awt.event.ActionListener;
  */
 
 public class InputPanel extends JPanel{
-    JPanel panel;
-    TitledBorder title;
-    GridBagConstraints c;
-    JButton animateButton;
-    JTextField textField;
-    JLabel spelling;
-    JButton reAnimateButton;
-    JButton resetButton;
-    String text;
+    private TitledBorder title;
+    private GridBagConstraints c;
+    private JButton animateButton;
+    private JTextField textField;
+    private JLabel spelling;
+    private JButton reAnimateButton;
+    private JButton resetButton;
+    private String text;
 
     public InputPanel(Container pane, GridBagConstraints constraints){
         c = constraints;
@@ -48,7 +47,7 @@ public class InputPanel extends JPanel{
         panel.add(textField, c);
     }
 
-    public JLabel createTextLabel(JPanel panel){
+    private JLabel createTextLabel(JPanel panel){
         spelling = new JLabel();
         c.weightx = 1.0;   //requests extra horizontal space
         c.weighty = 0.0;
@@ -59,7 +58,7 @@ public class InputPanel extends JPanel{
         return spelling;
     }
 
-    public JButton createAnimateButton(JPanel panel){
+    private JButton createAnimateButton(JPanel panel){
         animateButton = new JButton("Animate");
         c.weightx = 0.5;   //requests extra horizontal space
         c.weighty = 0.0;
@@ -95,7 +94,7 @@ public class InputPanel extends JPanel{
         return animateButton;
     }
 
-    public JTextField createTextField(JPanel panel){
+    private JTextField createTextField(JPanel panel){
         textField = new JTextField();
         c.weightx = 1.0;   //request extra horizontal space
         c.anchor = GridBagConstraints.LINE_START; //left of space
@@ -105,7 +104,7 @@ public class InputPanel extends JPanel{
         return textField;
     }
 
-    public JButton createReAnimateButton(JPanel panel){
+    private JButton createReAnimateButton(JPanel panel){
         reAnimateButton = new JButton("Reanimate");
         c.weightx = 0.5;   //request extra horizontal space
         c.weighty = 0.0;
@@ -116,7 +115,7 @@ public class InputPanel extends JPanel{
         return reAnimateButton;
     }
 
-    public JButton createResetButton(JPanel panel){
+    private JButton createResetButton(JPanel panel){
         resetButton = new JButton("Reset");
         c.weightx = 0.5;   //request extra horizontal space
         c.weighty = 0.0;
