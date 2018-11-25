@@ -4,7 +4,7 @@ import com.google.gson.stream.JsonWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.Writer;
+import java.util.List;
 
 public class JSONGenerator {
     private Gson gson;
@@ -15,11 +15,11 @@ public class JSONGenerator {
     
     /**
      *
-     * @param mArray
+     * @param mList
      * @param file
      * @return
      */
-    public boolean generateJSON(MouthShape[] mArray, File file) throws IOException {
+    public boolean generateJSON(List<MouthShape> mList, File file) throws IOException {
         JsonWriter writer;
         try {
             writer = new JsonWriter(new FileWriter(file));
@@ -29,7 +29,7 @@ public class JSONGenerator {
 
         writer.beginArray();
 
-        for (MouthShape m : mArray) {
+        for (MouthShape m : mList) {
             writeMouthShape(writer, m);
         }
 

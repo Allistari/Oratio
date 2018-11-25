@@ -6,7 +6,11 @@ public class MouthShape {
     String fileName;
     ImageIcon image;
 
-    public MouthShape(String fileName){
+    public MouthShape(String fileName, String[] spelling){
+        this.fileName = fileName;
+        this.spelling = spelling;
+
+        image = new ImageIcon(fileName);
     }
 
     public Image getImage() {

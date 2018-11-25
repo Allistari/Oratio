@@ -150,4 +150,17 @@ public class OratioLinkedList<T> {
         return counter;
     }
 
+    /**
+     * returns the contents of the list as an array
+     * @return list as an array
+     */
+    public T[] toArray() {
+        Object[] array = new Object[this.size()];
+
+        for (int i = 0; i < this.size(); i++) {
+            array[i] = this.get(i);
+        }
+
+        return (T[]) array;
+    }
 }
