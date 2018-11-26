@@ -18,7 +18,7 @@ public class PreviewPanel extends JPanel{
     JPanel panel;
     TitledBorder title;
     GridBagConstraints c;
-    //OratioDEQueue queue;
+    OratioDEQueue queue;
     BufferedImage avatar;
 
 
