@@ -36,6 +36,7 @@ public class PreviewPanel extends JPanel{
         c.gridy = 0;       //first row
         title = BorderFactory.createTitledBorder("Preview");
         panel.setBorder(title);
+        position = 0;
 
         try {
             avatar = ImageIO.read(new File("resources/MouthShapes/avatar.jpg"));
@@ -48,11 +49,12 @@ public class PreviewPanel extends JPanel{
         pane.add(panel, c);
     }
 
-    public void animate(String text){
+    public void animate(String text, Graphics g){
         do{
             queue.addLast(current);
             position++;
-            position % queue.size();
+            position = position % queue.size();
+            avatar = (BufferedImage)current.getImage();
         }while (position > 0);
     }
 
