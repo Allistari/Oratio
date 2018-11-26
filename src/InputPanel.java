@@ -21,10 +21,13 @@ public class InputPanel extends JPanel{
     private JButton reAnimateButton;
     private JButton resetButton;
     private String text;
+    private PhoneticTranslator phoneticTranslator;
+    private String phoneticSpelling;
 
     public InputPanel(GridBagConstraints constraints){
-        super();
+        super(new GridBagLayout());
         c = constraints;
+        phoneticTranslator = new PhoneticTranslator();
 
         c.fill = GridBagConstraints.BOTH;
         c.weightx = 1.0;
@@ -78,16 +81,23 @@ public class InputPanel extends JPanel{
             public void actionPerformed(ActionEvent E){
                     text = textField.getText();
                     panel.remove(textField);
+
                     spelling = createTextLabel(panel);
-                    spelling.setText(text);
+                    phoneticSpelling = phoneticTranslator.getPronounce(text);
+                    spelling.setText(phoneticSpelling);
                     panel.add(spelling);
+
                     panel.remove(animateButton);
+
                     reAnimateButton = createReAnimateButton(panel);
                     panel.add(reAnimateButton,c);
+
                     resetButton = createResetButton(panel);
                     panel.add(resetButton, c);
+
                     panel.validate();
                     panel.repaint();
+
             }
         });
         return animateButton;
