@@ -1,3 +1,5 @@
+import jdk.internal.util.xml.impl.Input;
+
 import java.awt.*;
 import javax.swing.JFrame;
 
@@ -11,6 +13,9 @@ import javax.swing.JFrame;
  */
 
 public class OratioDisplay {
+    private GalleryPanel galleryPanel;
+    private PreviewPanel previewPanel;
+    private InputPanel inputPanel;
 
     public OratioDisplay(){
         //Create and set up the window.
@@ -26,17 +31,16 @@ public class OratioDisplay {
         frame.setVisible(true);
     }
 
-    public static void addComponentsToPane(Container pane) {
+    private void addComponentsToPane(Container pane) {
 
         pane.setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
 
-        GalleryPanel GalleryPanel = new GalleryPanel(pane, c);
+        galleryPanel = new GalleryPanel(pane, c);
+        previewPanel = new PreviewPanel(pane,c);
+        inputPanel = new InputPanel(c);
 
-        PreviewPanel PreviewPanel = new PreviewPanel(pane,c);
-
-        InputPanel InputPanel = new InputPanel(pane, c);
-
+        pane.add(inputPanel, c);
     }
 
     public static void main(String[] args) { //to test display

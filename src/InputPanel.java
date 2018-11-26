@@ -22,10 +22,10 @@ public class InputPanel extends JPanel{
     private JButton resetButton;
     private String text;
 
-    public InputPanel(Container pane, GridBagConstraints constraints){
+    public InputPanel(GridBagConstraints constraints){
+        super();
         c = constraints;
 
-        JPanel panel = new JPanel(new GridBagLayout());
         c.fill = GridBagConstraints.BOTH;
         c.weightx = 1.0;
         c.weighty = 0.05;   //request extra vertical space
@@ -35,16 +35,15 @@ public class InputPanel extends JPanel{
         c.gridwidth = 3;   //3 columns wide
         c.gridheight = 1;  //1 row tall
         title = BorderFactory.createTitledBorder("Input"); //creates titled border
-        panel.setBorder(title);
-        pane.add(panel, c);
+        this.setBorder(title);
 
         //Creates initial animate button
-        animateButton = createAnimateButton(panel);
-        panel.add(animateButton, c);
+        animateButton = createAnimateButton(this);
+        this.add(animateButton, c);
 
         //Creates initial text field
-        textField = createTextField(panel);
-        panel.add(textField, c);
+        textField = createTextField(this);
+        this.add(textField, c);
     }
 
     private JLabel createTextLabel(JPanel panel){
@@ -141,8 +140,7 @@ public class InputPanel extends JPanel{
         return resetButton;
     }
 
-    public JPanel get(){
-        return this.panel;
+    public JTextField getTextField() {
+        return textField;
     }
-
 }
