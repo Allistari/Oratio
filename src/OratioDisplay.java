@@ -1,6 +1,7 @@
 import jdk.internal.util.xml.impl.Input;
 
 import java.awt.*;
+import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 
 
@@ -32,7 +33,6 @@ public class OratioDisplay {
     }
 
     private void addComponentsToPane(Container pane) {
-
         pane.setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
 
@@ -41,6 +41,10 @@ public class OratioDisplay {
         inputPanel = new InputPanel(c);
 
         pane.add(inputPanel, c);
+    }
+
+    public InputPanel getInputPanel() {
+        return inputPanel;
     }
 
     public static void main(String[] args) { //to test display

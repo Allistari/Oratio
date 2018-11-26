@@ -21,6 +21,9 @@ public class Launcher {
     private String phoneticSpelling;
     private int preset;
 
+    // data structures
+    private OratioTree<MouthShape> tree;
+
     /**
      * main method
      * @param args idk what this actually does
@@ -31,8 +34,13 @@ public class Launcher {
 
     private Launcher() {
         this.display = new OratioDisplay();
+        this.display.getInputPanel().getTextField().addActionListener(new InputPanelListener());
+
+
 
         // generate data structures
+        tree = new OratioTreeGenerator().generateTreeFromJson();
+
         // load info into data structures
 
         this.phoneticTranslator = new PhoneticTranslator();
@@ -52,9 +60,9 @@ public class Launcher {
     private class InputPanelListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            //String word = display.getInputPanel().getTextField().getText();
+            String word = display.getInputPanel().getTextField().getText();
 
-            //phoneticSpelling = phoneticTranslator.getPronounciation(word);
+            phoneticSpelling = phoneticTranslator.getPronounce(word);
         }
     }
 }

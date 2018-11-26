@@ -23,11 +23,11 @@ public class OratioTreeGenerator {
 
     /**
      * generates a tree from a JSON file containing an array of MouthShapes
-     * @param jsonURL
+     * @param jsonURL pathname for the json file
      * @return
      * @throws IOException
      */
-    public OratioTree generateTreeFromJson(String jsonURL) throws IOException{
+    public OratioTree<MouthShape> generateTreeFromJson(String jsonURL) throws IOException{
         FileReader fileReader = new FileReader(new File(jsonURL));
         JsonReader jsonReader = new JsonReader(fileReader);
 
