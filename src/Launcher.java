@@ -1,5 +1,6 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 /**
  * Launcher.java
@@ -13,13 +14,15 @@ import java.awt.event.ActionListener;
  */
 
 public class Launcher {
+    private final static String FILE_LOADING_ERR_MSG = "There was a problem loading the graphics.";
+
     private PhoneticTranslator phoneticTranslator;
 
     // GUI
     private OratioDisplay display;
 
     private String phoneticSpelling;
-    private int preset;
+    private String preset;
 
     // data structures
     private OratioTree<MouthShape> tree;
@@ -36,16 +39,19 @@ public class Launcher {
         this.display = new OratioDisplay();
         this.display.getInputPanel().getTextField().addActionListener(new InputPanelListener());
 
-
+        this.preset = "default";
 
         // generate data structures
-        tree = new OratioTreeGenerator().generateTreeFromJson();
-
-        // load info into data structures
+        try {
+            String filePath = "Graphics/" + this.preset + "/meta.json";
+            this.tree = new OratioTreeGenerator().generateTreeFromJson(filePath);
+        } catch (IOException e) {
+            System.err.println(FILE_LOADING_ERR_MSG);
+            System.exit(1);
+        }
 
         this.phoneticTranslator = new PhoneticTranslator();
     }
-
 
     /**
      * Returns the phonetic spelling.
@@ -54,8 +60,6 @@ public class Launcher {
     public String getPhoneticSpelling() {
         return phoneticSpelling;
     }
-
-
 
     private class InputPanelListener implements ActionListener {
         @Override
