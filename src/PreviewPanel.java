@@ -18,7 +18,7 @@ public class PreviewPanel extends JPanel{
     JPanel panel;
     TitledBorder title;
     GridBagConstraints c;
-    OratioDEQueue queue;
+    OratioDEQueue<MouthShape> queue;
     BufferedImage avatar;
 
 
@@ -55,7 +55,10 @@ public class PreviewPanel extends JPanel{
         return this.panel;
     }
 
-    /*public void setQueue(OratioDEQueue queue){
+
+
+    public void setQueue(OratioDEQueue<MouthShape> queue) {
         this.queue = queue;
-    }*/
+    }
+
 }
