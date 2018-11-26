@@ -1,11 +1,6 @@
-import jdk.internal.util.xml.impl.Input;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedInputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
 
 /**
  * Launcher.java
@@ -19,13 +14,18 @@ import java.net.URL;
  */
 
 public class Launcher {
+    private final static String FILE_LOADING_ERR_MSG = "There was a problem loading the graphics.";
+
     private PhoneticTranslator phoneticTranslator;
 
     // GUI
     private OratioDisplay display;
 
     private String phoneticSpelling;
-    private int preset;
+    private String preset;
+
+    // data structures
+    private OratioTree<MouthShape> tree;
 
     /**
      * main method
@@ -37,13 +37,21 @@ public class Launcher {
 
     private Launcher() {
         this.display = new OratioDisplay();
+        this.display.getInputPanel().getTextField().addActionListener(new InputPanelListener());
+
+        this.preset = "default";
 
         // generate data structures
-        // load info into data structures
+        try {
+            String filePath = "Graphics/" + this.preset + "/meta.json";
+            this.tree = new OratioTreeGenerator().generateTreeFromJson(filePath);
+        } catch (IOException e) {
+            System.err.println(FILE_LOADING_ERR_MSG);
+            System.exit(1);
+        }
 
         this.phoneticTranslator = new PhoneticTranslator();
     }
-
 
     /**
      * Returns the phonetic spelling.
@@ -53,14 +61,12 @@ public class Launcher {
         return phoneticSpelling;
     }
 
-
-
     private class InputPanelListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            //String word = display.getInputPanel().getTextField().getText();
+            String word = display.getInputPanel().getTextField().getText();
 
-            //phoneticSpelling = phoneticTranslator.getPronounciation(word);
+            phoneticSpelling = phoneticTranslator.getPronounce(word);
         }
     }
 }

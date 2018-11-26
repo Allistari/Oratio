@@ -2,11 +2,15 @@ import javax.swing.*;
 import java.awt.Image;
 
 public class MouthShape {
-    String [] spelling;
-    String fileName;
-    ImageIcon image;
+    private String [] spelling;
+    private String fileName;
+    private ImageIcon image;
 
-    public MouthShape(String fileName){
+    public MouthShape(String fileName, String[] spelling){
+        this.fileName = fileName;
+        this.spelling = spelling;
+
+        image = new ImageIcon(fileName);
     }
 
     public Image getImage() {

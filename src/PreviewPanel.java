@@ -1,14 +1,14 @@
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 /**
  * PreviewPanel.java
  * preview panel class which holds all the components in the preview panel
- * @author Joey Chik
- * @author Michael Tatsiopoulos
- * @author Angelina Zhang
- * @author Eric Ke
  * @author Kyle To
  * created 2018-11-20
  * last modified 2018-11-21
@@ -18,7 +18,9 @@ public class PreviewPanel extends JPanel{
     JPanel panel;
     TitledBorder title;
     GridBagConstraints c;
-    //OratioDEQueue gueue;
+    OratioDEQueue<MouthShape> queue;
+    BufferedImage avatar;
+
 
     public PreviewPanel(Container pane, GridBagConstraints constraints){
         panel = new JPanel();
@@ -33,14 +35,30 @@ public class PreviewPanel extends JPanel{
         c.gridy = 0;       //first row
         title = BorderFactory.createTitledBorder("Preview");
         panel.setBorder(title);
+
+        try {
+            avatar = ImageIO.read(new File("resources/MouthShapes/avatar.jpg"));
+        } catch (IOException ex) {
+            // handle exception...
+        }
+        JLabel start = new JLabel(new ImageIcon(avatar));
+        panel.add(start);
+
         pane.add(panel, c);
+    }
+
+    public void animate(String text){
+
     }
 
     public JPanel get(){
         return this.panel;
     }
 
-    /*public void setQueue(OratioDEQueue queue){
+
+
+    public void setQueue(OratioDEQueue<MouthShape> queue) {
         this.queue = queue;
-    }*/
+    }
+
 }
