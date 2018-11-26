@@ -29,6 +29,10 @@ public class OratioDEQueue<T> {
         return stuffQueue.remove(stuffQueue.size()-1);
     }
 
+    public int size() {
+        return stuffQueue.size();
+    }
+
     public boolean isEmpty() {
         if (stuffQueue.size() < 1) {
             return true;
