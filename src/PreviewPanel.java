@@ -20,7 +20,8 @@ public class PreviewPanel extends JPanel{
     GridBagConstraints c;
     OratioDEQueue<MouthShape> queue;
     BufferedImage avatar;
-
+    int position;
+    MouthShape current;
 
     public PreviewPanel(Container pane, GridBagConstraints constraints){
         panel = new JPanel();
@@ -48,7 +49,11 @@ public class PreviewPanel extends JPanel{
     }
 
     public void animate(String text){
-
+        do{
+            queue.addLast(current);
+            position++;
+            position % queue.size();
+        }while (position > 0);
     }
 
     public JPanel get(){
@@ -59,6 +64,7 @@ public class PreviewPanel extends JPanel{
 
     public void setQueue(OratioDEQueue<MouthShape> queue) {
         this.queue = queue;
+        this.current = queue.pollFirst();
     }
 
 }

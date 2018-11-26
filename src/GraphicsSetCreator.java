@@ -60,7 +60,7 @@ public class GraphicsSetCreator extends JFrame{
                             JOptionPane.showMessageDialog(mainPanel, FILE_NAME_TAKEN_MSG);
                             return;
                         }
-                    } catch (SecurityException e) {
+                    } catch (SecurityException f) {
                         System.err.println("This is a SecurityException and I don't know what it is");
                         System.exit(1);
                     }
