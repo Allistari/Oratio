@@ -24,7 +24,6 @@ public class InputPanel extends JPanel{
     private PhoneticTranslator phoneticTranslator;
     private String phoneticSpelling = "";
     private String[] splitText;
-    private String[] splitPho;
 
 
     public InputPanel(GridBagConstraints constraints){
@@ -72,31 +71,24 @@ public class InputPanel extends JPanel{
         c.gridy = 0;
         c.gridwidth = 1;   //1 columns wide
 
-        /**
-         * Action Listener
-         * Action listener for the animate button
-         * @author Kyle To
-         * @author Michael Tatsiopoulos
-         * created 2018-11-20
-         * last modified 2018-11-21
-         */
-
         animateButton.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent E){
                     text = textField.getText();
                     panel.remove(textField);
 
+                    //Splits inputted text into words
                     splitText = text.split("\\s+");
-                    String temp;
 
+                    //Translates the split words into their phonetic spelling and recombines them into one string
+                    String temp;
                     for (int i = 0; i < splitText.length; i++){
                         temp = phoneticTranslator.getPronounce(splitText[i]);
                         phoneticSpelling = phoneticSpelling + " " + temp;
                     }
 
+                    //Creates text label with both input and phonetic spelling
                     output = createTextLabel(panel);
-                    //phoneticSpelling = phoneticTranslator.getPronounce(text);
                     output.setText(text + ": " + phoneticSpelling +"  ");
                     panel.add(output);
 
