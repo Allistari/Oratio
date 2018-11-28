@@ -68,6 +68,7 @@ public class InputPanel extends JPanel{
         c.gridx = 2;       //3rd column
         c.gridy = 0;
         c.gridwidth = 1;   //1 columns wide
+
         /**
          * Action Listener
          * Action listener for the animate button
