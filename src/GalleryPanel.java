@@ -14,6 +14,7 @@ public class GalleryPanel extends JPanel{
     JPanel panel;
     TitledBorder title;
     GridBagConstraints c;
+    OratioDEQueue<MouthShape> queue;
 
     public GalleryPanel(Container pane, GridBagConstraints constraints){
         panel = new JPanel();
@@ -33,5 +34,15 @@ public class GalleryPanel extends JPanel{
 
     public JPanel get(){
         return this.panel;
+    }
+
+    public void setQueue(OratioDEQueue<MouthShape> queue) {
+        this.queue = queue;
+    }
+
+    public void showFrames(){
+        while (!queue.isEmpty()){
+
+        }
     }
 }
