@@ -50,7 +50,7 @@ public class PreviewPanel extends JPanel{
         pane.add(panel, c);
     }
 
-    public void animate(String text, Graphics g){
+    public void animate(){
         do{
             queue.addLast(current);
             position++;
