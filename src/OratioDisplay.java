@@ -4,7 +4,6 @@ import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 
-
 /**
  * OratioDisplay.java
  * display class which holds all the different components
