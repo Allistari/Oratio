@@ -24,7 +24,6 @@ public class InputPanel extends JPanel{
     private PhoneticTranslator phoneticTranslator;
     private String phoneticSpelling = "";
     private String[] splitText;
-    private String[] splitPho;
 
 
     public InputPanel(GridBagConstraints constraints){
@@ -86,7 +85,6 @@ public class InputPanel extends JPanel{
                     }
 
                     output = createTextLabel(panel);
-                    //phoneticSpelling = phoneticTranslator.getPronounce(text);
                     output.setText(text + ": " + phoneticSpelling +"  ");
                     panel.add(output);
 
