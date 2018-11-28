@@ -62,7 +62,6 @@ public class OratioDisplay {
     }
 
     public static void main(String[] args) { //to test display
-        //createAndShowGUI();
         OratioDisplay display = new OratioDisplay();
     }
 
