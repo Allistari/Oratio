@@ -4,7 +4,7 @@ import java.awt.Image;
 public class MouthShape {
     private String [] spelling;
     private String fileName;
-    ImageIcon image;
+    private ImageIcon image;
 
     public MouthShape(String fileName, String[] spelling){
         this.fileName = fileName;

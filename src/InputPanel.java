@@ -17,12 +17,14 @@ public class InputPanel extends JPanel{
     private GridBagConstraints c;
     private JButton animateButton;
     private JTextField textField;
-    private JLabel spelling;
+    private JLabel output;
     private JButton reAnimateButton;
     private JButton resetButton;
     private String text;
     private PhoneticTranslator phoneticTranslator;
-    private String phoneticSpelling;
+    private String phoneticSpelling = "";
+    private String[] splitText;
+
 
     public InputPanel(GridBagConstraints constraints){
         super(new GridBagLayout());
@@ -50,14 +52,14 @@ public class InputPanel extends JPanel{
     }
 
     private JLabel createTextLabel(JPanel panel){
-        spelling = new JLabel();
+        output = new JLabel();
         c.weightx = 1.0;   //requests extra horizontal space
         c.weighty = 0.0;
         c.anchor = GridBagConstraints.LINE_START; //left of space
         c.gridx = 0;       //1st column
         c.gridy = 0;
         c.gridwidth = 1;   //1 column wide
-        return spelling;
+        return output;
     }
 
     private JButton createAnimateButton(JPanel panel){
@@ -68,24 +70,27 @@ public class InputPanel extends JPanel{
         c.gridx = 2;       //3rd column
         c.gridy = 0;
         c.gridwidth = 1;   //1 columns wide
-        /**
-         * Action Listener
-         * Action listener for the animate button
-         * @author Kyle To
-         * @author Michael Tatsiopoulos
-         * created 2018-11-20
-         * last modified 2018-11-21
-         */
+
         animateButton.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent E){
                     text = textField.getText();
                     panel.remove(textField);
 
-                    spelling = createTextLabel(panel);
-                    phoneticSpelling = phoneticTranslator.getPronounce(text);
-                    spelling.setText(phoneticSpelling);
-                    panel.add(spelling);
+                    //Splits inputted text into words
+                    splitText = text.split("\\s+");
+
+                    //Translates the split words into their phonetic spelling and recombines them into one string
+                    String temp;
+                    for (int i = 0; i < splitText.length; i++){
+                        temp = phoneticTranslator.getPronounce(splitText[i]);
+                        phoneticSpelling = phoneticSpelling + " " + temp;
+                    }
+
+                    //Creates text label with both input and phonetic spelling
+                    output = createTextLabel(panel);
+                    output.setText(text + ": " + phoneticSpelling +"  ");
+                    panel.add(output);
 
                     panel.remove(animateButton);
 
@@ -136,7 +141,7 @@ public class InputPanel extends JPanel{
         resetButton.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent E){
-                panel.remove(spelling);
+                panel.remove(output);
                 panel.remove(reAnimateButton);
                 panel.remove(resetButton);
                 textField = createTextField(panel);

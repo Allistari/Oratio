@@ -10,6 +10,7 @@ import java.io.IOException;
  * PreviewPanel.java
  * preview panel class which holds all the components in the preview panel
  * @author Kyle To
+ * @author Michael Tatsiopoulos
  * created 2018-11-20
  * last modified 2018-11-21
  */
@@ -18,9 +19,10 @@ public class PreviewPanel extends JPanel{
     JPanel panel;
     TitledBorder title;
     GridBagConstraints c;
-    //OratioDEQueue queue;
+    OratioDEQueue<MouthShape> queue;
     BufferedImage avatar;
-
+    int position;
+    MouthShape current;
 
     public PreviewPanel(Container pane, GridBagConstraints constraints){
         panel = new JPanel();
@@ -35,6 +37,7 @@ public class PreviewPanel extends JPanel{
         c.gridy = 0;       //first row
         title = BorderFactory.createTitledBorder("Preview");
         panel.setBorder(title);
+        position = 0;
 
         try {
             avatar = ImageIO.read(new File("resources/MouthShapes/avatar.jpg"));
@@ -47,15 +50,24 @@ public class PreviewPanel extends JPanel{
         pane.add(panel, c);
     }
 
-    public void animate(String text){
-
+    public void animate(){
+        do{
+            queue.addLast(current);
+            position++;
+            position = position % queue.size();
+            avatar = (BufferedImage)current.getImage();
+        }while (position > 0);
     }
 
     public JPanel get(){
         return this.panel;
     }
 
-    /*public void setQueue(OratioDEQueue queue){
+
+
+    public void setQueue(OratioDEQueue<MouthShape> queue) {
         this.queue = queue;
-    }*/
+        this.current = queue.pollFirst();
+    }
+
 }

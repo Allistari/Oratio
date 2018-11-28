@@ -13,17 +13,18 @@ import java.net.URLConnection;
  * Last Updated: 2018-11-21
  * Created 2018-11-20
  */
+
 public class PhoneticTranslator {
 
     private final String URL = "https://api.datamuse.com/words?sp=";
     private final String URL2 = "&md=r&ipa=1&max=1";
-
 
     /**
      * Gets the IPA phonetic spelling of a word
      * @param search the word to get the pronunciation of
      * @return the pronunciation of the word
      */
+
     public String getPronounce(String search) {
 
         Word word = null;

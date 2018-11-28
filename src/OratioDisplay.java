@@ -1,10 +1,6 @@
-//import jdk.internal.util.xml.impl.Input;
-
 import java.awt.*;
-import java.awt.event.ActionListener;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
-
 
 /**
  * OratioDisplay.java
@@ -64,7 +60,6 @@ public class OratioDisplay {
     }
 
     public static void main(String[] args) { //to test display
-        //createAndShowGUI();
         OratioDisplay display = new OratioDisplay();
     }
 
