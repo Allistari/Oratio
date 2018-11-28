@@ -10,6 +10,7 @@ import java.io.IOException;
  * PreviewPanel.java
  * preview panel class which holds all the components in the preview panel
  * @author Kyle To
+ * @author Michael Tatsiopoulos
  * created 2018-11-20
  * last modified 2018-11-21
  */
@@ -43,7 +44,6 @@ public class PreviewPanel extends JPanel{
         } catch (IOException ex) {
             // handle exception...
         }
-
         JLabel start = new JLabel(new ImageIcon(avatar));
         panel.add(start);
 
