@@ -84,7 +84,7 @@ public class InputPanel extends JPanel{
 
                     spelling = createTextLabel(panel);
                     phoneticSpelling = phoneticTranslator.getPronounce(text);
-                    spelling.setText(phoneticSpelling);
+                    spelling.setText(text + ": " + phoneticSpelling +"  ");
                     panel.add(spelling);
 
                     panel.remove(animateButton);
