@@ -26,6 +26,7 @@ public class Launcher {
 
     // data structures
     private OratioTree<MouthShape> tree;
+    //private OratioDEQueue<MouthShape> queue;
 
     /**
      * main method
@@ -47,7 +48,7 @@ public class Launcher {
             this.tree = new OratioTreeGenerator().generateTreeFromJson(filePath);
         } catch (IOException e) {
             System.err.println(FILE_LOADING_ERR_MSG);
-            System.exit(1);
+            //System.exit(1);
         }
 
         this.phoneticTranslator = new PhoneticTranslator();

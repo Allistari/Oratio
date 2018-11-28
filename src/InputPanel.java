@@ -25,7 +25,6 @@ public class InputPanel extends JPanel{
     private String phoneticSpelling = "";
     private String[] splitText;
 
-
     public InputPanel(GridBagConstraints constraints){
         super(new GridBagLayout());
         c = constraints;
@@ -99,7 +98,6 @@ public class InputPanel extends JPanel{
 
                     resetButton = createResetButton(panel);
                     panel.add(resetButton, c);
-
                     panel.validate();
                     panel.repaint();
 
