@@ -80,6 +80,7 @@ public class InputPanel extends JPanel{
          * created 2018-11-20
          * last modified 2018-11-21
          */
+
         animateButton.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent E){
