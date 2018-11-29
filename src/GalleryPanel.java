@@ -20,7 +20,7 @@ public class GalleryPanel extends JPanel{
         panel = new JPanel();
         c = constraints;
         c.fill = GridBagConstraints.BOTH;
-        c.weightx = 0.5;
+        c.weightx = 1.0;
         c.weighty = 1.0;   //request any extra vertical space
         c.anchor = GridBagConstraints.FIRST_LINE_END; //top of space
         c.gridx = 2;       //aligned with button 1
