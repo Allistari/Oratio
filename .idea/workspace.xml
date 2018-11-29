@@ -2,38 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d6dcaa92-4ca7-4b88-a378-58a8a05eb138" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Oratio.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Oratio.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Oratio/GalleryPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Oratio/GraphicsSetCreator$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Oratio/GraphicsSetCreator$MouthShapePanel$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Oratio/GraphicsSetCreator$MouthShapePanel$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Oratio/GraphicsSetCreator$MouthShapePanel$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Oratio/GraphicsSetCreator$MouthShapePanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Oratio/GraphicsSetCreator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Oratio/InputPanel$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Oratio/InputPanel$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Oratio/InputPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Oratio/JsonGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Oratio/Launcher$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Oratio/Launcher$InputPanelListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Oratio/Launcher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Oratio/LinkedListNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Oratio/MouthShape.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Oratio/OratioDEQueue.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Oratio/OratioDisplay.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Oratio/OratioLinkedList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Oratio/OratioTree.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Oratio/OratioTreeGenerator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Oratio/PhoneticTranslator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Oratio/PreviewPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Oratio/TestFile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Oratio/TreeNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Oratio/Word.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Graphics/default/AEI.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Graphics/default/BMP.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Graphics/default/CDGKNSTXYZ.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Graphics/default/CHJSH.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Graphics/default/E.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Graphics/default/FV.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Graphics/default/L.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Graphics/default/QUW.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Graphics/default/R.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Graphics/default/TH.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/MouthShapes/AEI.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/MouthShapes/BMP.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/MouthShapes/FV.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GraphicsSetCreator.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GraphicsSetCreator.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GraphicsSetCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GraphicsSetCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MouthShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MouthShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Launcher.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -149,11 +134,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Launcher.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Launcher.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Launcher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="800">
-              <caret line="42" column="32" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
+            <state relative-caret-position="53">
+              <caret line="42" column="27" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -161,25 +146,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GraphicsSetCreator.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GraphicsSetCreator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GraphicsSetCreator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="126" column="22" selection-start-line="126" selection-start-column="22" selection-end-line="126" selection-end-column="22" />
+            <state relative-caret-position="399">
+              <caret line="181" column="5" selection-start-line="181" selection-start-column="5" selection-end-line="181" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MouthShape.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MouthShape.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="method#createMetadataJson#0;class#GraphicsSetCreator#0" />
+                <element signature="method#createUIComponents#0;class#GraphicsSetCreator#0" />
               </folding>
             </state>
           </provider>
@@ -190,56 +165,6 @@
           <provider selected="true" editor-type-id="ui-designer" />
         </entry>
       </file>
-      <file leaf-file-name="MouthShapePanel.form" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/MouthShapePanel.form">
-          <provider selected="true" editor-type-id="ui-designer" />
-        </entry>
-      </file>
-      <file leaf-file-name="JsonGenerator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/JsonGenerator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="19" column="75" selection-start-line="19" selection-start-column="75" selection-end-line="19" selection-end-column="94" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OratioLinkedList.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/OratioLinkedList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3080">
-              <caret line="156" column="31" selection-start-line="156" selection-start-column="31" selection-end-line="156" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OratioTreeGenerator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/OratioTreeGenerator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="25" column="48" selection-start-line="25" selection-start-column="48" selection-end-line="25" selection-end-column="48" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PhoneticTranslator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PhoneticTranslator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1060">
-              <caret line="53" column="31" selection-start-line="53" selection-start-column="31" selection-end-line="53" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="OratioDisplay.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/OratioDisplay.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -247,6 +172,11 @@
               <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MouthShapePanel.form" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MouthShapePanel.form">
+          <provider selected="true" editor-type-id="ui-designer" />
         </entry>
       </file>
     </leaf>
@@ -289,13 +219,13 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/JSONGenerator.java" />
         <option value="$PROJECT_DIR$/src/OratioTreeGenerator.java" />
-        <option value="$PROJECT_DIR$/src/Launcher.java" />
         <option value="$PROJECT_DIR$/src/JsonGenerator.java" />
         <option value="$PROJECT_DIR$/src/MouthShapePanel.form" />
         <option value="$PROJECT_DIR$/src/OratioLinkedList.java" />
         <option value="$PROJECT_DIR$/src/MouthShape.java" />
         <option value="$PROJECT_DIR$/src/GraphicsSetCreator.form" />
         <option value="$PROJECT_DIR$/src/GraphicsSetCreator.java" />
+        <option value="$PROJECT_DIR$/src/Launcher.java" />
       </list>
     </option>
   </component>
@@ -331,12 +261,18 @@
               <item name="Oratio" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Oratio" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Oratio" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="GraphicsSetCreator" type="e9f4de52:FormNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -448,7 +384,8 @@
       <updated>1542295297281</updated>
       <workItem from="1542295304022" duration="2138000" />
       <workItem from="1543463418165" duration="1115000" />
-      <workItem from="1543464869631" duration="1444000" />
+      <workItem from="1543464869631" duration="3349000" />
+      <workItem from="1543506567012" duration="1124000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'master' of https://github.com/Grimtrap/Oratio&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
       <created>1542850869842</created>
@@ -506,11 +443,18 @@
       <option name="project" value="LOCAL" />
       <updated>1543421364129</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="graphics set creator mostly works">
+      <created>1543467425946</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1543467425946</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49978000" />
+    <option name="totallyTimeSpent" value="53007000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -522,60 +466,60 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50512445" side_tool="true" visible="true" weight="0.2780269" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50073206" side_tool="true" visible="true" weight="0.32884902" />
       <window_info anchor="right" id="Maven Projects" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49487555" visible="true" weight="0.2780269" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49633968" weight="0.32884902" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49341142" weight="0.2780269" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Designer" order="3" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27452415" />
       <window_info anchor="right" id="Database" order="6" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" sideWeight="0.49926794" visible="true" weight="0.32884902" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49932885" weight="0.39886847" />
       <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49932885" weight="0.39886847" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info id="Learn" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32956153" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49924356" weight="0.3289689" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32569557" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49924356" visible="true" weight="0.32569557" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2730711" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4977307" weight="0.3289689" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49924356" weight="0.3289689" />
       <window_info id="Learn" order="7" />
-      <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.4977307" weight="0.3289689" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50226927" side_tool="true" weight="0.3289689" />
       <window_info id="Capture Tool" order="5" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49924356" visible="true" weight="0.32569557" />
+      <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="right" id="Maven Projects" order="8" />
-      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -594,7 +538,8 @@
     <MESSAGE value="start working on animation" />
     <MESSAGE value="...." />
     <MESSAGE value="..." />
-    <option name="LAST_COMMIT_MESSAGE" value="..." />
+    <MESSAGE value="graphics set creator mostly works" />
+    <option name="LAST_COMMIT_MESSAGE" value="graphics set creator mostly works" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -772,6 +717,8 @@
           <caret line="126" column="39" selection-start-line="126" selection-start-column="39" selection-end-line="126" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#createMetadataJson#0;class#GraphicsSetCreator#0" />
+            <element signature="method#createUIComponents#0;class#GraphicsSetCreator#0" />
           </folding>
         </state>
       </provider>
@@ -838,23 +785,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MouthShapePanel.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/JsonGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
           <caret line="19" column="75" selection-start-line="19" selection-start-column="75" selection-end-line="19" selection-end-column="94" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Launcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="800">
-          <caret line="42" column="32" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -911,20 +845,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="e#289#290#0" expanded="true" />
-            <element signature="e#343#344#0" expanded="true" />
-            <element signature="e#483#484#0" expanded="true" />
-            <element signature="e#522#523#0" expanded="true" />
-            <element signature="e#660#661#0" expanded="true" />
-            <element signature="e#696#697#0" expanded="true" />
-            <element signature="e#827#828#0" expanded="true" />
-            <element signature="e#870#871#0" expanded="true" />
-            <element signature="e#998#999#0" expanded="true" />
-            <element signature="e#1059#1060#0" expanded="true" />
-            <element signature="e#1171#1172#0" expanded="true" />
-            <element signature="e#1211#1212#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -961,7 +881,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MouthShape.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
+        <state relative-caret-position="320">
           <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -969,13 +889,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/MouthShapePanel.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/GraphicsSetCreator.form">
       <provider selected="true" editor-type-id="ui-designer" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GraphicsSetCreator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="126" column="22" selection-start-line="126" selection-start-column="22" selection-end-line="126" selection-end-column="22" />
+        <state relative-caret-position="399">
+          <caret line="181" column="5" selection-start-line="181" selection-start-column="5" selection-end-line="181" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#createMetadataJson#0;class#GraphicsSetCreator#0" />
+            <element signature="method#createUIComponents#0;class#GraphicsSetCreator#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Launcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="53">
+          <caret line="42" column="27" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

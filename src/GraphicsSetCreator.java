@@ -11,10 +11,14 @@ public class GraphicsSetCreator extends JFrame{
     private static final String FILE_IO_EXCEPTION_MSG = "There was an error creating the file.";
     private static final String IMG_FILE_IO_EXCEPTION_MSG = "There was an error moving the image file.";
     private static final String FILE_WRITING_EXCEPTION_MSG = "There was an error writing to the file.";
+    private static final String GRAPHICS_SET_CREATED_MSG = "Your graphics set was created.";
 
     private JPanel mainPanel;
     private JButton createDirectoryButton;
     private MouthShapePanel mouthShapePanel;
+    private JPanel avatarPanel;
+    private JTextField avatarTextField;
+    private JButton chooseAvatarButton;
     private JTextField graphicsSetNameTextField;
     private JButton mouthShapeAddButton;
     private JTextArea mouthShapePhoneticDisplayTextArea;
@@ -44,15 +48,33 @@ public class GraphicsSetCreator extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 directory.mkdir();
-                System.out.println(directory.getAbsolutePath());
 
                 for (int i = 0; i < mList.size(); i++) {
                     MouthShape m = mList.get(i);
 
-                    m.setFileName(directory.getAbsolutePath() + m.getFileName());
+                    File mFile = new File(m.getFileName());
+                    File newLocation = new File(directory, mFile.getName());
+
+                    if (!mFile.renameTo(newLocation)) {
+                        JOptionPane.showMessageDialog(mainPanel, IMG_FILE_IO_EXCEPTION_MSG);
+                        return;
+                    }
+
+                    m.setFileName(mFile.getAbsolutePath());
                 }
 
+
+
                 createMetadataJson(directory);
+
+                JOptionPane.showMessageDialog(mainPanel, GRAPHICS_SET_CREATED_MSG);
+                System.exit(0);
+            }
+        });
+        chooseAvatarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
             }
         });
     }
@@ -85,6 +107,7 @@ public class GraphicsSetCreator extends JFrame{
 
     private void createUIComponents() {
         mouthShapePanel = new MouthShapePanel();
+        //avatarTextField = new AvatarTextField();
     }
 
     private class MouthShapePanel extends JPanel {
@@ -125,18 +148,11 @@ public class GraphicsSetCreator extends JFrame{
                     // move image from original location to resources root
                     File imgFile = new File(fileName);
 
-                    /*
-                    File newLocation = new File(directory, imgFile.getName());
-                    System.out.println(imgFile.toPath() + "\n" + newLocation.getAbsolutePath());
-                    if (!imgFile.renameTo(newLocation)) {
-                        JOptionPane.showMessageDialog(mainPanel, IMG_FILE_IO_EXCEPTION_MSG);
-                        return;
-                    }
-                    */
-
-                    MouthShape m = new MouthShape(imgFile.getName(), phoneticArray);
+                    MouthShape m = new MouthShape(imgFile.getAbsolutePath(), phoneticArray);
 
                     mList.add(m);
+
+                    phoneticList.clear();
 
                     fileNameTextField.setText("");
                     phoneticInputTextField.setText("");
