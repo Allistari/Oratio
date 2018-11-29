@@ -33,7 +33,6 @@ public class OratioDisplay {
     private void addComponentsToPane(Container pane) {
         pane.setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
-
         galleryPanel = new GalleryPanel(pane, c);
         previewPanel = new PreviewPanel(pane,c);
         inputPanel = new InputPanel(c);
@@ -47,16 +46,11 @@ public class OratioDisplay {
         c.gridheight = 1;  //1 row tall
         title = BorderFactory.createTitledBorder("Input"); //creates titled border
         inputPanel.setBorder(title);
-
         pane.add(inputPanel, c);
     }
 
     public InputPanel getInputPanel() {
         return inputPanel;
-    }
-
-    public void animate(){
-
     }
 
     public static void main(String[] args) { //to test display
