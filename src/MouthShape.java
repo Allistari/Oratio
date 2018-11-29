@@ -24,4 +24,8 @@ public class MouthShape {
     public String getFileName() {
         return fileName;
     }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
 }

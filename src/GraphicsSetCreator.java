@@ -1,22 +1,21 @@
-import jdk.nashorn.internal.scripts.JO;
-
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 
 public class GraphicsSetCreator extends JFrame{
     private static final String FILE_NAME_TAKEN_MSG = "This file name is already taken. Try another one.";
     private static final String FILE_IO_EXCEPTION_MSG = "There was an error creating the file.";
+    private static final String IMG_FILE_IO_EXCEPTION_MSG = "There was an error moving the image file.";
     private static final String FILE_WRITING_EXCEPTION_MSG = "There was an error writing to the file.";
 
     private JPanel mainPanel;
-    private JTextArea graphicsSetNameTextField;
     private JButton createDirectoryButton;
     private MouthShapePanel mouthShapePanel;
-    private JPanel directoryNamePanel;
+    private JTextField graphicsSetNameTextField;
     private JButton mouthShapeAddButton;
     private JTextArea mouthShapePhoneticDisplayTextArea;
     private JTextField mouthShapePhoneticTextField;
@@ -24,6 +23,7 @@ public class GraphicsSetCreator extends JFrame{
 
     private OratioLinkedList<MouthShape> mList;
     private File directory;
+    private String graphicsSetName;
 
     private GraphicsSetCreator() {
         super("Graphics Set Creator");
@@ -35,17 +35,24 @@ public class GraphicsSetCreator extends JFrame{
         this.setVisible(true);
         this.pack();
 
-        this.directory = new File("temp");
+        graphicsSetName = JOptionPane.showInputDialog("What would you like to name your graphics set?");
+
+        this.directory = new File("resources\\Graphics\\" + graphicsSetName);
+        //if (this.directory.exists()) System.out.println("THIS FINALLY FUCKING WORKS HOLY FUCK");
 
         createDirectoryButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String directoryName = "Graphics/" + graphicsSetNameTextField.getText();
-                if (directory.renameTo(new File(directoryName))) {
-                    createMetadataJson(directoryName);
-                } else {
-                    JOptionPane.showMessageDialog(mainPanel, FILE_NAME_TAKEN_MSG);
+                directory.mkdir();
+                System.out.println(directory.getAbsolutePath());
+
+                for (int i = 0; i < mList.size(); i++) {
+                    MouthShape m = mList.get(i);
+
+                    m.setFileName(directory.getAbsolutePath() + m.getFileName());
                 }
+
+                createMetadataJson(directory);
             }
         });
     }
@@ -54,8 +61,8 @@ public class GraphicsSetCreator extends JFrame{
         new GraphicsSetCreator();
     }
 
-    private void createMetadataJson(String directory) {
-        File metadata = new File(directory + "/meta.json");
+    private void createMetadataJson(File directory) {
+        File metadata = new File(directory.getPath() + "\\meta.json");
 
         try {
             if (!metadata.createNewFile()) {
@@ -116,15 +123,20 @@ public class GraphicsSetCreator extends JFrame{
                     String[] phoneticArray = phoneticList.toArray();
 
                     // move image from original location to resources root
-                    File temp = new File(fileName);
-                    String newPath = "temp/" + temp.getName();
-                    temp.renameTo(new File(newPath));
+                    File imgFile = new File(fileName);
 
-                    MouthShape m = new MouthShape(newPath, phoneticArray);
+                    /*
+                    File newLocation = new File(directory, imgFile.getName());
+                    System.out.println(imgFile.toPath() + "\n" + newLocation.getAbsolutePath());
+                    if (!imgFile.renameTo(newLocation)) {
+                        JOptionPane.showMessageDialog(mainPanel, IMG_FILE_IO_EXCEPTION_MSG);
+                        return;
+                    }
+                    */
+
+                    MouthShape m = new MouthShape(imgFile.getName(), phoneticArray);
 
                     mList.add(m);
-
-                    System.out.println();
 
                     fileNameTextField.setText("");
                     phoneticInputTextField.setText("");
