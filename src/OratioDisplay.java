@@ -53,10 +53,6 @@ public class OratioDisplay {
         return inputPanel;
     }
 
-    public void animate(){
-
-    }
-
     public static void main(String[] args) { //to test display
         OratioDisplay display = new OratioDisplay();
     }

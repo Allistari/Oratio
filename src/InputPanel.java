@@ -22,7 +22,7 @@ public class InputPanel extends JPanel{
     private JButton resetButton;
     private String text;
     private PhoneticTranslator phoneticTranslator;
-    private String phoneticSpelling = "";
+    private String phoneticSpelling;
     private String[] splitText;
 
     public InputPanel(GridBagConstraints constraints){
@@ -79,6 +79,7 @@ public class InputPanel extends JPanel{
                     //Splits inputted text into words
                     splitText = text.split("\\s+");
 
+                    phoneticSpelling = "";
                     //Translates the split words into their phonetic spelling and recombines them into one string
                     String temp;
                     for (int i = 0; i < splitText.length; i++){
@@ -88,7 +89,7 @@ public class InputPanel extends JPanel{
 
                     //Creates text label with both input and phonetic spelling
                     output = createTextLabel(panel);
-                    output.setText(text + ": " + phoneticSpelling +"  ");
+                    output.setText(text + " " + phoneticSpelling +"  ");
                     panel.add(output);
 
                     panel.remove(animateButton);
