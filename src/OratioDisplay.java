@@ -16,6 +16,7 @@ public class OratioDisplay {
     private InputPanel inputPanel;
     private TitledBorder title;
 
+    // Constructor
     public OratioDisplay(){
         // Create and set up the window.
         JFrame frame = new JFrame("Oratio");

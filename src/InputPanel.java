@@ -25,6 +25,7 @@ public class InputPanel extends JPanel{
     private String phoneticSpelling;
     private String[] splitText;
 
+    // Constructor
     public InputPanel(GridBagConstraints constraints){
         super(new GridBagLayout());
         c = constraints;

@@ -24,6 +24,7 @@ public class PreviewPanel extends JPanel{
     int position;
     MouthShape current;
 
+    // Constructor
     public PreviewPanel(Container pane, GridBagConstraints constraints){
         panel = new JPanel(new GridLayout()); // grid layout used to keep image within panel
         c = constraints;

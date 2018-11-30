@@ -16,6 +16,7 @@ public class GalleryPanel extends JPanel{
     GridBagConstraints c;
     OratioDEQueue<MouthShape> queue;
 
+    // Constructor
     public GalleryPanel(Container pane, GridBagConstraints constraints){
         panel = new JPanel();
         c = constraints;

@@ -36,6 +36,7 @@ public class Launcher {
         new Launcher();
     }
 
+    // Constructor
     private Launcher() {
         this.display = new OratioDisplay();
         this.display.getInputPanel().getTextField().addActionListener(new InputPanelListener());

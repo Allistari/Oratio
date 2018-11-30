@@ -29,6 +29,7 @@ public class GraphicsSetCreator extends JFrame{
     private File directory;
     private String graphicsSetName;
 
+    // Constructor
     private GraphicsSetCreator() {
         super("Graphics Set Creator");
 
