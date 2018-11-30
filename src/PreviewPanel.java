@@ -45,7 +45,7 @@ public class PreviewPanel extends JPanel{
         try {
             avatar = ImageIO.read(new File("resources/MouthShapes/avatar.jpg"));
         } catch (IOException ex) {
-            // handle exception...
+            System.out.println("Warning: IO Exception");
         }
 
         // Sets initial image as the avatar chosen

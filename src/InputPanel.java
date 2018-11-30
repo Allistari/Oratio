@@ -63,7 +63,6 @@ public class InputPanel extends JPanel{
         return output;
     }
 
-    // Method for creating the animate button
     private JButton createAnimateButton(JPanel panel){
         animateButton = new JButton("Animate");
         c.weightx = 0.5;
@@ -109,7 +108,6 @@ public class InputPanel extends JPanel{
         return animateButton;
     }
 
-    // Method for creating the text field for input
     private JTextField createTextField(JPanel panel){
         textField = new JTextField();
         c.weightx = 1.0;
@@ -120,7 +118,6 @@ public class InputPanel extends JPanel{
         return textField;
     }
 
-    // Method for creating the reanimate button
     private JButton createReAnimateButton(JPanel panel){
         reAnimateButton = new JButton("Reanimate");
         c.weightx = 0.5;
@@ -132,7 +129,6 @@ public class InputPanel extends JPanel{
         return reAnimateButton;
     }
 
-    // Method for creating the reset button
     private JButton createResetButton(JPanel panel){
         resetButton = new JButton("Reset");
         c.weightx = 0.5;
