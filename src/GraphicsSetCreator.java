@@ -131,7 +131,7 @@ public class GraphicsSetCreator extends JFrame{
                 public void actionPerformed(ActionEvent e) {
                     String text = phoneticInputTextField.getText();
                     text = text.trim();
-                    //make sure white space isn't added to the list
+                    // make sure white space isn't added to the list
                     if (text.length() <= 0) return;
                     phoneticList.add(text);
                     phoneticInputTextField.setText("");

@@ -2,7 +2,7 @@ import java.io.IOException;
 
 public class TestFile {
     public static void main(String[] args) throws IOException {
-        OratioLinkedList<String> myList = new OratioLinkedList<String>();//you can use your list similar to an ArrayList
+        OratioLinkedList<String> myList = new OratioLinkedList<String>(); //you can use your list similar to an ArrayList
         OratioTree<String> tree = new OratioTree<String>();
 
         PhoneticTranslator pt = new PhoneticTranslator();
