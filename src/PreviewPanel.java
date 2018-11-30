@@ -25,8 +25,9 @@ public class PreviewPanel extends JPanel{
     MouthShape current;
 
     public PreviewPanel(Container pane, GridBagConstraints constraints){
-        panel = new JPanel(new GridLayout());
+        panel = new JPanel(new GridLayout()); // grid layout used to keep image within panel
         c = constraints;
+
         c.fill = GridBagConstraints.BOTH;
         c.weightx = 1.0;
         c.weighty = 1.0;
@@ -39,12 +40,14 @@ public class PreviewPanel extends JPanel{
         panel.setBorder(title);
         position = 0;
 
+        // Gets image from file
         try {
             avatar = ImageIO.read(new File("resources/MouthShapes/avatar.jpg"));
         } catch (IOException ex) {
             // handle exception...
         }
 
+        // Sets initial image as the avatar chosen
         JLabel start = new JLabel(new ImageIcon(avatar));
         panel.add(start);
 

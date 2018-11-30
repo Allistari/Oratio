@@ -19,14 +19,15 @@ public class GalleryPanel extends JPanel{
     public GalleryPanel(Container pane, GridBagConstraints constraints){
         panel = new JPanel();
         c = constraints;
+
         c.fill = GridBagConstraints.BOTH;
         c.weightx = 1.0;
-        c.weighty = 1.0;   // request any extra vertical space
-        c.anchor = GridBagConstraints.FIRST_LINE_END; // top of space
-        c.gridx = 2;       // aligned with button 1
-        c.gridwidth = 1;   // 2 columns wide
+        c.weighty = 1.0;
+        c.anchor = GridBagConstraints.FIRST_LINE_END;
+        c.gridx = 2;
+        c.gridwidth = 1;
         c.gridheight = 2;
-        c.gridy = 0;       // first row
+        c.gridy = 0;
         title = BorderFactory.createTitledBorder("Gallery");
         panel.setBorder(title);
         pane.add(panel, c);
@@ -40,6 +41,7 @@ public class GalleryPanel extends JPanel{
         this.queue = queue;
     }
 
+    // Method for displaying the frames needed for animation
     public void showFrames(){
         while (!queue.isEmpty()){
 

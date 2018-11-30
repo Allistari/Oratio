@@ -32,12 +32,12 @@ public class InputPanel extends JPanel{
 
         c.fill = GridBagConstraints.BOTH;
         c.weightx = 1.0;
-        c.weighty = 0.05;   // request extra vertical space
-        c.anchor = GridBagConstraints.PAGE_END; // bottom of space
-        c.gridx = 0;       // 1st column
-        c.gridy = 2;       // third row
-        c.gridwidth = 3;   // 3 columns wide
-        c.gridheight = 1;  // 1 row tall
+        c.weighty = 0.05;
+        c.anchor = GridBagConstraints.PAGE_END;
+        c.gridx = 0;
+        c.gridy = 2;
+        c.gridwidth = 3;
+        c.gridheight = 1;
         title = BorderFactory.createTitledBorder("Input"); //creates titled border
         this.setBorder(title);
 
@@ -50,26 +50,27 @@ public class InputPanel extends JPanel{
         this.add(textField, c);
     }
 
+    // Method for creating the text label for output
     private JLabel createTextLabel(JPanel panel){
         output = new JLabel();
-        c.weightx = 1.0;   // requests extra horizontal space
+        c.weightx = 1.0;
         c.weighty = 0.0;
-        c.anchor = GridBagConstraints.LINE_START; //left of space
-        c.gridx = 0;       // 1st column
+        c.anchor = GridBagConstraints.LINE_START;
+        c.gridx = 0;
         c.gridy = 0;
-        c.gridwidth = 1;   // 1 column wide
+        c.gridwidth = 1;
         return output;
     }
 
+    // Method for creating the animate button
     private JButton createAnimateButton(JPanel panel){
         animateButton = new JButton("Animate");
-        c.weightx = 0.5;   // requests extra horizontal space
+        c.weightx = 0.5;
         c.weighty = 0.0;
-        c.anchor = GridBagConstraints.LINE_END; //right of space
-        c.gridx = 2;       // 3rd column
+        c.anchor = GridBagConstraints.LINE_END;
+        c.gridx = 2;
         c.gridy = 0;
-        c.gridwidth = 1;   // 1 columns wide
-
+        c.gridwidth = 1;
         animateButton.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent E){
@@ -79,9 +80,8 @@ public class InputPanel extends JPanel{
                     // Splits inputted text into words
                     splitText = text.split("\\s+");
 
-                    phoneticSpelling = "";
-
                     // Translates the split words into their phonetic spelling and recombines them into one string
+                    phoneticSpelling = "";
                     String temp;
                     for (int i = 0; i < splitText.length; i++){
                         temp = phoneticTranslator.getPronounce(splitText[i]);
@@ -90,7 +90,7 @@ public class InputPanel extends JPanel{
 
                     // Creates text label with both input and phonetic spelling
                     output = createTextLabel(panel);
-                    output.setText(text + " " + phoneticSpelling +"  ");
+                    output.setText(text + " " + phoneticSpelling + "  ");
                     panel.add(output);
 
                     panel.remove(animateButton);
@@ -108,35 +108,38 @@ public class InputPanel extends JPanel{
         return animateButton;
     }
 
+    // Method for creating the text field for input
     private JTextField createTextField(JPanel panel){
         textField = new JTextField();
-        c.weightx = 1.0;   // request extra horizontal space
-        c.anchor = GridBagConstraints.LINE_START; //left of space
-        c.gridx = 0;       // 1st column
+        c.weightx = 1.0;
+        c.anchor = GridBagConstraints.LINE_START;
+        c.gridx = 0;
         c.gridy = 0;
-        c.gridwidth = 2;   // 2 columns wide
+        c.gridwidth = 2;
         return textField;
     }
 
+    // Method for creating the reanimate button
     private JButton createReAnimateButton(JPanel panel){
         reAnimateButton = new JButton("Reanimate");
-        c.weightx = 0.5;   // request extra horizontal space
+        c.weightx = 0.5;
         c.weighty = 0.0;
-        c.anchor = GridBagConstraints.CENTER; //center of space
-        c.gridx = 1;       // 2nd column
+        c.anchor = GridBagConstraints.CENTER;
+        c.gridx = 1;
         c.gridy = 0;
-        c.gridwidth = 1;   // 1 columns wide
+        c.gridwidth = 1;
         return reAnimateButton;
     }
 
+    // Method for creating the reset button
     private JButton createResetButton(JPanel panel){
         resetButton = new JButton("Reset");
-        c.weightx = 0.5;   // request extra horizontal space
+        c.weightx = 0.5;
         c.weighty = 0.0;
-        c.anchor = GridBagConstraints.LINE_END; //right of space
-        c.gridx = 2;       // 3rd column
+        c.anchor = GridBagConstraints.LINE_END;
+        c.gridx = 2;
         c.gridy = 0;
-        c.gridwidth = 1;   // 1 columns wide
+        c.gridwidth = 1;
 
         resetButton.addActionListener(new ActionListener(){
             @Override
