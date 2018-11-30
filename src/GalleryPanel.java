@@ -38,6 +38,7 @@ public class GalleryPanel extends JPanel{
         return this.panel;
     }
 
+    // Method that sets the queue for mouth shapes
     public void setQueue(OratioDEQueue<MouthShape> queue) {
         this.queue = queue;
     }

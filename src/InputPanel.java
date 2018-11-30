@@ -159,6 +159,7 @@ public class InputPanel extends JPanel{
         return resetButton;
     }
 
+    // Method for getting the text field
     public JTextField getTextField() {
         return textField;
     }

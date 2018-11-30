@@ -68,6 +68,7 @@ public class PreviewPanel extends JPanel{
         return this.panel;
     }
 
+    // Set the queue for mouth shapes
     public void setQueue(OratioDEQueue<MouthShape> queue) {
         this.queue = queue;
         this.current = queue.pollFirst();

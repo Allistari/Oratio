@@ -31,6 +31,7 @@ public class OratioDisplay {
         frame.setVisible(true);
     }
 
+    // Method for adding components to pane
     private void addComponentsToPane(Container pane) {
         pane.setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
@@ -53,6 +54,7 @@ public class OratioDisplay {
         pane.add(inputPanel, c);
     }
 
+    // Method for getting the input panel
     public InputPanel getInputPanel() {
         return inputPanel;
     }
