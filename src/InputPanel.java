@@ -80,6 +80,7 @@ public class InputPanel extends JPanel{
                     splitText = text.split("\\s+");
 
                     phoneticSpelling = "";
+
                     //Translates the split words into their phonetic spelling and recombines them into one string
                     String temp;
                     for (int i = 0; i < splitText.length; i++){
