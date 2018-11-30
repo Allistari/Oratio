@@ -40,11 +40,11 @@ public class Launcher {
         this.display = new OratioDisplay();
         this.display.getInputPanel().getTextField().addActionListener(new InputPanelListener());
 
-        this.preset = "default";
+        this.preset = "test";
 
         // generate data structures
         try {
-            String filePath = "Graphics/" + this.preset + "/meta.json";
+            String filePath = "resources\\Graphics\\" + this.preset + "\\meta.json";
             this.tree = new OratioTreeGenerator().generateTreeFromJson(filePath);
         } catch (IOException e) {
             System.err.println(FILE_LOADING_ERR_MSG);

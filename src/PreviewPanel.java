@@ -25,7 +25,7 @@ public class PreviewPanel extends JPanel{
     MouthShape current;
 
     public PreviewPanel(Container pane, GridBagConstraints constraints){
-        panel = new JPanel();
+        panel = new JPanel(new GridLayout());
         c = constraints;
         c.fill = GridBagConstraints.BOTH;
         c.weightx = 1.0;
