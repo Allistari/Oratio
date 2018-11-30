@@ -44,7 +44,7 @@ public class OratioDisplay {
         c.gridy = 2;       // third row
         c.gridwidth = 3;   // 3 columns wide
         c.gridheight = 1;  // 1 row tall
-        title = BorderFactory.createTitledBorder("Input"); //creates titled border
+        title = BorderFactory.createTitledBorder("Input"); // creates titled border
         inputPanel.setBorder(title);
         pane.add(inputPanel, c);
     }
