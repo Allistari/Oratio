@@ -44,6 +44,7 @@ public class PreviewPanel extends JPanel{
         } catch (IOException ex) {
             // handle exception...
         }
+
         JLabel start = new JLabel(new ImageIcon(avatar));
         panel.add(start);
 
