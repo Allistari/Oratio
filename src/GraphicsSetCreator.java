@@ -9,9 +9,10 @@ import java.nio.file.Files;
 public class GraphicsSetCreator extends JFrame{
     private static final String FILE_NAME_TAKEN_MSG = "This file name is already taken. Try another one.";
     private static final String FILE_IO_EXCEPTION_MSG = "There was an error creating the file.";
-    private static final String IMG_FILE_IO_EXCEPTION_MSG = "There was an error moving the image file.";
+    private static final String IMG_FILE_IO_EXCEPTION_MSG = "There was an error moving an image file.";
     private static final String FILE_WRITING_EXCEPTION_MSG = "There was an error writing to the file.";
     private static final String GRAPHICS_SET_CREATED_MSG = "Your graphics set was created.";
+    private static final String DIRECTORY_CREATION_ERR_MSG = "There was a problem creating the directory.";
 
     private JPanel mainPanel;
     private JButton createDirectoryButton;
@@ -42,12 +43,14 @@ public class GraphicsSetCreator extends JFrame{
         graphicsSetName = JOptionPane.showInputDialog("What would you like to name your graphics set?");
 
         this.directory = new File("resources\\Graphics\\" + graphicsSetName);
-        //if (this.directory.exists()) System.out.println("THIS FINALLY FUCKING WORKS HOLY FUCK");
 
         createDirectoryButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                directory.mkdir();
+                if (!directory.mkdirs()) {
+                    JOptionPane.showMessageDialog(mainPanel, DIRECTORY_CREATION_ERR_MSG);
+                    return;
+                }
 
                 for (int i = 0; i < mList.size(); i++) {
                     MouthShape m = mList.get(i);
@@ -55,7 +58,9 @@ public class GraphicsSetCreator extends JFrame{
                     File mFile = new File(m.getFileName());
                     File newLocation = new File(directory, mFile.getName());
 
-                    if (!mFile.renameTo(newLocation)) {
+                    try {
+                        Files.copy(mFile.toPath(), newLocation.toPath());
+                    } catch (IOException exception) {
                         JOptionPane.showMessageDialog(mainPanel, IMG_FILE_IO_EXCEPTION_MSG);
                         return;
                     }
@@ -63,9 +68,16 @@ public class GraphicsSetCreator extends JFrame{
                     m.setFileName(mFile.getAbsolutePath());
                 }
 
+                File avatarImg = new File(avatarTextField.getText());
+                File dest = new File(directory, avatarImg.getName());
+                try {
+                    Files.copy(avatarImg.toPath(), dest.toPath());
+                } catch (IOException exception) {
+                    JOptionPane.showMessageDialog(mainPanel, IMG_FILE_IO_EXCEPTION_MSG);
+                    return;
+                }
 
-
-                createMetadataJson(directory);
+                createMetadataJson(avatarImg, directory);
 
                 JOptionPane.showMessageDialog(mainPanel, GRAPHICS_SET_CREATED_MSG);
                 System.exit(0);
@@ -74,7 +86,20 @@ public class GraphicsSetCreator extends JFrame{
         chooseAvatarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                JFileChooser fileChooser = new JFileChooser();
+                fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
 
+                FileNameExtensionFilter filter = new FileNameExtensionFilter(
+                        "Image files",
+                        "jpg", "jpeg", "png", "bmp", "gif"
+                );
+                fileChooser.setFileFilter(filter);
+
+                int returnState = fileChooser.showOpenDialog(mainPanel);
+
+                if (returnState == JFileChooser.APPROVE_OPTION) {
+                    avatarTextField.setText(fileChooser.getSelectedFile().getPath());
+                }
             }
         });
     }
@@ -83,7 +108,7 @@ public class GraphicsSetCreator extends JFrame{
         new GraphicsSetCreator();
     }
 
-    private void createMetadataJson(File directory) {
+    private void createMetadataJson(File avatar, File directory) {
         File metadata = new File(directory.getPath() + "\\meta.json");
 
         try {
@@ -99,7 +124,7 @@ public class GraphicsSetCreator extends JFrame{
         }
 
         try {
-            new JsonGenerator().generateJSON(mList, metadata);
+            new JsonGenerator().generateJSON(mList, avatar.getAbsolutePath(), metadata);
         } catch (IOException exception) {
             JOptionPane.showMessageDialog(mainPanel, FILE_WRITING_EXCEPTION_MSG);
         }
@@ -107,7 +132,6 @@ public class GraphicsSetCreator extends JFrame{
 
     private void createUIComponents() {
         mouthShapePanel = new MouthShapePanel();
-        //avatarTextField = new AvatarTextField();
     }
 
     private class MouthShapePanel extends JPanel {

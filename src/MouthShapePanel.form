@@ -39,6 +39,7 @@
             <constraints/>
             <properties>
               <editable value="false"/>
+              <preferredSize width="0" height="51"/>
             </properties>
           </component>
         </children>

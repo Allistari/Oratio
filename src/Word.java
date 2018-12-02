@@ -8,6 +8,6 @@ public class Word {
     }
 
     public String getIPAPronounce() {
-        return tags[1].substring(tags[1].indexOf(":") + 1);
+        return tags[1].substring(tags[0].indexOf(":") + 1);
     }
 }

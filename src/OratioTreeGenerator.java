@@ -1,5 +1,7 @@
 import com.google.gson.stream.JsonReader;
 
+import javax.swing.*;
+import java.awt.*;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
@@ -20,6 +22,7 @@ public class OratioTreeGenerator {
                     "L", "M", "N", "NG", "NX", "P", "Q", "R", "S", "SH", "T", "TH", "V", "W", "WH", "Y", "Z",
                     "ZH"
             };
+    private Image avatar;
 
     /**
      * generates a tree from a JSON file containing an array of MouthShapes
@@ -38,6 +41,15 @@ public class OratioTreeGenerator {
         // start reading json
         jsonReader.beginArray();
 
+        // read default avatar image
+        jsonReader.beginObject();
+        String avatarFilePath;
+        if (jsonReader.nextName().equals("avatar")) {
+            avatarFilePath = jsonReader.nextString();
+            avatar = new ImageIcon(avatarFilePath).getImage();
+        }
+        jsonReader.endObject();
+
         while (jsonReader.hasNext()) {
             mList.add(readMouthShape(jsonReader));
         }
@@ -52,6 +64,14 @@ public class OratioTreeGenerator {
         }
 
         return tree;
+    }
+
+    /**
+     * Returns the default avatar image
+     * @return The default avatar image
+     */
+    public Image getAvatar() {
+        return avatar;
     }
 
     private MouthShape readMouthShape(JsonReader jsonReader) throws IOException{

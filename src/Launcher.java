@@ -10,7 +10,7 @@ import java.io.IOException;
  * @author Angelina Zhang
  * @author Eric Ke
  * created 2018-11-15
- * last modified 2018-11-22
+ * last modified 2018-11-30
  */
 
 public class Launcher {
@@ -26,7 +26,7 @@ public class Launcher {
 
     // data structures
     private OratioTree<MouthShape> tree;
-    //private OratioDEQueue<MouthShape> queue;
+    private OratioDEQueue<MouthShape> queue;
 
     /**
      * main method
