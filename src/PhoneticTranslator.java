@@ -48,7 +48,7 @@ public class PhoneticTranslator {
         String inputLine;
         inputLine = in.readLine();
 
-        inputLine = inputLine.substring(1,inputLine.length()-1); //the string has weird square brackets so we gotta clean it
+        inputLine = inputLine.substring(1,inputLine.length()-1); // the string has weird square brackets so we gotta clean it
 
 
         Gson gson = new Gson();

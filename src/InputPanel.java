@@ -25,6 +25,7 @@ public class InputPanel extends JPanel{
     private String phoneticSpelling;
     private String[] splitText;
 
+    // Constructor
     public InputPanel(GridBagConstraints constraints){
         super(new GridBagLayout());
         c = constraints;
@@ -32,64 +33,65 @@ public class InputPanel extends JPanel{
 
         c.fill = GridBagConstraints.BOTH;
         c.weightx = 1.0;
-        c.weighty = 0.05;   //request extra vertical space
-        c.anchor = GridBagConstraints.PAGE_END; //bottom of space
-        c.gridx = 0;       //1st column
-        c.gridy = 2;       //third row
-        c.gridwidth = 3;   //3 columns wide
-        c.gridheight = 1;  //1 row tall
+        c.weighty = 0.05;
+        c.anchor = GridBagConstraints.PAGE_END;
+        c.gridx = 0;
+        c.gridy = 2;
+        c.gridwidth = 3;
+        c.gridheight = 1;
         title = BorderFactory.createTitledBorder("Input"); //creates titled border
         this.setBorder(title);
 
-        //Creates initial animate button
+        // Creates initial animate button
         animateButton = createAnimateButton(this);
         this.add(animateButton, c);
 
-        //Creates initial text field
+        // Creates initial text field
         textField = createTextField(this);
         this.add(textField, c);
     }
 
+    // Method for creating the text label for output
     private JLabel createTextLabel(JPanel panel){
         output = new JLabel();
-        c.weightx = 1.0;   //requests extra horizontal space
+        c.weightx = 1.0;
         c.weighty = 0.0;
-        c.anchor = GridBagConstraints.LINE_START; //left of space
-        c.gridx = 0;       //1st column
+        c.anchor = GridBagConstraints.LINE_START;
+        c.gridx = 0;
         c.gridy = 0;
-        c.gridwidth = 1;   //1 column wide
+        c.gridwidth = 1;
         return output;
     }
 
+    // Method that creates animate button
     private JButton createAnimateButton(JPanel panel){
         animateButton = new JButton("Animate");
-        c.weightx = 0.5;   //requests extra horizontal space
+        c.weightx = 0.5;
         c.weighty = 0.0;
-        c.anchor = GridBagConstraints.LINE_END; //right of space
-        c.gridx = 2;       //3rd column
+        c.anchor = GridBagConstraints.LINE_END;
+        c.gridx = 2;
         c.gridy = 0;
-        c.gridwidth = 1;   //1 columns wide
-
+        c.gridwidth = 1;
         animateButton.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent E){
                     text = textField.getText();
                     panel.remove(textField);
 
-                    //Splits inputted text into words
+                    // Splits inputted text into words
                     splitText = text.split("\\s+");
 
+                    // Translates the split words into their phonetic spelling and recombines them into one string
                     phoneticSpelling = "";
-                    //Translates the split words into their phonetic spelling and recombines them into one string
                     String temp;
                     for (int i = 0; i < splitText.length; i++){
                         temp = phoneticTranslator.getPronounce(splitText[i]);
                         phoneticSpelling = phoneticSpelling + " " + temp;
                     }
 
-                    //Creates text label with both input and phonetic spelling
+                    // Creates text label with both input and phonetic spelling
                     output = createTextLabel(panel);
-                    output.setText(text + " " + phoneticSpelling +"  ");
+                    output.setText(text + " " + phoneticSpelling + "  ");
                     panel.add(output);
 
                     panel.remove(animateButton);
@@ -107,35 +109,38 @@ public class InputPanel extends JPanel{
         return animateButton;
     }
 
+    // Method that creates text field
     private JTextField createTextField(JPanel panel){
         textField = new JTextField();
-        c.weightx = 1.0;   //request extra horizontal space
-        c.anchor = GridBagConstraints.LINE_START; //left of space
-        c.gridx = 0;       //1st column
+        c.weightx = 1.0;
+        c.anchor = GridBagConstraints.LINE_START;
+        c.gridx = 0;
         c.gridy = 0;
-        c.gridwidth = 2;   //2 columns wide
+        c.gridwidth = 2;
         return textField;
     }
 
+    // Method that creates reanimate button
     private JButton createReAnimateButton(JPanel panel){
         reAnimateButton = new JButton("Reanimate");
-        c.weightx = 0.5;   //request extra horizontal space
+        c.weightx = 0.5;
         c.weighty = 0.0;
-        c.anchor = GridBagConstraints.CENTER; //center of space
-        c.gridx = 1;       //2nd column
+        c.anchor = GridBagConstraints.CENTER;
+        c.gridx = 1;
         c.gridy = 0;
-        c.gridwidth = 1;   //1 columns wide
+        c.gridwidth = 1;
         return reAnimateButton;
     }
 
+    // Method that creates reset button
     private JButton createResetButton(JPanel panel){
         resetButton = new JButton("Reset");
-        c.weightx = 0.5;   //request extra horizontal space
+        c.weightx = 0.5;
         c.weighty = 0.0;
-        c.anchor = GridBagConstraints.LINE_END; //right of space
-        c.gridx = 2;       //3rd column
+        c.anchor = GridBagConstraints.LINE_END;
+        c.gridx = 2;
         c.gridy = 0;
-        c.gridwidth = 1;   //1 columns wide
+        c.gridwidth = 1;
 
         resetButton.addActionListener(new ActionListener(){
             @Override
@@ -154,6 +159,7 @@ public class InputPanel extends JPanel{
         return resetButton;
     }
 
+    // Method for getting the text field
     public JTextField getTextField() {
         return textField;
     }
