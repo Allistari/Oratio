@@ -43,7 +43,7 @@ public class Launcher {
 
         this.preset = "test";
 
-        // generate data structures
+        // Generate data structures
         try {
             String filePath = "resources\\Graphics\\" + this.preset + "\\meta.json";
             this.tree = new OratioTreeGenerator().generateTreeFromJson(filePath);
