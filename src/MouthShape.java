@@ -6,10 +6,10 @@ public class MouthShape {
     private String fileName;
     private ImageIcon image;
 
+    // Constructor
     public MouthShape(String fileName, String[] spelling){
         this.fileName = fileName;
         this.spelling = spelling;
-
         image = new ImageIcon(fileName);
     }
 

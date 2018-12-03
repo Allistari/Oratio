@@ -49,7 +49,7 @@ public class OratioDisplay {
         c.gridy = 2;
         c.gridwidth = 3;
         c.gridheight = 1;
-        title = BorderFactory.createTitledBorder("Input"); //creates titled border
+        title = BorderFactory.createTitledBorder("Input"); // creates titled border
         inputPanel.setBorder(title);
         pane.add(inputPanel, c);
     }
