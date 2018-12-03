@@ -14,6 +14,10 @@ public class LinkedListNode<T> {
         this.next=null;
     }
 
+    public LinkedListNode() {
+        this.next=null;
+    }
+
     public LinkedListNode(T item, LinkedListNode<T> next) {
         this.item=item;
         this.next=next;

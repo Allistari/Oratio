@@ -129,7 +129,7 @@ public class OratioLinkedList<T> {
      * clear the whole list
      */
     public void clear() {
-        this.head.setNext(null);
+        this.head = null;
     }
 
     /**
