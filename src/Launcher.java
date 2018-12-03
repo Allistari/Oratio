@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -21,7 +22,8 @@ public class Launcher {
     // GUI
     private OratioDisplay display;
 
-    private String phoneticSpelling;
+    private String phoneticSpellings[];
+    private String[] words;
     private String preset;
 
     // data structures
@@ -37,37 +39,57 @@ public class Launcher {
     }
 
     private Launcher() {
-        this.display = new OratioDisplay();
-        this.display.getInputPanel().getTextField().addActionListener(new InputPanelListener());
-
         this.preset = "test";
+        Image avatar = null;
 
         // generate data structures
         try {
             String filePath = "resources\\Graphics\\" + this.preset + "\\meta.json";
-            this.tree = new OratioTreeGenerator().generateTreeFromJson(filePath);
+            OratioTreeGenerator treeGenerator = new OratioTreeGenerator();
+            this.tree = treeGenerator.generateTreeFromJson(filePath);
+
         } catch (IOException e) {
             System.err.println(FILE_LOADING_ERR_MSG);
             //System.exit(1);
         }
 
-        this.phoneticTranslator = new PhoneticTranslator();
-    }
+        this.display = new OratioDisplay();
+        this.display.getInputPanel().getTextField().addActionListener(new InputPanelListener());
+        this.display.getInputPanel().getAnimateButton().addActionListener(new AnimateButtonListener());
 
-    /**
-     * Returns the phonetic spelling.
-     * @return String containing the phonetic spelling in ARPABET symbols
-     */
-    public String getPhoneticSpelling() {
-        return phoneticSpelling;
+        //this.display.get set default photo for the previewpanel
+
+        this.phoneticTranslator = new PhoneticTranslator();
     }
 
     private class InputPanelListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            String word = display.getInputPanel().getTextField().getText();
-
-            phoneticSpelling = phoneticTranslator.getPronounce(word);
+            generatePhoneticSpelling();
         }
+    }
+
+    private class AnimateButtonListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            generatePhoneticSpelling();
+        }
+    }
+
+    private void generatePhoneticSpelling() {
+        String phrase = display.getInputPanel().getTextField().getText();
+
+        words = phrase.split("\\s+|\\p{Punct}+"); // splits the string at any whitespace or punctuation
+
+        for (String s : words) {
+            System.out.println(s);
+        }
+
+        phoneticSpellings = new String[words.length];
+        for (int i = 0; i < words.length; i++) {
+            phoneticSpellings[i] = phoneticTranslator.getPronounce(words[i]);
+        }
+
+        display.getInputPanel().switchInputpanel(phoneticSpellings);
     }
 }
