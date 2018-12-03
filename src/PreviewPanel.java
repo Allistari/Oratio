@@ -65,6 +65,7 @@ public class PreviewPanel extends JPanel{
         }while (position > 0);
     }
 
+    // Get method
     public JPanel get(){
         return this.panel;
     }

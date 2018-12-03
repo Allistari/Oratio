@@ -34,6 +34,7 @@ public class GalleryPanel extends JPanel{
         pane.add(panel, c);
     }
 
+    // Get method
     public JPanel get(){
         return this.panel;
     }
