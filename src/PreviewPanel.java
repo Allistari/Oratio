@@ -55,6 +55,7 @@ public class PreviewPanel extends JPanel{
         pane.add(panel, c);
     }
 
+    // Method that runs animation
     public void animate(){
         do{
             queue.addLast(current);
