@@ -59,4 +59,8 @@ public class OratioDisplay {
         return inputPanel;
     }
 
+    // getter for preview panel
+    public PreviewPanel getPreviewPanel() {
+        return previewPanel;
+    }
 }

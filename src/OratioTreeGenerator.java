@@ -17,12 +17,16 @@ import java.io.IOException;
 public class OratioTreeGenerator {
     private static final String[] ARPABET_SYMBOLS =
             {
-                    "AA", "AE", "AH", "AO", "AW", "AX", "AXR", "AY", "EH", "ER", "EY", "IH", "IX", "IY", "OW",
-                    "OY", "UH", "UW", "UX", "BCH", "D", "DH", "DX", "EL", "EM", "IN", "F", "G", "H", "JH", "K",
-                    "L", "M", "N", "NG", "NX", "P", "Q", "R", "S", "SH", "T", "TH", "V", "W", "WH", "Y", "Z",
-                    "ZH"
+                    "AA", "AE", "AH", "AO", "AW",
+                    "AY", "B", "CH", "D", "DH",
+                    "EH", "ER", "EY", "F", "G",
+                    "HH", "IH", "IY", "JH", "K",
+                    "L", "M", "N", "NG", "OW",
+                    "OY", "P", "R", "S", "SH",
+                    "T", "TH", "UH", "UW", "V",
+                    "W", "Y", "Z", "ZH"
             };
-    private Image avatar;
+    private MouthShape avatar;
 
     /**
      * generates a tree from a JSON file containing an array of MouthShapes
@@ -46,7 +50,7 @@ public class OratioTreeGenerator {
         String avatarFilePath;
         if (jsonReader.nextName().equals("avatar")) {
             avatarFilePath = jsonReader.nextString();
-            avatar = new ImageIcon(avatarFilePath).getImage();
+            avatar = new MouthShape(avatarFilePath, null);
         }
         jsonReader.endObject();
 
@@ -58,10 +62,10 @@ public class OratioTreeGenerator {
         jsonReader.close();
         // finish reading json
 
-        //for (String symbol : ARPABET_SYMBOLS) {
-            MouthShape temp = getMouthShapesWithPhoneticSpelling(mList, "R");
-            tree.add(temp, "R");
-        //}
+        for (String symbol : ARPABET_SYMBOLS) {
+            MouthShape temp = getMouthShapesWithPhoneticSpelling(mList, symbol);
+            tree.add(temp, symbol);
+        }
 
         return tree;
     }
@@ -70,7 +74,7 @@ public class OratioTreeGenerator {
      * Returns the default avatar image
      * @return The default avatar image
      */
-    public Image getAvatar() {
+    public MouthShape getAvatar() {
         return avatar;
     }
 

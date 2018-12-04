@@ -60,19 +60,19 @@ public class GraphicsSetCreator extends JFrame{
                     File newLocation = new File(directory, mFile.getName());
 
                     try {
-                        Files.copy(mFile.toPath(), newLocation.toPath());
+                        Files.copy(mFile.toPath().toAbsolutePath(), newLocation.toPath().toAbsolutePath());
                     } catch (IOException exception) {
                         JOptionPane.showMessageDialog(mainPanel, IMG_FILE_IO_EXCEPTION_MSG);
                         return;
                     }
 
-                    m.setFileName(mFile.getAbsolutePath());
+                    m.setFileName(newLocation.getPath());
                 }
 
-                File avatarImg = new File(avatarTextField.getText());
+                File avatarImg = new File(avatarTextField.getText().trim());
                 File dest = new File(directory, avatarImg.getName());
                 try {
-                    Files.copy(avatarImg.toPath(), dest.toPath());
+                    Files.copy(avatarImg.toPath().toAbsolutePath(), dest.toPath().toAbsolutePath());
                 } catch (IOException exception) {
                     JOptionPane.showMessageDialog(mainPanel, IMG_FILE_IO_EXCEPTION_MSG);
                     return;
@@ -167,7 +167,7 @@ public class GraphicsSetCreator extends JFrame{
             this.addButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    String fileName = fileNameTextField.getText();
+                    String fileName = fileNameTextField.getText().trim();
                     String[] phoneticArray = phoneticList.toArray();
 
                     // move image from original location to resources root

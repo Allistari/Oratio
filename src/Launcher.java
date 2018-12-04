@@ -25,6 +25,7 @@ public class Launcher {
     private String phoneticSpellings[];
     private String[] words;
     private String preset;
+    private MouthShape avatar;
 
     // data structures
     private OratioTree<MouthShape> tree;
@@ -40,17 +41,16 @@ public class Launcher {
 
     private Launcher() {
         this.preset = "test";
-        Image avatar = null;
 
         // generate data structures
         try {
             String filePath = "resources\\Graphics\\" + this.preset + "\\meta.json";
             OratioTreeGenerator treeGenerator = new OratioTreeGenerator();
             this.tree = treeGenerator.generateTreeFromJson(filePath);
-
+            this.avatar = treeGenerator.getAvatar();
         } catch (IOException e) {
             System.err.println(FILE_LOADING_ERR_MSG);
-            //System.exit(1);
+            System.exit(1);
         }
 
         this.display = new OratioDisplay();
@@ -66,6 +66,7 @@ public class Launcher {
         @Override
         public void actionPerformed(ActionEvent e) {
             generatePhoneticSpelling();
+            queue = assembleAnimationQueue();
         }
     }
 
@@ -73,6 +74,7 @@ public class Launcher {
         @Override
         public void actionPerformed(ActionEvent e) {
             generatePhoneticSpelling();
+            queue = assembleAnimationQueue();
         }
     }
 
@@ -90,6 +92,21 @@ public class Launcher {
             phoneticSpellings[i] = phoneticTranslator.getPronounce(words[i]);
         }
 
-        display.getInputPanel().switchInputpanel(phoneticSpellings);
+        display.getInputPanel().switchInputPanel(phoneticSpellings);
+    }
+
+    private OratioDEQueue<MouthShape> assembleAnimationQueue() {
+        OratioDEQueue<MouthShape> queue = new OratioDEQueue<>();
+
+        for (String phoneticSpelling : phoneticSpellings) {
+            // splits phonetic spelling of word into individual phonemes
+            String[] phonemes = phoneticSpelling.split("[^A-Z]+");
+            for (String phoneme : phonemes) {
+                queue.addLast(tree.get(phoneme));
+            }
+            queue.addLast(avatar);
+        }
+
+        return queue;
     }
 }

@@ -8,7 +8,6 @@ public class Word {
     }
 
     public String getIPAPronounce() {
-        System.out.println("1: " + tags[0] + "\n" + "2: " + tags[1]);
         return tags[0].substring(tags[0].indexOf(":") + 1);
     }
 }

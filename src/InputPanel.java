@@ -21,9 +21,7 @@ public class InputPanel extends JPanel{
     private JButton reAnimateButton;
     private JButton resetButton;
     private String text;
-    private PhoneticTranslator phoneticTranslator;
     private String phoneticSpelling;
-    private String[] splitText;
 
     // Constructor
     public InputPanel(GridBagConstraints constraints){
@@ -75,12 +73,8 @@ public class InputPanel extends JPanel{
     }
 
     // method that switches input panel. this method is called when the animateButton is pressed.
-    public void switchInputpanel(String[] phoneticSpellings) {
+    public void switchInputPanel(String[] phoneticSpellings) {
         text = textField.getText();
-        this.remove(textField);
-
-        // Splits inputted text into words
-        splitText = text.split("\\s+");
 
         // Translates the split words into their phonetic spelling and recombines them into one string
         phoneticSpelling = "";
@@ -93,7 +87,9 @@ public class InputPanel extends JPanel{
         output.setText(text + " " + phoneticSpelling + "  ");
         this.add(output);
 
+        // remove old components
         this.remove(animateButton);
+        this.remove(textField);
 
         reAnimateButton = createReAnimateButton(this);
         this.add(reAnimateButton,c);
