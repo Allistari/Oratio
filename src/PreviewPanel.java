@@ -2,6 +2,8 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -19,8 +21,9 @@ public class PreviewPanel extends JPanel{
     JPanel panel;
     TitledBorder title;
     GridBagConstraints c;
+    JLabel imageLabel;
     OratioDEQueue<MouthShape> queue;
-    BufferedImage avatar;
+    MouthShape avatar;
     int position;
     MouthShape current;
 
@@ -41,16 +44,9 @@ public class PreviewPanel extends JPanel{
         panel.setBorder(title);
         position = 0;
 
-        // Gets image from file
-        try {
-            avatar = ImageIO.read(new File("resources/MouthShapes/avatar.jpg"));
-        } catch (IOException ex) {
-            System.out.println("Warning: IO Exception");
-        }
-
         // Sets initial image as the avatar chosen
-        JLabel start = new JLabel(new ImageIcon(avatar));
-        panel.add(start);
+        imageLabel = new JLabel();
+        panel.add(imageLabel);
 
         pane.add(panel, c);
     }
@@ -61,7 +57,7 @@ public class PreviewPanel extends JPanel{
             queue.addLast(current);
             position++;
             position = position % queue.size();
-            avatar = (BufferedImage)current.getImage();
+            avatar = current;
         }while (position > 0);
     }
 
@@ -76,4 +72,8 @@ public class PreviewPanel extends JPanel{
         this.current = queue.pollFirst();
     }
 
+    public void setAvatar(MouthShape avatar) {
+        this.avatar = avatar;
+        imageLabel.setIcon(avatar.getImageIcon());
+    }
 }

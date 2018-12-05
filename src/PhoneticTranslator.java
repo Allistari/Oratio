@@ -25,7 +25,7 @@ public class PhoneticTranslator {
      * @return the pronunciation of the word
      */
 
-    public String getPronounce(String search) {
+    public String getPronounce(String search) throws IOException{
         Word word = null;
 
         try {
@@ -33,7 +33,7 @@ public class PhoneticTranslator {
             return word.getIPAPronounce();
         } catch(Exception e) {
             System.out.println("Error getting word");
-            return null;
+            throw new IOException();
         }
     }
 
