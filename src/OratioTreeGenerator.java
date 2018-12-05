@@ -50,7 +50,7 @@ public class OratioTreeGenerator {
         String avatarFilePath;
         if (jsonReader.nextName().equals("avatar")) {
             avatarFilePath = jsonReader.nextString();
-            avatar = new MouthShape(avatarFilePath, null);
+            avatar = new MouthShape(avatarFilePath, ARPABET_SYMBOLS);
         }
         jsonReader.endObject();
 
@@ -63,8 +63,11 @@ public class OratioTreeGenerator {
         // finish reading json
 
         for (String symbol : ARPABET_SYMBOLS) {
-            MouthShape temp = getMouthShapesWithPhoneticSpelling(mList, symbol);
-            tree.add(temp, symbol);
+            MouthShape m = getMouthShapesWithPhoneticSpelling(mList, symbol);
+            if (m == null) {
+                m = avatar;
+            }
+            tree.add(m, symbol);
         }
 
         return tree;
@@ -114,14 +117,13 @@ public class OratioTreeGenerator {
     private MouthShape getMouthShapesWithPhoneticSpelling
             (OratioLinkedList<MouthShape> mList, String spelling){
         for (int i = 0; i < mList.size(); i++) {
-            MouthShape mouthShape = mList.get(i);
-            for (String s : mouthShape.getSpelling()){
-                if (s.equals(spelling)) {
-                    return mouthShape;
+            MouthShape m = mList.get(i);
+            for (String s : m.getSpelling()){
+                if (s.trim().equals(spelling.trim())) {
+                    return m;
                 }
             }
         }
-
         return null;
     }
 }

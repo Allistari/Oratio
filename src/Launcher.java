@@ -40,7 +40,7 @@ public class Launcher {
     }
 
     private Launcher() {
-        this.preset = "test";
+        this.preset = "default";
 
         // generate data structures
         try {
@@ -57,7 +57,7 @@ public class Launcher {
         this.display.getInputPanel().getTextField().addActionListener(new InputPanelListener());
         this.display.getInputPanel().getAnimateButton().addActionListener(new AnimateButtonListener());
 
-        //this.display.get set default photo for the previewpanel
+        this.display.getPreviewPanel().setAvatar(this.avatar);
 
         this.phoneticTranslator = new PhoneticTranslator();
     }
@@ -65,20 +65,30 @@ public class Launcher {
     private class InputPanelListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            generatePhoneticSpelling();
+            try {
+                generatePhoneticSpelling();
+            } catch (IOException exception) {
+                return;
+            }
             queue = assembleAnimationQueue();
+            display.getPreviewPanel().setQueue(queue);
         }
     }
 
     private class AnimateButtonListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            generatePhoneticSpelling();
+            try {
+                generatePhoneticSpelling();
+            } catch (IOException exception) {
+                return;
+            }
             queue = assembleAnimationQueue();
+            display.getPreviewPanel().setQueue(queue);
         }
     }
 
-    private void generatePhoneticSpelling() {
+    private void generatePhoneticSpelling() throws IOException{
         String phrase = display.getInputPanel().getTextField().getText();
 
         words = phrase.split("\\s+|\\p{Punct}+"); // splits the string at any whitespace or punctuation
