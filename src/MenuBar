@@ -19,7 +19,7 @@ import javax.swing.JOptionPane;
 
 public class MenuBar extends JFrame{ //implements ActionListener, KeyListener{
     ArrayList<String> pNames = new ArrayList<String>();
-
+    String presetName;
     public MenuBar() {
         menuBar();
         JFrame sampleWindow = new JFrame("Menu");
@@ -67,7 +67,7 @@ public class MenuBar extends JFrame{ //implements ActionListener, KeyListener{
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     String name = item.getText();
-                    switchPreset(name);
+                    setPresetName(name);
                 }
             });
             presetMenu.add(item);
@@ -79,8 +79,11 @@ public class MenuBar extends JFrame{ //implements ActionListener, KeyListener{
         }
     }
 
-    private String switchPreset(String name){
-        return name;
+    public void setPresetName(String name){
+        this.presetName = name;
+    }
+    public String getPresetName (){
+        return this.presetName;
     }
     private void popUp(){
         JFrame dialogWindow = new JFrame("About Oratio");

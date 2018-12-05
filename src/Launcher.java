@@ -21,7 +21,7 @@ public class Launcher {
 
     // GUI
     private OratioDisplay display;
-    private MenuBar meanu;
+    private MenuBar menu;
     private String phoneticSpellings[];
     private String[] words;
     private String preset;
@@ -40,7 +40,12 @@ public class Launcher {
     }
 
     private Launcher() {
-        this.preset = "default";
+        EventQueue.invokeLater(()->{
+            menu = new MenuBar();
+            menu.setVisible(true);
+        });
+        
+        this.preset = menu.getPresetName();
 
         // generate data structures
         try {
@@ -56,10 +61,7 @@ public class Launcher {
         this.display = new OratioDisplay();
         this.display.getInputPanel().getTextField().addActionListener(new InputPanelListener());
         this.display.getInputPanel().getAnimateButton().addActionListener(new AnimateButtonListener());
-        EventQueue.invokeLater(()->{
-            MenuBar menu = new MenuBar();
-            menu.setVisible(true);
-        });
+
 
         this.display.getPreviewPanel().setAvatar(this.avatar);
 
