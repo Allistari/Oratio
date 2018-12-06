@@ -9,43 +9,34 @@ import java.util.Arrays;
 import javax.swing.JOptionPane;
 
 /**
- * MenuBar.java
+ * OratioMenuBar.java
  * Creates a Menu bar
  * @author Angelina
  * created 2018-11-29
  * last modified 2018-12-05
  */
 
-
-public class MenuBar extends JFrame{ //implements ActionListener, KeyListener{
+public class OratioMenuBar extends JMenuBar { //implements ActionListener, KeyListener{
     ArrayList<String> pNames = new ArrayList<String>();
     String presetName;
-    public MenuBar() {
-        menuBar();
-        JFrame sampleWindow = new JFrame("Menu");
-        sampleWindow.setSize(1400,700);
-        sampleWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    }
-    private void menuBar (){
+    public OratioMenuBar() {
         createMenuBar();
-        setTitle("Menu");
-        setSize(500,300);
-        setLocationRelativeTo(null);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
     private void createMenuBar(){
         ArrayList<File> pFiles = new ArrayList<File>();
         ArrayList<File> presetNames = new ArrayList<File>();
-        File presetFile = new File("Graphics");
+        File presetFile = new File("resources\\Graphics");
         getPresetName(presetFile,presetNames);
         if(presetNames.size()>0){
+
             String name;
             for(int i = 0; i <presetNames.size();i++){
                 name = presetNames.get(i).toString();
-                pNames.add(name.substring(name.indexOf("\\")+1));
+                pNames.add(name.substring(name.lastIndexOf("\\")+1));
             }
         }
-        JMenuBar menuBar = new JMenuBar();
+
+        //JMenuBar menuBar = new JMenuBar();
         JMenu helpMenu = new JMenu("Help");
         JMenuItem about = new JMenuItem("About Oratio");
         about.setToolTipText("About");
@@ -72,10 +63,9 @@ public class MenuBar extends JFrame{ //implements ActionListener, KeyListener{
             });
             presetMenu.add(item);
             helpMenu.add(about);
-            menuBar.add(presetMenu);
-            menuBar.add(helpMenu);
-            setJMenuBar(menuBar);
-            menuBar.revalidate();
+            add(presetMenu);
+            add(helpMenu);
+            //menuBar.revalidate();
         }
     }
 
@@ -89,7 +79,7 @@ public class MenuBar extends JFrame{ //implements ActionListener, KeyListener{
         JFrame dialogWindow = new JFrame("About Oratio");
         dialogWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         dialogWindow.setSize(300,400);
-        JOptionPane.showMessageDialog(dialogWindow, "Oratio does this ...");
+        JOptionPane.showMessageDialog(dialogWindow, "Oratio draws mouth shape animations ^^");
 
     }
 

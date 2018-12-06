@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,11 +18,10 @@ import java.io.IOException;
 public class Launcher {
     private final static String FILE_LOADING_ERR_MSG = "There was a problem loading the graphics.";
 
-    private PhoneticTranslator phoneticTranslator;
+   private PhoneticTranslator phoneticTranslator;
 
     // GUI
     private OratioDisplay display;
-    private MenuBar menu;
     private String phoneticSpellings[];
     private String[] words;
     private String preset;
@@ -36,16 +36,18 @@ public class Launcher {
      * @param args idk what this actually does
      */
     public static void main(String[] args) {
+
         new Launcher();
     }
 
     private Launcher() {
-        EventQueue.invokeLater(()->{
-            menu = new MenuBar();
-            menu.setVisible(true);
-        });
-        
-        this.preset = menu.getPresetName();
+        this.preset = "default";
+        DisplayContent(null);
+    }
+    private void DisplayContent(String preset) {
+        if (preset!=null) {
+            this.preset = preset;
+        }
 
         // generate data structures
         try {
@@ -59,15 +61,33 @@ public class Launcher {
         }
 
         this.display = new OratioDisplay();
+        OratioMenuBar addListenerMenu = this.display.getOratioMenuBar();
+        JMenu presetMenu = addListenerMenu.getMenu(0);
+        for(int i =0; i<presetMenu.getMenuComponentCount();i++){
+            java.awt.Component comp = presetMenu.getMenuComponent(i);
+            if(comp instanceof JMenuItem){
+                JMenuItem item = (JMenuItem) comp;
+                item.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        String name = item.getText();
+                        setPresetName(name);
+                    }
+                });
+            }
+        }
+        this.display.setOratioMenuBar(addListenerMenu);
         this.display.getInputPanel().getTextField().addActionListener(new InputPanelListener());
         this.display.getInputPanel().getAnimateButton().addActionListener(new AnimateButtonListener());
-
-
         this.display.getPreviewPanel().setAvatar(this.avatar);
 
         this.phoneticTranslator = new PhoneticTranslator();
     }
-
+    private void setPresetName(String name){
+//update tmr
+        this.display.remove(this.display.getContentPane());
+        DisplayContent(name);
+    }
     private class InputPanelListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -105,7 +125,7 @@ public class Launcher {
 
         phoneticSpellings = new String[words.length];
         for (int i = 0; i < words.length; i++) {
-            phoneticSpellings[i] = phoneticTranslator.getPronounce(words[i]);
+            //phoneticSpellings[i] = PhoneticTranslator.getPronounce(words[i]);
         }
 
         display.getInputPanel().switchInputPanel(phoneticSpellings);
