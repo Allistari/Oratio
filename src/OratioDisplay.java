@@ -10,48 +10,46 @@ import javax.swing.border.TitledBorder;
  * last modified 2018-11-21
  */
 
-public class OratioDisplay {
+public class OratioDisplay extends JPanel{
     private GalleryPanel galleryPanel;
     private PreviewPanel previewPanel;
     private InputPanel inputPanel;
     private TitledBorder title;
+    private Launcher launcher;
 
     // Constructor
-    public OratioDisplay(){
+    public OratioDisplay(Launcher launcher){
+        this.launcher = launcher;
+
         // Create and set up the window.
         JFrame frame = new JFrame("Oratio");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // Set up the content pane.
-        addComponentsToPane(frame.getContentPane());
+        addComponentsToPane(this);
 
         // Display the window.
+        frame.add(this);
         frame.setSize(Toolkit.getDefaultToolkit().getScreenSize());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
     }
 
     // Method for adding components to the pane
-    private void addComponentsToPane(Container pane) {
-        pane.setLayout(new GridBagLayout());
+    private void addComponentsToPane(OratioDisplay display) {
+        display.setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
 
-        galleryPanel = new GalleryPanel(pane, c);
+        galleryPanel = new GalleryPanel(display, c);
 
-        previewPanel = new PreviewPanel(pane,c);
+        previewPanel = new PreviewPanel(display,c);
 
-        inputPanel = new InputPanel(c); // created here to be used in launcher class
-        c.fill = GridBagConstraints.BOTH;
-        c.weightx = 1.0;
-        c.weighty = 0.05;
-        c.anchor = GridBagConstraints.PAGE_END;
-        c.gridx = 0;
-        c.gridy = 2;
-        c.gridwidth = 3;
-        c.gridheight = 1;
-        title = BorderFactory.createTitledBorder("Input"); // creates titled border
-        inputPanel.setBorder(title);
-        pane.add(inputPanel, c);
+        inputPanel = new InputPanel(display, c); // created here to be used in launcher class
+    }
+
+    // getter for launcher
+    public Launcher getLauncher() {
+        return launcher;
     }
 
     // Method for getting the input panel

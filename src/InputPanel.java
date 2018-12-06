@@ -22,11 +22,14 @@ public class InputPanel extends JPanel{
     private JButton resetButton;
     private String text;
     private String phoneticSpelling;
+    private OratioDisplay display;
 
     // Constructor
-    public InputPanel(GridBagConstraints constraints){
+    public InputPanel(OratioDisplay display, GridBagConstraints constraints){
         super(new GridBagLayout());
         c = constraints;
+
+        this.display = display;
 
         c.fill = GridBagConstraints.BOTH;
         c.weightx = 1.0;
@@ -38,6 +41,8 @@ public class InputPanel extends JPanel{
         c.gridheight = 1;
         title = BorderFactory.createTitledBorder("Input"); //creates titled border
         this.setBorder(title);
+
+        this.display.add(this, c);
 
         // Creates initial animate button
         animateButton = createAnimateButton(this);
@@ -69,6 +74,7 @@ public class InputPanel extends JPanel{
         c.gridx = 2;
         c.gridy = 0;
         c.gridwidth = 1;
+        animateButton.addActionListener(display.getLauncher().getInputPanelListener());
         return animateButton;
     }
 
@@ -98,6 +104,7 @@ public class InputPanel extends JPanel{
         this.add(resetButton, c);
         this.validate();
         this.repaint();
+        System.out.println("ok liberals animation time");
     }
 
     // Method that creates text field
@@ -108,6 +115,7 @@ public class InputPanel extends JPanel{
         c.gridx = 0;
         c.gridy = 0;
         c.gridwidth = 2;
+        textField.addActionListener(display.getLauncher().getInputPanelListener());
         return textField;
     }
 
@@ -145,6 +153,7 @@ public class InputPanel extends JPanel{
                 panel.add(animateButton, c);
                 panel.validate();
                 panel.repaint();
+                System.out.println("destroyed w/ facks and logic");
             }
         });
         return resetButton;

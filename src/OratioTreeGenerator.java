@@ -124,6 +124,7 @@ public class OratioTreeGenerator {
                 }
             }
         }
+        System.out.println("null: " + spelling);
         return null;
     }
 }

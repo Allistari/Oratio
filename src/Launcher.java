@@ -53,13 +53,14 @@ public class Launcher {
             System.exit(1);
         }
 
-        this.display = new OratioDisplay();
-        this.display.getInputPanel().getTextField().addActionListener(new InputPanelListener());
-        this.display.getInputPanel().getAnimateButton().addActionListener(new AnimateButtonListener());
+        this.display = new OratioDisplay(this);
+
+        /*
         EventQueue.invokeLater(()->{
             MenuBar menu = new MenuBar();
             menu.setVisible(true);
         });
+        */
 
         this.display.getPreviewPanel().setAvatar(this.avatar);
 
@@ -76,20 +77,12 @@ public class Launcher {
             }
             queue = assembleAnimationQueue();
             display.getPreviewPanel().setQueue(queue);
+            //display.getPreviewPanel().animate();
         }
     }
 
-    private class AnimateButtonListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            try {
-                generatePhoneticSpelling();
-            } catch (IOException exception) {
-                return;
-            }
-            queue = assembleAnimationQueue();
-            display.getPreviewPanel().setQueue(queue);
-        }
+    public InputPanelListener getInputPanelListener() {
+        return new InputPanelListener();
     }
 
     private void generatePhoneticSpelling() throws IOException{

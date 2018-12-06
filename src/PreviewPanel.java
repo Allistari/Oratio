@@ -18,7 +18,7 @@ import java.io.IOException;
  */
 
 public class PreviewPanel extends JPanel{
-    JPanel panel;
+    OratioDisplay display;
     TitledBorder title;
     GridBagConstraints c;
     JLabel imageLabel;
@@ -28,8 +28,8 @@ public class PreviewPanel extends JPanel{
     MouthShape current;
 
     // Constructor
-    public PreviewPanel(Container pane, GridBagConstraints constraints){
-        panel = new JPanel(new GridLayout()); // grid layout used to keep image within panel
+    public PreviewPanel(OratioDisplay display, GridBagConstraints constraints){
+        super(new GridLayout());
         c = constraints;
 
         c.fill = GridBagConstraints.BOTH;
@@ -41,29 +41,25 @@ public class PreviewPanel extends JPanel{
         c.gridheight = 2;
         c.gridy = 0;
         title = BorderFactory.createTitledBorder("Preview");
-        panel.setBorder(title);
+        this.setBorder(title);
         position = 0;
 
         // Sets initial image as the avatar chosen
         imageLabel = new JLabel();
-        panel.add(imageLabel);
+        this.add(imageLabel);
 
-        pane.add(panel, c);
+        display.add(this, c);
     }
 
     // Method that runs animation
     public void animate(){
+        System.out.println("animate");
         do{
             queue.addLast(current);
             position++;
             position = position % queue.size();
             avatar = current;
         }while (position > 0);
-    }
-
-    // Get method
-    public JPanel get(){
-        return this.panel;
     }
 
     // Set the queue for mouth shapes
@@ -74,6 +70,6 @@ public class PreviewPanel extends JPanel{
 
     public void setAvatar(MouthShape avatar) {
         this.avatar = avatar;
-        imageLabel.setIcon(avatar.getImageIcon());
+        imageLabel.setIcon(new ImageIcon(avatar.getFileName()));
     }
 }
