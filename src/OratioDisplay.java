@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.awt.MenuBar;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 
@@ -6,6 +7,7 @@ import javax.swing.border.TitledBorder;
  * OratioDisplay.java
  * display class which holds all the different components
  * @author Kyle To
+ * @author Angelina
  * created 2018-11-20
  * last modified 2018-11-21
  */
@@ -16,7 +18,7 @@ public class OratioDisplay extends JPanel{
     private InputPanel inputPanel;
     private TitledBorder title;
     private Launcher launcher;
-
+    private OratioMenuBar oratioMenu;
     // Constructor
     public OratioDisplay(Launcher launcher){
         this.launcher = launcher;
@@ -24,15 +26,20 @@ public class OratioDisplay extends JPanel{
         // Create and set up the window.
         JFrame frame = new JFrame("Oratio");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        // Set up the content pane.
+        oratioMenu = new OratioMenuBar();
         addComponentsToPane(this);
-
+        frame.setJMenuBar(oratioMenu);
         // Display the window.
         frame.add(this);
         frame.setSize(Toolkit.getDefaultToolkit().getScreenSize());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
+    }
+    public OratioMenuBar getOratioMenuBar(){
+        return this.oratioMenu;
+    }
+    public void setOratioMenuBar(OratioMenuBar menuBar){
+        this.oratioMenu = menuBar;
     }
 
     // Method for adding components to the pane
