@@ -42,7 +42,7 @@ public class InputPanel extends JPanel{
         title = BorderFactory.createTitledBorder("Input"); //creates titled border
         this.setBorder(title);
 
-        this.display.add(this, c);
+        display.getContentPane().add(this, c);
 
         // Creates initial animate button
         animateButton = createAnimateButton(this);

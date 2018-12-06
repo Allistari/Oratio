@@ -36,7 +36,6 @@ public class Launcher {
      * @param args idk what this actually does
      */
     public static void main(String[] args) {
-
         new Launcher();
     }
 
@@ -44,6 +43,7 @@ public class Launcher {
         this.preset = "default";
         DisplayContent(null);
     }
+
     private void DisplayContent(String preset) {
         if (preset!=null) {
             this.preset = preset;
@@ -60,7 +60,7 @@ public class Launcher {
             System.exit(1);
         }
 
-        this.display = new OratioDisplay();
+        this.display = new OratioDisplay(this);
         OratioMenuBar addListenerMenu = this.display.getOratioMenuBar();
         JMenu presetMenu = addListenerMenu.getMenu(0);
         for(int i =0; i<presetMenu.getMenuComponentCount();i++){
@@ -82,7 +82,6 @@ public class Launcher {
         this.phoneticTranslator = new PhoneticTranslator();
     }
     private void setPresetName(String name){
-//update tmr
         this.display.remove(this.display.getContentPane());
         DisplayContent(name);
     }

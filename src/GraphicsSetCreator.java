@@ -155,7 +155,7 @@ public class GraphicsSetCreator extends JFrame{
             this.phoneticInputTextField.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    String text = phoneticInputTextField.getText();
+                    String text = phoneticInputTextField.getText().toUpperCase();
                     text = text.trim();
                     // make sure white space isn't added to the list
                     if (text.length() <= 0) return;

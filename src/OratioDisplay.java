@@ -12,28 +12,34 @@ import javax.swing.border.TitledBorder;
  * last modified 2018-11-21
  */
 
-public class OratioDisplay extends JPanel{
+public class OratioDisplay extends JFrame{
     private GalleryPanel galleryPanel;
     private PreviewPanel previewPanel;
     private InputPanel inputPanel;
     private TitledBorder title;
     private Launcher launcher;
     private OratioMenuBar oratioMenu;
+    private JPanel contentPane;
+
     // Constructor
     public OratioDisplay(Launcher launcher){
+        super("Oratio");
         this.launcher = launcher;
+        contentPane = new JPanel(new GridBagLayout());
 
         // Create and set up the window.
-        JFrame frame = new JFrame("Oratio");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
         oratioMenu = new OratioMenuBar();
+        this.setJMenuBar(oratioMenu);
+
+        this.setContentPane(contentPane);
         addComponentsToPane(this);
-        frame.setJMenuBar(oratioMenu);
+
         // Display the window.
-        frame.add(this);
-        frame.setSize(Toolkit.getDefaultToolkit().getScreenSize());
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
+        this.setSize(Toolkit.getDefaultToolkit().getScreenSize());
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setVisible(true);
     }
     public OratioMenuBar getOratioMenuBar(){
         return this.oratioMenu;
@@ -44,14 +50,13 @@ public class OratioDisplay extends JPanel{
 
     // Method for adding components to the pane
     private void addComponentsToPane(OratioDisplay display) {
-        display.setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
 
         galleryPanel = new GalleryPanel(display, c);
 
         previewPanel = new PreviewPanel(display,c);
 
-        inputPanel = new InputPanel(display, c); // created here to be used in launcher class
+        inputPanel = new InputPanel(display, c);
     }
 
     // getter for launcher

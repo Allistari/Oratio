@@ -30,6 +30,7 @@ public class PreviewPanel extends JPanel{
     // Constructor
     public PreviewPanel(OratioDisplay display, GridBagConstraints constraints){
         super(new GridLayout());
+        this.display = display;
         c = constraints;
 
         c.fill = GridBagConstraints.BOTH;
@@ -48,7 +49,7 @@ public class PreviewPanel extends JPanel{
         imageLabel = new JLabel();
         this.add(imageLabel);
 
-        display.add(this, c);
+        display.getContentPane().add(this, c);
     }
 
     // Method that runs animation

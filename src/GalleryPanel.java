@@ -11,14 +11,14 @@ import java.awt.*;
  */
 
 public class GalleryPanel extends JPanel{
-    JPanel panel;
     TitledBorder title;
     GridBagConstraints c;
     OratioDEQueue<MouthShape> queue;
+    private OratioDisplay display;
 
     // Constructor
-    public GalleryPanel(Container pane, GridBagConstraints constraints){
-        panel = new JPanel();
+    public GalleryPanel(OratioDisplay display, GridBagConstraints constraints){
+        super();
         c = constraints;
 
         c.fill = GridBagConstraints.BOTH;
@@ -30,13 +30,8 @@ public class GalleryPanel extends JPanel{
         c.gridheight = 2;
         c.gridy = 0;
         title = BorderFactory.createTitledBorder("Gallery");
-        panel.setBorder(title);
-        pane.add(panel, c);
-    }
-
-    // Get method
-    public JPanel get(){
-        return this.panel;
+        this.setBorder(title);
+        display.getContentPane().add(this, c);
     }
 
     // Method that sets the queue for mouth shapes
