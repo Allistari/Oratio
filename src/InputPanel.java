@@ -104,7 +104,6 @@ public class InputPanel extends JPanel{
         this.add(resetButton, c);
         this.validate();
         this.repaint();
-        System.out.println("ok liberals animation time");
     }
 
     // Method that creates text field
@@ -153,7 +152,6 @@ public class InputPanel extends JPanel{
                 panel.add(animateButton, c);
                 panel.validate();
                 panel.repaint();
-                System.out.println("destroyed w/ facks and logic");
             }
         });
         return resetButton;
