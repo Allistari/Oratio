@@ -34,7 +34,7 @@ public class PreviewPanel extends JPanel{
         c = constraints;
 
         c.fill = GridBagConstraints.BOTH;
-        c.weightx = 1.0;
+        c.weightx = 0;
         c.weighty = 1.0;
         c.anchor = GridBagConstraints.PAGE_START;
         c.gridx = 0;

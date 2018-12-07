@@ -19,6 +19,10 @@ public class MouthShape {
         return image;
     }
 
+    public ImageIcon getImageIcon() {
+        return imageIcon;
+    }
+
     public String[] getSpelling() {
         return spelling;
     }

@@ -96,6 +96,8 @@ public class Launcher {
             queue = assembleAnimationQueue();
             display.getPreviewPanel().setQueue(queue);
             //display.getPreviewPanel().animate();
+            display.getGalleryPanel().setQueue(queue);
+            display.getGalleryPanel().showFrames();
         }
     }
 
@@ -131,7 +133,6 @@ public class Launcher {
             }
             queue.addLast(avatar);
         }
-
         return queue;
     }
 }

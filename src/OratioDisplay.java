@@ -73,4 +73,9 @@ public class OratioDisplay extends JFrame{
     public PreviewPanel getPreviewPanel() {
         return previewPanel;
     }
+
+    // getter for preview panel
+    public GalleryPanel getGalleryPanel() {
+        return galleryPanel;
+    }
 }
