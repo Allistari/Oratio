@@ -51,9 +51,7 @@ public class PhoneticTranslator {
 
         Gson gson = new Gson();
 
-        Word word = gson.fromJson(inputLine, Word.class);
-
-        return word;
+        return gson.fromJson(inputLine, Word.class);
     }
 
 }

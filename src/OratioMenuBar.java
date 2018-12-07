@@ -4,7 +4,6 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import java.io.File;
 import java.awt.event.*;
-import java.util.ArrayList;
 import java.util.Arrays;
 import javax.swing.JOptionPane;
 
@@ -17,14 +16,13 @@ import javax.swing.JOptionPane;
  */
 
 public class OratioMenuBar extends JMenuBar { //implements ActionListener, KeyListener{
-    ArrayList<String> pNames = new ArrayList<String>();
+    OratioLinkedList<String> pNames = new OratioLinkedList<String>();
     String presetName;
     public OratioMenuBar() {
         createMenuBar();
     }
     private void createMenuBar(){
-        ArrayList<File> pFiles = new ArrayList<File>();
-        ArrayList<File> presetNames = new ArrayList<File>();
+        OratioLinkedList<File> presetNames = new OratioLinkedList<File>();
         File presetFile = new File("resources\\Graphics");
         getPresetName(presetFile,presetNames);
         if(presetNames.size()>0){
@@ -83,9 +81,9 @@ public class OratioMenuBar extends JMenuBar { //implements ActionListener, KeyLi
 
     }
 
-    private void getPresetName(File file, ArrayList<File> Folders){
+    private void getPresetName(File file, OratioLinkedList<File> Folders){
         if(file.isDirectory()){
-            ArrayList <File> path = new ArrayList<File>(Arrays.asList(file.listFiles()));
+            OratioLinkedList <File> path = new OratioLinkedList<File>(Arrays.asList(file.listFiles()));
             for (int i = 0; i < path.size(); i++) {
                 if(path.get(i).isDirectory()){
                     Folders.add(path.get(i));
