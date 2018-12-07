@@ -13,8 +13,9 @@ import java.io.IOException;
  * preview panel class which holds all the components in the preview panel
  * @author Kyle To
  * @author Michael Tatsiopoulos
+ * @author Angelina
  * created 2018-11-20
- * last modified 2018-11-21
+ * last modified 2018-12-07
  */
 
 public class PreviewPanel extends JPanel{
@@ -26,15 +27,16 @@ public class PreviewPanel extends JPanel{
     MouthShape avatar;
     int position;
     MouthShape current;
+    Image currentFrame;
+    DrawPanel drawingPanel;
 
     // Constructor
     public PreviewPanel(OratioDisplay display, GridBagConstraints constraints){
         super(new GridLayout());
         this.display = display;
         c = constraints;
-
         c.fill = GridBagConstraints.BOTH;
-        c.weightx = 0;
+        c.weightx = 1.0;
         c.weighty = 1.0;
         c.anchor = GridBagConstraints.PAGE_START;
         c.gridx = 0;
@@ -44,23 +46,34 @@ public class PreviewPanel extends JPanel{
         title = BorderFactory.createTitledBorder("Preview");
         this.setBorder(title);
         position = 0;
+        drawingPanel = new DrawPanel();
 
         // Sets initial image as the avatar chosen
         imageLabel = new JLabel();
         this.add(imageLabel);
-
         display.getContentPane().add(this, c);
     }
 
-    // Method that runs animation
-    public void animate(){
-        System.out.println("animate");
-        do{
+    public class DrawPanel extends JPanel{
+        public void paintComponent(Graphics g){
+            g.drawImage(currentFrame,0,0,this);
+        }
+    }
+
+    public void makeAnimation(){
+        while(true){
+            current = queue.pollFirst();
+            currentFrame = current.getImage();
+            try{
+                Thread.sleep(50);
+            }
+            catch (Exception e){
+                e.printStackTrace();
+            }
+            display.repaint();
             queue.addLast(current);
-            position++;
-            position = position % queue.size();
-            avatar = current;
-        }while (position > 0);
+
+        }
     }
 
     // Set the queue for mouth shapes

@@ -48,7 +48,6 @@ public class Launcher {
         if (preset!=null) {
             this.preset = preset;
         }
-
         // generate data structures
         try {
             String filePath = "resources\\Graphics\\" + this.preset + "\\meta.json";
@@ -76,9 +75,8 @@ public class Launcher {
                 });
             }
         }
-        this.display.setOratioMenuBar(addListenerMenu);
         this.display.getPreviewPanel().setAvatar(this.avatar);
-
+        this.display.setOratioMenuBar(addListenerMenu);
         this.phoneticTranslator = new PhoneticTranslator();
     }
     private void setPresetName(String name){
@@ -95,7 +93,7 @@ public class Launcher {
             }
             queue = assembleAnimationQueue();
             display.getPreviewPanel().setQueue(queue);
-            //display.getPreviewPanel().animate();
+            //display.getPreviewPanel().makeAnimation();
             display.getGalleryPanel().setQueue(queue);
             display.getGalleryPanel().showFrames();
         }

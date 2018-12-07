@@ -9,7 +9,7 @@ import javax.swing.border.TitledBorder;
  * @author Kyle To
  * @author Angelina
  * created 2018-11-20
- * last modified 2018-11-21
+ * last modified 2018-12-07
  */
 
 public class OratioDisplay extends JFrame{
@@ -55,6 +55,9 @@ public class OratioDisplay extends JFrame{
         galleryPanel = new GalleryPanel(display, c);
 
         previewPanel = new PreviewPanel(display,c);
+
+        //causes null pointer exception
+        previewPanel.makeAnimation();
 
         inputPanel = new InputPanel(display, c);
     }
