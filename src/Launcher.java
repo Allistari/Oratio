@@ -114,7 +114,7 @@ public class Launcher {
 
         phoneticSpellings = new String[words.length];
         for (int i = 0; i < words.length; i++) {
-            //phoneticSpellings[i] = PhoneticTranslator.getPronounce(words[i]);
+            phoneticSpellings[i] = PhoneticTranslator.getPronounce(words[i]);
         }
 
         display.getInputPanel().switchInputPanel(phoneticSpellings);

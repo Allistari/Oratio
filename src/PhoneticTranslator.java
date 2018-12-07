@@ -16,8 +16,8 @@ import java.net.URLConnection;
 
 public class PhoneticTranslator {
 
-    private final String URL = "https://api.datamuse.com/words?sp=";
-    private final String URL2 = "&md=r&max=1";
+    private static final String URL = "https://api.datamuse.com/words?sp=";
+    private static final String URL2 = "&md=r&max=1";
 
     /**
      * Gets the IPA phonetic spelling of a word
@@ -25,8 +25,8 @@ public class PhoneticTranslator {
      * @return the pronunciation of the word
      */
 
-    public String getPronounce(String search) throws IOException{
-        Word word = null;
+    public static String getPronounce(String search) throws IOException{
+        Word word;
 
         try {
             word = getWord(search);
@@ -38,7 +38,7 @@ public class PhoneticTranslator {
     }
 
 
-    private Word getWord(String search) throws IOException {
+    private static Word getWord(String search) throws IOException {
 
         java.net.URL wordURL = new URL(URL + search + URL2);
         System.out.println(URL + search + URL2);
