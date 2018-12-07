@@ -49,12 +49,9 @@ public class PhoneticTranslator {
 
         inputLine = inputLine.substring(1,inputLine.length()-1); // the string has weird square brackets so we gotta clean it
 
-
         Gson gson = new Gson();
 
-        Word word = gson.fromJson(inputLine, Word.class);
-
-        return word;
+        return gson.fromJson(inputLine, Word.class);
     }
 
 }
