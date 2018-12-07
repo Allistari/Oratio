@@ -83,10 +83,12 @@ public class OratioMenuBar extends JMenuBar { //implements ActionListener, KeyLi
 
     private void getPresetName(File file, OratioLinkedList<File> Folders){
         if(file.isDirectory()){
-            OratioLinkedList <File> path = new OratioLinkedList<File>(Arrays.asList(file.listFiles()));
-            for (int i = 0; i < path.size(); i++) {
-                if(path.get(i).isDirectory()){
-                    Folders.add(path.get(i));
+
+            File[] path = file.listFiles();
+
+            for (File f : path) {
+                if(f.isDirectory()){
+                    Folders.add(f);
                 }
 
             }
