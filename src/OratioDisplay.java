@@ -55,11 +55,8 @@ public class OratioDisplay extends JFrame{
         galleryPanel = new GalleryPanel(display, c);
 
         previewPanel = new PreviewPanel(display,c);
-
-        //causes null pointer exception
-        previewPanel.makeAnimation();
-
         inputPanel = new InputPanel(display, c);
+
     }
 
     // getter for launcher

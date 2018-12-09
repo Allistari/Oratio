@@ -75,10 +75,10 @@ public class Launcher {
                 });
             }
         }
-        this.display.getPreviewPanel().setAvatar(this.avatar);
         this.display.setOratioMenuBar(addListenerMenu);
         this.phoneticTranslator = new PhoneticTranslator();
     }
+
     private void setPresetName(String name){
         this.display.remove(this.display.getContentPane());
         DisplayContent(name);
@@ -93,7 +93,6 @@ public class Launcher {
             }
             queue = assembleAnimationQueue();
             display.getPreviewPanel().setQueue(queue);
-            //display.getPreviewPanel().makeAnimation();
             display.getGalleryPanel().setQueue(queue);
             display.getGalleryPanel().showFrames();
         }
@@ -118,7 +117,9 @@ public class Launcher {
         }
 
         display.getInputPanel().switchInputPanel(phoneticSpellings);
-    }
+}
+
+
 
     private OratioDEQueue<MouthShape> assembleAnimationQueue() {
         OratioDEQueue<MouthShape> queue = new OratioDEQueue<>();

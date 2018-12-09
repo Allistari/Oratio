@@ -23,12 +23,13 @@ public class PreviewPanel extends JPanel{
     TitledBorder title;
     GridBagConstraints c;
     JLabel imageLabel;
-    OratioDEQueue<MouthShape> queue;
+    OratioDEQueue<MouthShape> queue = new OratioDEQueue<>();
     MouthShape avatar;
     int position;
     MouthShape current;
-    Image currentFrame;
-    DrawPanel drawingPanel;
+    ImageIcon currentFrame;
+    JLabel animatedImage;
+    private OratioTree<MouthShape> tree;
 
     // Constructor
     public PreviewPanel(OratioDisplay display, GridBagConstraints constraints){
@@ -45,45 +46,55 @@ public class PreviewPanel extends JPanel{
         c.gridy = 0;
         title = BorderFactory.createTitledBorder("Preview");
         this.setBorder(title);
-        position = 0;
-        drawingPanel = new DrawPanel();
+        System.out.println(queue.size());
 
-        // Sets initial image as the avatar chosen
         imageLabel = new JLabel();
+        if (queue.size() ==0)
+            imageLabel.setIcon(new ImageIcon("resources\\Graphics\\default\\avatar.jpg"));
+       else
+           imageLabel.setIcon(currentFrame);
+
         this.add(imageLabel);
+
         display.getContentPane().add(this, c);
     }
 
-    public class DrawPanel extends JPanel{
-        public void paintComponent(Graphics g){
-            g.drawImage(currentFrame,0,0,this);
+
+
+//    public void animateImage(ImageIcon currentFrame){
+//            imageLabel.setIcon(currentFrame);
+//            this.validate();
+//            this.repaint();
+//         }
+public void makeAnimation(){
+    System.out.println(queue.size());
+    while(queue.size()>0){
+        MouthShape current = queue.pollFirst();
+        System.out.println(current.getFileName());
+        ImageIcon currentFrame = current.getImageIcon();
+        this.currentFrame = currentFrame;
+        try{
+            Thread.sleep(100);
         }
-    }
-
-    public void makeAnimation(){
-        while(true){
-            current = queue.pollFirst();
-            currentFrame = current.getImage();
-            try{
-                Thread.sleep(50);
-            }
-            catch (Exception e){
-                e.printStackTrace();
-            }
-            display.repaint();
-            queue.addLast(current);
-
+        catch (Exception e){
+            e.printStackTrace();
         }
-    }
+        this.repaint();
 
+        queue.addLast(current);
+    }
+}
     // Set the queue for mouth shapes
     public void setQueue(OratioDEQueue<MouthShape> queue) {
         this.queue = queue;
-        this.current = queue.pollFirst();
+        //this.current = queue.pollFirst();
+    }
+    public OratioDEQueue getQueue (){
+        return this.queue;
     }
 
-    public void setAvatar(MouthShape avatar) {
-        this.avatar = avatar;
-        imageLabel.setIcon(new ImageIcon(avatar.getFileName()));
-    }
+//    public void setAvatar(MouthShape avatar) {
+//        this.avatar = avatar;
+//        imageLabel.setIcon(new ImageIcon(avatar.getFileName()));
+//    }
 }
