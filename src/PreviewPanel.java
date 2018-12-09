@@ -66,13 +66,12 @@ public class PreviewPanel extends JPanel {
         try {
             AnimatedGifEncoder encoder = new AnimatedGifEncoder();
             encoder.start(outputPath);
-            encoder.setDelay(500);
+            encoder.setDelay(200);
             encoder.setRepeat(0);
             for (int j = 0; j < queue.size(); j++) {
                 current = (MouthShape) queue.pollFirst();
                 currentFrame = ImageIO.read(new File(current.getFileName()));
                 encoder.addFrame(currentFrame);
-                System.out.println(current.getFileName());
             }
             encoder.finish();
             i++;
