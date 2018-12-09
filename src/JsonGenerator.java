@@ -17,11 +17,15 @@ public class JsonGenerator {
      * @param mList an OratioLinkedList of MouthShapes
      * @param file the file object to write to
      */
-    public void generateJSON(OratioLinkedList<MouthShape> mList, File file) throws IOException {
+    public void generateJSON(OratioLinkedList<MouthShape> mList, String avatarPath, File file) throws IOException {
         JsonWriter writer;
         writer = new JsonWriter(new FileWriter(file));
 
         writer.beginArray();
+
+        writer.beginObject();
+        writer.name("avatar").value(avatarPath);
+        writer.endObject();
 
         for (int i = 0; i < mList.size(); i++) {
             writeMouthShape(writer, mList.get(i));

@@ -76,7 +76,7 @@ public class OratioTree<T> {
     }
 
     /**
-     * Traverses the tree to acquire an item
+     * Traverses the tree to acquire an item, alternative method
      * @param nameOfItem the name of the item to get
      * @return the item
      */

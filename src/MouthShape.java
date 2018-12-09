@@ -4,17 +4,23 @@ import java.awt.Image;
 public class MouthShape {
     private String [] spelling;
     private String fileName;
-    private ImageIcon image;
+    private ImageIcon imageIcon;
+    private Image image;
 
+    // Constructor
     public MouthShape(String fileName, String[] spelling){
         this.fileName = fileName;
         this.spelling = spelling;
-
-        image = new ImageIcon(fileName);
+        this.imageIcon = new ImageIcon(fileName);
+        this.image = this.imageIcon.getImage();
     }
 
     public Image getImage() {
-        return image.getImage();
+        return image;
+    }
+
+    public ImageIcon getImageIcon() {
+        return imageIcon;
     }
 
     public String[] getSpelling() {
@@ -23,5 +29,9 @@ public class MouthShape {
 
     public String getFileName() {
         return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
     }
 }

@@ -1,51 +1,81 @@
-import jdk.internal.util.xml.impl.Input;
-
 import java.awt.*;
-import javax.swing.JFrame;
-
+import java.awt.MenuBar;
+import javax.swing.*;
+import javax.swing.border.TitledBorder;
 
 /**
  * OratioDisplay.java
  * display class which holds all the different components
  * @author Kyle To
+ * @author Angelina
  * created 2018-11-20
- * last modified 2018-11-21
+ * last modified 2018-12-07
  */
 
-public class OratioDisplay {
+public class OratioDisplay extends JFrame{
     private GalleryPanel galleryPanel;
     private PreviewPanel previewPanel;
     private InputPanel inputPanel;
+    private TitledBorder title;
+    private Launcher launcher;
+    private OratioMenuBar oratioMenu;
+    private JPanel contentPane;
 
-    public OratioDisplay(){
-        //Create and set up the window.
-        JFrame frame = new JFrame("Oratio");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    // Constructor
+    public OratioDisplay(Launcher launcher){
+        super("Oratio");
+        this.launcher = launcher;
+        contentPane = new JPanel(new GridBagLayout());
 
-        //Set up the content pane.
-        addComponentsToPane(frame.getContentPane());
+        // Create and set up the window.
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        //Display the window.
-        frame.setSize(Toolkit.getDefaultToolkit().getScreenSize());
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
+        oratioMenu = new OratioMenuBar();
+        this.setJMenuBar(oratioMenu);
+
+        this.setContentPane(contentPane);
+        addComponentsToPane(this);
+
+        // Display the window.
+        this.setSize(Toolkit.getDefaultToolkit().getScreenSize());
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setVisible(true);
+    }
+    public OratioMenuBar getOratioMenuBar(){
+        return this.oratioMenu;
+    }
+    public void setOratioMenuBar(OratioMenuBar menuBar){
+        this.oratioMenu = menuBar;
     }
 
-    private void addComponentsToPane(Container pane) {
-
-        pane.setLayout(new GridBagLayout());
+    // Method for adding components to the pane
+    private void addComponentsToPane(OratioDisplay display) {
         GridBagConstraints c = new GridBagConstraints();
 
-        galleryPanel = new GalleryPanel(pane, c);
-        previewPanel = new PreviewPanel(pane,c);
-        inputPanel = new InputPanel(c);
+        galleryPanel = new GalleryPanel(display, c);
 
-        pane.add(inputPanel, c);
+        previewPanel = new PreviewPanel(display,c);
+        inputPanel = new InputPanel(display, c);
+
     }
 
-    public static void main(String[] args) { //to test display
-        //createAndShowGUI();
-        OratioDisplay display = new OratioDisplay();
+    // getter for launcher
+    public Launcher getLauncher() {
+        return launcher;
     }
 
+    // Method for getting the input panel
+    public InputPanel getInputPanel() {
+        return inputPanel;
+    }
+
+    // getter for preview panel
+    public PreviewPanel getPreviewPanel() {
+        return previewPanel;
+    }
+
+    // getter for preview panel
+    public GalleryPanel getGalleryPanel() {
+        return galleryPanel;
+    }
 }

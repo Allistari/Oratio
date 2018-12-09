@@ -129,7 +129,7 @@ public class OratioLinkedList<T> {
      * clear the whole list
      */
     public void clear() {
-        this.head.setNext(null);
+        this.head = null;
     }
 
     /**
@@ -154,13 +154,13 @@ public class OratioLinkedList<T> {
      * returns the contents of the list as an array
      * @return list as an array
      */
-    public T[] toArray() {
-        Object[] array = new Object[this.size()];
+    public String[] toArray() {
+        String[] array = new String[this.size()];
 
         for (int i = 0; i < this.size(); i++) {
-            array[i] = this.get(i);
+            array[i] = (String) this.get(i);
         }
 
-        return (T[]) array;
+        return array;
     }
 }

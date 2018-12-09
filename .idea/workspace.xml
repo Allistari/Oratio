@@ -1,20 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d6dcaa92-4ca7-4b88-a378-58a8a05eb138" name="Default" comment="update a treenode">
-      <change beforePath="$PROJECT_DIR$/Oratio.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Oratio.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/MouthShapes/AEI.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/MouthShapes/BMP.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/MouthShapes/CDGKNSTXYZ.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/MouthShapes/CHJSH.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/MouthShapes/E.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/MouthShapes/FV.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/MouthShapes/Guide.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/MouthShapes/L.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/MouthShapes/QUW.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/MouthShapes/R.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/MouthShapes/TH.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/MouthShapes/avatar.jpg" beforeDir="false" />
+    <list default="true" id="d6dcaa92-4ca7-4b88-a378-58a8a05eb138" name="Default" comment="test">
+      <change afterPath="$PROJECT_DIR$/resources/Graphics/default/AEI.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/Graphics/default/BMP.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/Graphics/default/CDGKNSTXYZ.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/Graphics/default/CHJSH.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/Graphics/default/E.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/Graphics/default/FV.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/Graphics/default/L.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/Graphics/default/O.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/Graphics/default/QUW.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/Graphics/default/R.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/Graphics/default/TH.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/Graphics/default/avatar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/Graphics/default/meta.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GraphicsSetCreator.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GraphicsSetCreator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MouthShapePanel.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/OratioMenuBar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GalleryPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GalleryPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InputPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/InputPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/JsonGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JsonGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Launcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LinkedListNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LinkedListNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MouthShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MouthShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OratioDEQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OratioDEQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OratioDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OratioDisplay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OratioLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OratioLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OratioTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OratioTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OratioTreeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OratioTreeGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PhoneticTranslator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PhoneticTranslator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PreviewPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PreviewPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TestFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Word.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path=".idea/" />
@@ -31,7 +56,7 @@
     <session id="718350658">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.opened" value="2" />
@@ -39,28 +64,32 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="gitignore" value="1" />
           <entry key="html" value="1" />
+          <entry key="iml" value="1" />
           <entry key="java" value="18" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="HTML" value="1" />
+          <entry key="IDEA_MODULE" value="1" />
           <entry key="JAVA" value="18" />
+          <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="1" />
           <entry key="java" value="3175" />
-          <entry key="txt" value="17" />
+          <entry key="txt" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="1" />
           <entry key="JAVA" value="3175" />
-          <entry key="PLAIN_TEXT" value="17" />
+          <entry key="PLAIN_TEXT" value="21" />
         </counts>
       </usages-collector>
     </session>
@@ -119,13 +148,41 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/OratioDEQueue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8">
-              <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+            <state relative-caret-position="84">
+              <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+              <folding>
+                <element signature="e#289#290#0" expanded="true" />
+                <element signature="e#343#344#0" expanded="true" />
+                <element signature="e#483#484#0" expanded="true" />
+                <element signature="e#522#523#0" expanded="true" />
+                <element signature="e#660#661#0" expanded="true" />
+                <element signature="e#696#697#0" expanded="true" />
+                <element signature="e#827#828#0" expanded="true" />
+                <element signature="e#870#871#0" expanded="true" />
+                <element signature="e#998#999#0" expanded="true" />
+                <element signature="e#1059#1060#0" expanded="true" />
+                <element signature="e#1171#1172#0" expanded="true" />
+                <element signature="e#1211#1212#0" expanded="true" />
+              </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="38">
+              <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Oratio.iml">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -170,8 +227,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PreviewPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            <state relative-caret-position="380">
+              <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -232,9 +289,10 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-175" />
     <option name="y" value="20" />
-    <option name="width" value="1348" />
+    <option name="width" value="1349" />
     <option name="height" value="730" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -264,11 +322,11 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543192269508" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544367131015" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/gson-2.8.5.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Ignored.Files" />
@@ -369,7 +427,14 @@
       <option name="project" value="LOCAL" />
       <updated>1542915165336</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="test">
+      <created>1544366936630</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1544366936630</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -378,7 +443,7 @@
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="840" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2751678" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2751678" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -393,7 +458,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="7" sideWeight="0.49798658" visible="true" weight="0.32956153" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" sideWeight="0.49798658" weight="0.32956153" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50201344" side_tool="true" visible="true" weight="0.32956153" />
@@ -452,19 +517,17 @@
     <MESSAGE value="update a treenode" />
     <MESSAGE value="update gitignore" />
     <MESSAGE value="sum fixxes" />
-    <option name="LAST_COMMIT_MESSAGE" value="sum fixxes" />
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Oratio.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Tree.java" />
     <entry file="file://$PROJECT_DIR$/src/Node.java" />
     <entry file="file://$PROJECT_DIR$/src/OratioNode.java" />
     <entry file="file://$PROJECT_DIR$/src/PreviewPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        <state relative-caret-position="380">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -491,15 +554,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/OratioDEQueue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8">
-          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        <state relative-caret-position="84">
+          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+          <folding>
+            <element signature="e#289#290#0" expanded="true" />
+            <element signature="e#343#344#0" expanded="true" />
+            <element signature="e#483#484#0" expanded="true" />
+            <element signature="e#522#523#0" expanded="true" />
+            <element signature="e#660#661#0" expanded="true" />
+            <element signature="e#696#697#0" expanded="true" />
+            <element signature="e#827#828#0" expanded="true" />
+            <element signature="e#870#871#0" expanded="true" />
+            <element signature="e#998#999#0" expanded="true" />
+            <element signature="e#1059#1060#0" expanded="true" />
+            <element signature="e#1171#1172#0" expanded="true" />
+            <element signature="e#1211#1212#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -594,6 +664,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
           <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Oratio.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
         </state>
       </provider>
     </entry>

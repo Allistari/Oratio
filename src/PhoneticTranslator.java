@@ -13,32 +13,32 @@ import java.net.URLConnection;
  * Last Updated: 2018-11-21
  * Created 2018-11-20
  */
+
 public class PhoneticTranslator {
 
-    private final String URL = "https://api.datamuse.com/words?sp=";
-    private final String URL2 = "&md=r&ipa=1&max=1";
-
+    private static final String URL = "https://api.datamuse.com/words?sp=";
+    private static final String URL2 = "&md=r&max=1";
 
     /**
      * Gets the IPA phonetic spelling of a word
      * @param search the word to get the pronunciation of
      * @return the pronunciation of the word
      */
-    public String getPronounce(String search) {
 
-        Word word = null;
+    public static String getPronounce(String search) throws IOException{
+        Word word;
 
         try {
             word = getWord(search);
             return word.getIPAPronounce();
         } catch(Exception e) {
             System.out.println("Error getting word");
-            return null;
+            throw new IOException();
         }
     }
 
 
-    private Word getWord(String search) throws IOException {
+    private static Word getWord(String search) throws IOException {
 
         java.net.URL wordURL = new URL(URL + search + URL2);
         System.out.println(URL + search + URL2);
@@ -47,14 +47,11 @@ public class PhoneticTranslator {
         String inputLine;
         inputLine = in.readLine();
 
-        inputLine = inputLine.substring(1,inputLine.length()-1); //the string has weird square brackets so we gotta clean it
-
+        inputLine = inputLine.substring(1,inputLine.length()-1); // the string has weird square brackets so we gotta clean it
 
         Gson gson = new Gson();
 
-        Word word = gson.fromJson(inputLine, Word.class);
-
-        return word;
+        return gson.fromJson(inputLine, Word.class);
     }
 
 }
