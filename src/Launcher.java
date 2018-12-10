@@ -22,7 +22,7 @@ public class Launcher {
 
     // GUI
     private OratioDisplay display;
-    private String phoneticSpellings[];
+    private String[] phoneticSpellings;
     private String[] words;
     private String preset;
     private MouthShape avatar;
@@ -50,7 +50,7 @@ public class Launcher {
         }
         // generate data structures
         try {
-            String filePath = "resources\\Graphics\\" + this.preset + "\\meta.json";
+            String filePath = "resources\\Graphics\\" + this.preset + "\\meta.json"; //FIX THIS LATER!!!!
             OratioTreeGenerator treeGenerator = new OratioTreeGenerator();
             this.tree = treeGenerator.generateTreeFromJson(filePath);
             this.avatar = treeGenerator.getAvatar();
@@ -66,12 +66,9 @@ public class Launcher {
             java.awt.Component comp = presetMenu.getMenuComponent(i);
             if(comp instanceof JMenuItem){
                 JMenuItem item = (JMenuItem) comp;
-                item.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        String name = item.getText();
-                        setPresetName(name);
-                    }
+                item.addActionListener(e -> {
+                    String name = item.getText();
+                    setPresetName(name);
                 });
             }
         }
