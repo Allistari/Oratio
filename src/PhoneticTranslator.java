@@ -30,13 +30,19 @@ public class PhoneticTranslator {
 
         try {
             word = getWord(search);
-            return word.getIPAPronounce();
+            return eliminateNumbers(word.getIPAPronounce());
         } catch(Exception e) {
             System.out.println("Error getting word");
             throw new IOException();
         }
     }
 
+    private static String eliminateNumbers(String pronounce) {
+        for(int i = 0; i <= 9; i++) {
+            pronounce = pronounce.replace(Integer.toString(i),"");
+        }
+        return pronounce;
+    }
 
     private static Word getWord(String search) throws IOException {
 

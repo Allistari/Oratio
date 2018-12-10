@@ -11,7 +11,4 @@ public class Word {
         return tags[0].substring(tags[0].indexOf(":") + 1);
     }
 
-    private String remove() {
-        return null;
-    }
 }

@@ -13,19 +13,20 @@ import java.io.IOException;
  * preview panel class which holds all the components in the preview panel
  * @author Kyle To
  * @author Michael Tatsiopoulos
+ * @author Eric Ke
  * @author Angelina
  * created 2018-11-20
  * last modified 2018-12-07
  */
 
 public class PreviewPanel extends JPanel {
-    OratioDisplay display;
-    TitledBorder title;
-    GridBagConstraints c;
-    JLabel imageLabel;
-    OratioDEQueue<MouthShape> queue = new OratioDEQueue<>();
-    MouthShape current;
-    BufferedImage currentFrame;
+    private OratioDisplay display;
+    private TitledBorder title;
+    private GridBagConstraints c;
+    private JLabel imageLabel;
+    private OratioDEQueue<MouthShape> queue = new OratioDEQueue<>();
+    private MouthShape current;
+    private BufferedImage currentFrame;
 
 
     // Constructor
@@ -77,7 +78,7 @@ public class PreviewPanel extends JPanel {
             i++;
             imageLabel.setIcon(new ImageIcon(outputPath));
         } catch (Exception e) {
-            System.out.println(e.getMessage().toString());
+            System.out.println(e.getMessage());
         }
     }
 }
