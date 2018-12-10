@@ -1,11 +1,8 @@
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.awt.image.ImageObserver;
-import java.io.File;
-import java.io.IOException;
+
+import static javax.swing.BorderFactory.createEmptyBorder;
 
 /**
  * GalleryPanel.java
@@ -16,14 +13,13 @@ import java.io.IOException;
  */
 
 public class GalleryPanel extends JPanel{
-    TitledBorder title;
-    GridBagConstraints c;
-    OratioDEQueue<MouthShape> queue;
-    private OratioDisplay display;
-    MouthShape current;
-    JLabel show;
-    ImageIcon icon;
-    Image temp;
+    private TitledBorder title;
+    private GridBagConstraints c;
+    private OratioDEQueue<MouthShape> queue;
+    private MouthShape current;
+    private JLabel show;
+    private ImageIcon icon;
+    private Image temp;
 
     // Constructor
     public GalleryPanel(OratioDisplay display, GridBagConstraints constraints){
@@ -38,7 +34,10 @@ public class GalleryPanel extends JPanel{
         c.gridwidth = 1;
         c.gridheight = 2;
         c.gridy = 0;
+        title = BorderFactory.createTitledBorder("Gallery"); //creates titled border
+        this.setBorder(title);
         JScrollPane panelPane = new JScrollPane(this);
+        panelPane.setBorder(createEmptyBorder());
         display.getContentPane().add(panelPane, c);
     }
 
@@ -52,8 +51,8 @@ public class GalleryPanel extends JPanel{
         for (int i = 0; i < queue.size(); i++) {
             current = queue.pollFirst();
             temp = current.getImage();
-            Image newimg = temp.getScaledInstance(200, 200,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
-            icon = new ImageIcon(newimg);
+            Image newImg = temp.getScaledInstance(200, 200,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
+            icon = new ImageIcon(newImg);
             show = new JLabel(icon);
             this.add(show);
             queue.addLast(current);
