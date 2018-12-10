@@ -27,20 +27,19 @@ public class GalleryPanel extends JPanel{
 
     // Constructor
     public GalleryPanel(OratioDisplay display, GridBagConstraints constraints){
-        super(new GridLayout(0,2));
+        super(new GridLayout(0,1));
         c = constraints;
 
         c.fill = GridBagConstraints.BOTH;
-        c.weightx = 0;
+        c.weightx = 0.75;
         c.weighty = 1.0;
         c.anchor = GridBagConstraints.FIRST_LINE_END;
         c.gridx = 2;
         c.gridwidth = 1;
         c.gridheight = 2;
         c.gridy = 0;
-        title = BorderFactory.createTitledBorder("Gallery");
-        this.setBorder(title);
-        display.getContentPane().add(this, c);
+        JScrollPane panelPane = new JScrollPane(this);
+        display.getContentPane().add(panelPane, c);
     }
 
     // Method that sets the queue for mouth shapes
