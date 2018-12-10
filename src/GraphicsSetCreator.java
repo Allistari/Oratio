@@ -53,6 +53,15 @@ public class GraphicsSetCreator extends JFrame{
                     return;
                 }
 
+                String[] fileNames = mouthShapePanel.getMouthShapeTextArea().getText().split("\n+");
+
+                for (int i = 0; i < fileNames.length; i++) {
+                    if (!mList.get(i).getFileName().equals(fileNames[i])) {
+                        mList.remove(i);
+                        i--;
+                    }
+                }
+
                 for (int i = 0; i < mList.size(); i++) {
                     MouthShape m = mList.get(i);
 
@@ -135,35 +144,19 @@ public class GraphicsSetCreator extends JFrame{
         mouthShapePanel = new MouthShapePanel();
     }
 
-    private class MouthShapePanel extends JPanel {
+    private class MouthShapePanel {
         private JPanel mainPanel;
-        private JTextArea phoneticDisplayArea;
-        private JTextField phoneticInputTextField;
         private JTextField fileNameTextField;
         private JButton addButton;
         private JButton chooseFileButton;
         private JPanel filePanel;
+        private JTextArea mouthShapeTextArea;
+        private JTextArea phoneticTextArea;
 
         private OratioLinkedList<String> phoneticList;
 
         MouthShapePanel() {
-            super();
-            this.add(this.mainPanel);
-
             this.phoneticList = new OratioLinkedList<>();
-
-            this.phoneticInputTextField.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    String text = phoneticInputTextField.getText().toUpperCase();
-                    text = text.trim();
-                    // make sure white space isn't added to the list
-                    if (text.length() <= 0) return;
-                    phoneticList.add(text);
-                    phoneticInputTextField.setText("");
-                    phoneticDisplayArea.setText(phoneticDisplayArea.getText() + text + '\n');
-                }
-            });
             this.addButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -179,9 +172,9 @@ public class GraphicsSetCreator extends JFrame{
 
                     phoneticList.clear();
 
+                    mouthShapeTextArea.setText(fileNameTextField.getText() + "\n");
                     fileNameTextField.setText("");
-                    phoneticInputTextField.setText("");
-                    phoneticDisplayArea.setText("");
+                    phoneticTextArea.setText("");
                 }
             });
             this.chooseFileButton.addActionListener(new ActionListener() {
@@ -203,6 +196,14 @@ public class GraphicsSetCreator extends JFrame{
                     }
                 }
             });
+        }
+
+        JTextArea getMouthShapeTextArea() {
+            return mouthShapeTextArea;
+        }
+
+        JPanel getMainPanel() {
+            return mainPanel;
         }
     }
 }
