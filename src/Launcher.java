@@ -77,9 +77,10 @@ public class Launcher {
     }
 
     private void setPresetName(String name){
-        this.display.remove(this.display.getContentPane());
+        this.display.dispose();
         DisplayContent(name);
     }
+
     private class InputPanelListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -89,16 +90,21 @@ public class Launcher {
                 return;
             }
             queue = assembleAnimationQueue();
+
             display.getPreviewPanel().setQueue(queue);
             display.getPreviewPanel().animate(queue);
+
             display.getGalleryPanel().setQueue(queue);
             display.getGalleryPanel().showFrames();
-
         }
     }
 
     public InputPanelListener getInputPanelListener() {
         return new InputPanelListener();
+    }
+
+    public MouthShape getAvatar() {
+        return avatar;
     }
 
     private void generatePhoneticSpelling() throws IOException{
@@ -117,7 +123,6 @@ public class Launcher {
 
         display.getInputPanel().switchInputPanel(phoneticSpellings);
 }
-
 
 
     private OratioDEQueue<MouthShape> assembleAnimationQueue() {

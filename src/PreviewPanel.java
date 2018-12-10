@@ -46,7 +46,7 @@ public class PreviewPanel extends JPanel {
         this.setBorder(title);
         imageLabel = new JLabel();
         if (queue.size() == 0) {
-            imageLabel.setIcon(new ImageIcon("resources\\Graphics\\Default-Female\\avatar.jpg"));
+            imageLabel.setIcon(display.getLauncher().getAvatar().getImageIcon());
         }
         this.add(imageLabel);
         display.getContentPane().add(this, c);
