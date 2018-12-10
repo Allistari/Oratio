@@ -34,8 +34,8 @@ public class PreviewPanel extends JPanel {
         super(new GridLayout());
         this.display = display;
         c = constraints;
-        c.fill = GridBagConstraints.BOTH;
-        c.weightx = 1.0;
+        c.fill = GridBagConstraints.NONE;
+        c.weightx = 0;
         c.weighty = 1.0;
         c.anchor = GridBagConstraints.PAGE_START;
         c.gridx = 0;
@@ -64,8 +64,6 @@ public class PreviewPanel extends JPanel {
     public void animate(OratioDEQueue queue) {
         int i = 1;
         String outputPath = "output\\" + i + ".gif";
-        System.out.println(queue.size());
-
         AnimatedGifEncoder encoder = new AnimatedGifEncoder();
         encoder.start(outputPath);
         encoder.setDelay(200);

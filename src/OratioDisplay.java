@@ -37,7 +37,8 @@ public class OratioDisplay extends JFrame{
         addComponentsToPane(this);
 
         // Display the window.
-        this.setSize(Toolkit.getDefaultToolkit().getScreenSize());
+        //this.setSize(Toolkit.getDefaultToolkit().getScreenSize());
+        this.setSize(1035,700);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
     }

@@ -27,11 +27,11 @@ public class GalleryPanel extends JPanel{
         c = constraints;
 
         c.fill = GridBagConstraints.BOTH;
-        c.weightx = 0.75;
+        c.weightx = 1;
         c.weighty = 1.0;
         c.anchor = GridBagConstraints.FIRST_LINE_END;
         c.gridx = 2;
-        c.gridwidth = 1;
+        c.gridwidth = 2;
         c.gridheight = 2;
         c.gridy = 0;
         title = BorderFactory.createTitledBorder("Gallery"); //creates titled border

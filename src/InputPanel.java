@@ -97,8 +97,8 @@ public class InputPanel extends JPanel{
         this.remove(animateButton);
         this.remove(textField);
 
-        reAnimateButton = createReAnimateButton(this);
-        this.add(reAnimateButton,c);
+        //reAnimateButton = createReAnimateButton(this);
+//        this.add(reAnimateButton,c);
 
         resetButton = createResetButton(this);
         this.add(resetButton, c);
@@ -118,17 +118,17 @@ public class InputPanel extends JPanel{
         return textField;
     }
 
-    // Method that creates reanimate button
-    private JButton createReAnimateButton(JPanel panel){
-        reAnimateButton = new JButton("Reanimate");
-        c.weightx = 0.5;
-        c.weighty = 0.0;
-        c.anchor = GridBagConstraints.CENTER;
-        c.gridx = 1;
-        c.gridy = 0;
-        c.gridwidth = 1;
-        return reAnimateButton;
-    }
+//    // Method that creates reanimate button
+//    private JButton createReAnimateButton(JPanel panel){
+//        reAnimateButton = new JButton("Reanimate");
+//        c.weightx = 0.5;
+//        c.weighty = 0.0;
+//        c.anchor = GridBagConstraints.CENTER;
+//        c.gridx = 1;
+//        c.gridy = 0;
+//        c.gridwidth = 1;
+//        return reAnimateButton;
+//    }
 
     // Method that creates reset button
     private JButton createResetButton(JPanel panel){
