@@ -62,6 +62,8 @@ public class GraphicsSetCreator extends JFrame{
                     }
                 }
 
+                System.out.println(mList.size());
+
                 for (int i = 0; i < mList.size(); i++) {
                     MouthShape m = mList.get(i);
 
@@ -153,15 +155,12 @@ public class GraphicsSetCreator extends JFrame{
         private JTextArea mouthShapeTextArea;
         private JTextArea phoneticTextArea;
 
-        private OratioLinkedList<String> phoneticList;
-
         MouthShapePanel() {
-            this.phoneticList = new OratioLinkedList<>();
             this.addButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     String fileName = fileNameTextField.getText().trim();
-                    String[] phoneticArray = phoneticList.toArray();
+                    String[] phoneticArray = phoneticTextArea.getText().trim().split("\n+");
 
                     // move image from original location to resources root
                     File imgFile = new File(fileName);
@@ -170,9 +169,7 @@ public class GraphicsSetCreator extends JFrame{
 
                     mList.add(m);
 
-                    phoneticList.clear();
-
-                    mouthShapeTextArea.setText(fileNameTextField.getText() + "\n");
+                    mouthShapeTextArea.append(fileNameTextField.getText() + "\n");
                     fileNameTextField.setText("");
                     phoneticTextArea.setText("");
                 }
