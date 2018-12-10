@@ -7,6 +7,8 @@ import java.awt.image.ImageObserver;
 import java.io.File;
 import java.io.IOException;
 
+import static javax.swing.BorderFactory.createEmptyBorder;
+
 /**
  * GalleryPanel.java
  * gallery panel class which holds all the components in the gallery panel
@@ -38,7 +40,10 @@ public class GalleryPanel extends JPanel{
         c.gridwidth = 1;
         c.gridheight = 2;
         c.gridy = 0;
+        title = BorderFactory.createTitledBorder("Gallery"); //creates titled border
+        this.setBorder(title);
         JScrollPane panelPane = new JScrollPane(this);
+        panelPane.setBorder(createEmptyBorder());
         display.getContentPane().add(panelPane, c);
     }
 
