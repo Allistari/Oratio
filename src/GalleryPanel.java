@@ -18,14 +18,13 @@ import static javax.swing.BorderFactory.createEmptyBorder;
  */
 
 public class GalleryPanel extends JPanel{
-    TitledBorder title;
-    GridBagConstraints c;
-    OratioDEQueue<MouthShape> queue;
-    private OratioDisplay display;
-    MouthShape current;
-    JLabel show;
-    ImageIcon icon;
-    Image temp;
+    private TitledBorder title;
+    private GridBagConstraints c;
+    private OratioDEQueue<MouthShape> queue;
+    private MouthShape current;
+    private JLabel show;
+    private ImageIcon icon;
+    private Image temp;
 
     // Constructor
     public GalleryPanel(OratioDisplay display, GridBagConstraints constraints){
