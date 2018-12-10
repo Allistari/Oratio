@@ -40,7 +40,7 @@ public class Launcher {
     }
 
     private Launcher() {
-        this.preset = "default";
+        this.preset = "Default-Female";
         DisplayContent(null);
     }
 

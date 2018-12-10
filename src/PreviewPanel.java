@@ -46,7 +46,7 @@ public class PreviewPanel extends JPanel {
         this.setBorder(title);
         imageLabel = new JLabel();
         if (queue.size() == 0) {
-            imageLabel.setIcon(new ImageIcon("resources\\Graphics\\default\\avatar.jpg"));
+            imageLabel.setIcon(new ImageIcon("resources\\Graphics\\Default-Female\\avatar.jpg"));
         }
         this.add(imageLabel);
         display.getContentPane().add(this, c);
@@ -64,21 +64,24 @@ public class PreviewPanel extends JPanel {
     public void animate(OratioDEQueue queue) {
         int i = 1;
         String outputPath = "output\\" + i + ".gif";
-        try {
-            AnimatedGifEncoder encoder = new AnimatedGifEncoder();
-            encoder.start(outputPath);
-            encoder.setDelay(200);
-            encoder.setRepeat(0);
-            for (int j = 0; j < queue.size(); j++) {
-                current = (MouthShape) queue.pollFirst();
+        System.out.println(queue.size());
+
+        AnimatedGifEncoder encoder = new AnimatedGifEncoder();
+        encoder.start(outputPath);
+        encoder.setDelay(200);
+        encoder.setRepeat(0);
+        for (int j = 0; j < queue.size(); j++) {
+            current = (MouthShape) queue.pollFirst();
+            try {
                 currentFrame = ImageIO.read(new File(current.getFileName()));
-                encoder.addFrame(currentFrame);
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
             }
-            encoder.finish();
-            i++;
-            imageLabel.setIcon(new ImageIcon(outputPath));
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+            System.out.println(current.getFileName());
+            encoder.addFrame(currentFrame);
         }
+        encoder.finish();
+        i++;
+        imageLabel.setIcon(new ImageIcon(outputPath));
     }
 }
