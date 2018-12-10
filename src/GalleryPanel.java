@@ -51,7 +51,7 @@ public class GalleryPanel extends JPanel{
         for (int i = 0; i < queue.size(); i++) {
             current = queue.pollFirst();
             temp = current.getImage();
-            Image newImg = temp.getScaledInstance(200, 200,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
+            Image newImg = temp.getScaledInstance(254, 325,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
             icon = new ImageIcon(newImg);
             show = new JLabel(icon);
             this.add(show);
