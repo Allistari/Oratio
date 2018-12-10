@@ -58,6 +58,7 @@ public class GraphicsSetCreator extends JFrame{
                 for (int i = 0; i < fileNames.length; i++) {
                     if (!mList.get(i).getFileName().equals(fileNames[i])) {
                         mList.remove(i);
+                        System.out.println("remove");
                         i--;
                     }
                 }
@@ -89,7 +90,7 @@ public class GraphicsSetCreator extends JFrame{
                     return;
                 }
 
-                createMetadataJson(avatarImg, directory);
+                createMetadataJson(dest, directory);
 
                 JOptionPane.showMessageDialog(mainPanel, GRAPHICS_SET_CREATED_MSG);
                 System.exit(0);
