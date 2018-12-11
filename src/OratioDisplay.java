@@ -38,7 +38,7 @@ public class OratioDisplay extends JFrame{
 
         // Display the window.
         //this.setSize(Toolkit.getDefaultToolkit().getScreenSize());
-        this.setSize(1035,700);
+        this.setSize(1080,700);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
     }
@@ -54,7 +54,6 @@ public class OratioDisplay extends JFrame{
         GridBagConstraints c = new GridBagConstraints();
 
         galleryPanel = new GalleryPanel(display, c);
-
         previewPanel = new PreviewPanel(display,c);
         inputPanel = new InputPanel(display, c);
 

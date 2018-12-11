@@ -47,7 +47,7 @@ public class GalleryPanel extends JPanel{
     }
 
     // Method for displaying the frames needed for animation
-    public void showFrames(){
+    public void showFrames(GalleryPanel panel){
         for (int i = 0; i < queue.size(); i++) {
             current = queue.pollFirst();
             temp = current.getImage();
@@ -56,6 +56,8 @@ public class GalleryPanel extends JPanel{
             show = new JLabel(icon);
             this.add(show);
             queue.addLast(current);
+            panel.validate();
+            panel.repaint();
         }
     }
 

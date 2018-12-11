@@ -139,12 +139,13 @@ public class InputPanel extends JPanel{
         c.gridx = 2;
         c.gridy = 0;
         c.gridwidth = 1;
-
         resetButton.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent E){
+                display.getPreviewPanel().removeAll();
+                display.getGalleryPanel().repaint();
                 panel.remove(output);
-                panel.remove(reAnimateButton);
+//                panel.remove(reAnimateButton);
                 panel.remove(resetButton);
                 textField = createTextField(panel);
                 panel.add(textField,c);

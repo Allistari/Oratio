@@ -90,12 +90,10 @@ public class Launcher {
                 return;
             }
             queue = assembleAnimationQueue();
-
             display.getPreviewPanel().setQueue(queue);
             display.getPreviewPanel().animate(queue);
-
             display.getGalleryPanel().setQueue(queue);
-            display.getGalleryPanel().showFrames();
+            display.getGalleryPanel().showFrames(display.getGalleryPanel());
         }
     }
 
