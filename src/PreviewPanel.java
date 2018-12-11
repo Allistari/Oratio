@@ -24,7 +24,7 @@ public class PreviewPanel extends JPanel {
     private TitledBorder title;
     private GridBagConstraints c;
     private JLabel imageLabel;
-    private OratioDEQueue<MouthShape> queue = new OratioDEQueue<>();
+    private OratioDEQueue<MouthShape> previewQueue = new OratioDEQueue<>();
     private MouthShape current;
     private BufferedImage currentFrame;
 
@@ -45,7 +45,7 @@ public class PreviewPanel extends JPanel {
         title = BorderFactory.createTitledBorder("Preview");
         this.setBorder(title);
         imageLabel = new JLabel();
-        if (queue.size() == 0) {
+        if (previewQueue.size() == 0) {
             imageLabel.setIcon(display.getLauncher().getAvatar().getImageIcon());
         }
         this.add(imageLabel);
@@ -54,15 +54,13 @@ public class PreviewPanel extends JPanel {
 
     // Set the queue for mouth shapes
     public void setQueue(OratioDEQueue<MouthShape> queue) {
-        this.queue = queue;
+        this.previewQueue = queue;
     }
 
-    public OratioDEQueue getQueue() {
-        return this.queue;
-    }
 
     public void animate(OratioDEQueue queue) {
         String outputPath = "output\\animation.gif";
+        System.out.println(queue.size());
         File file = new File(outputPath);
         if (file.exists()) {
             file.delete();
@@ -71,8 +69,9 @@ public class PreviewPanel extends JPanel {
         encoder.start(outputPath);
         encoder.setDelay(200);
         encoder.setRepeat(0);
-        for (int j = 0; j < queue.size(); j++) {
-            current = (MouthShape) queue.pollFirst();
+        while(!previewQueue.isEmpty()) {
+            current = previewQueue.pollFirst();
+            System.out.println(current.getFileName());
             try {
                 currentFrame = ImageIO.read(new File(current.getFileName()));
             } catch (Exception e) {

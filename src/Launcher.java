@@ -29,7 +29,8 @@ public class Launcher {
 
     // data structures
     private OratioTree<MouthShape> tree;
-    private OratioDEQueue<MouthShape> queue;
+    private OratioDEQueue<MouthShape> previewQueue;
+    private OratioDEQueue<MouthShape> galleryQueue;
 
     /**
      * main method
@@ -90,10 +91,11 @@ public class Launcher {
                 return;
             }
             display.getInputPanel().switchInputPanel(phoneticSpellings);
-            queue = assembleAnimationQueue();
-            display.getPreviewPanel().setQueue(queue);
-            display.getPreviewPanel().animate(queue);
-            display.getGalleryPanel().setQueue(queue);
+            previewQueue = assembleAnimationQueue();
+            galleryQueue = assembleAnimationQueue();
+            display.getPreviewPanel().setQueue(previewQueue);
+            display.getPreviewPanel().animate(previewQueue);
+            display.getGalleryPanel().setQueue(galleryQueue);
             display.getGalleryPanel().showFrames(display.getGalleryPanel());
         }
     }
