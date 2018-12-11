@@ -20,6 +20,7 @@ public class GalleryPanel extends JPanel{
     private JLabel show;
     private ImageIcon icon;
     private Image temp;
+    private JScrollPane panelPane;
 
     // Constructor
     public GalleryPanel(OratioDisplay display, GridBagConstraints constraints){
@@ -36,7 +37,7 @@ public class GalleryPanel extends JPanel{
         c.gridy = 0;
         title = BorderFactory.createTitledBorder("Gallery"); //creates titled border
         this.setBorder(title);
-        JScrollPane panelPane = new JScrollPane(this);
+        panelPane = new JScrollPane(this);
         panelPane.setBorder(createEmptyBorder());
         display.getContentPane().add(panelPane, c);
     }
@@ -48,6 +49,7 @@ public class GalleryPanel extends JPanel{
 
     // Method for displaying the frames needed for animation
     public void showFrames(GalleryPanel panel){
+        this.removeAll();
         for (int i = 0; i < queue.size(); i++) {
             current = queue.pollFirst();
             temp = current.getImage();
@@ -59,6 +61,7 @@ public class GalleryPanel extends JPanel{
             panel.validate();
             panel.repaint();
         }
+        panelPane.updateUI();
     }
 
 }

@@ -62,8 +62,11 @@ public class PreviewPanel extends JPanel {
     }
 
     public void animate(OratioDEQueue queue) {
-        int i = 1;
-        String outputPath = "output\\" + i + ".gif";
+        String outputPath = "output\\animation.gif";
+        File file = new File(outputPath);
+        if (file.exists()) {
+            file.delete();
+        }
         AnimatedGifEncoder encoder = new AnimatedGifEncoder();
         encoder.start(outputPath);
         encoder.setDelay(200);
@@ -75,11 +78,9 @@ public class PreviewPanel extends JPanel {
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
-            System.out.println(current.getFileName());
             encoder.addFrame(currentFrame);
         }
         encoder.finish();
-        i++;
         imageLabel.setIcon(new ImageIcon(outputPath));
     }
 }

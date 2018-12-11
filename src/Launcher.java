@@ -89,6 +89,7 @@ public class Launcher {
             } catch (IOException exception) {
                 return;
             }
+            display.getInputPanel().switchInputPanel(phoneticSpellings);
             queue = assembleAnimationQueue();
             display.getPreviewPanel().setQueue(queue);
             display.getPreviewPanel().animate(queue);
@@ -118,8 +119,6 @@ public class Launcher {
         for (int i = 0; i < words.length; i++) {
             phoneticSpellings[i] = PhoneticTranslator.getPronounce(words[i]);
         }
-
-        display.getInputPanel().switchInputPanel(phoneticSpellings);
 }
 
 

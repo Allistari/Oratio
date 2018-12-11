@@ -97,10 +97,6 @@ public class InputPanel extends JPanel{
         // remove old components
         this.remove(animateButton);
         this.remove(textField);
-
-        //reAnimateButton = createReAnimateButton(this);
-//        this.add(reAnimateButton,c);
-
         resetButton = createResetButton(this);
         this.add(resetButton, c);
         this.validate();
@@ -119,18 +115,6 @@ public class InputPanel extends JPanel{
         return textField;
     }
 
-//    // Method that creates reanimate button
-//    private JButton createReAnimateButton(JPanel panel){
-//        reAnimateButton = new JButton("Reanimate");
-//        c.weightx = 0.5;
-//        c.weighty = 0.0;
-//        c.anchor = GridBagConstraints.CENTER;
-//        c.gridx = 1;
-//        c.gridy = 0;
-//        c.gridwidth = 1;
-//        return reAnimateButton;
-//    }
-
     // Method that creates reset button
     private JButton createResetButton(JPanel panel){
         resetButton = new JButton("Reset");
@@ -140,23 +124,24 @@ public class InputPanel extends JPanel{
         c.gridx = 2;
         c.gridy = 0;
         c.gridwidth = 1;
-        resetButton.addActionListener(new ActionListener(){
+        resetButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent E){
-                display.getPreviewPanel().removeAll();
-                display.getGalleryPanel().repaint();
-                panel.remove(output);
-//                panel.remove(reAnimateButton);
-                panel.remove(resetButton);
-                textField = createTextField(panel);
-                panel.add(textField,c);
-                animateButton = createAnimateButton(panel);
-                panel.add(animateButton, c);
-                panel.validate();
-                panel.repaint();
+            public void actionPerformed(ActionEvent e) {
+                redrawInputPanel();
             }
         });
         return resetButton;
+    }
+
+    private void redrawInputPanel(){
+        this.remove(output);
+        this.remove(resetButton);
+        textField = createTextField(this);
+        this.add(textField,c);
+        animateButton = createAnimateButton(this);
+        this.add(animateButton, c);
+        this.validate();
+        this.repaint();
     }
 
     // Method for getting the text field

@@ -30,7 +30,12 @@ public class PhoneticTranslator {
 
         try {
             word = getWord(search);
-            return eliminateNumbers(word.getIPAPronounce());
+            String pronounce = eliminateNumbers(word.getIPAPronounce());
+            if (pronounce == null || pronounce.equals("")) {
+                System.out.println("null pronunciation");
+                throw new IOException();
+            }
+            return eliminateNumbers(pronounce);
         } catch(Exception e) {
             System.out.println("Error getting word");
             throw new IOException();
@@ -38,9 +43,7 @@ public class PhoneticTranslator {
     }
 
     private static String eliminateNumbers(String pronounce) {
-        for(int i = 0; i <= 9; i++) {
-            pronounce = pronounce.replace(Integer.toString(i),"");
-        }
+        pronounce = pronounce.replaceAll("\\d+","");
         return pronounce;
     }
 
