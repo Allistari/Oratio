@@ -1,4 +1,5 @@
 import javax.swing.*;
+import javax.swing.border.Border;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -33,12 +34,12 @@ public class InputPanel extends JPanel{
 
         c.fill = GridBagConstraints.BOTH;
         c.weightx = 1.0;
-        c.weighty = 0.05;
+        c.weighty = 0;
         c.anchor = GridBagConstraints.PAGE_END;
         c.gridx = 0;
         c.gridy = 2;
-        c.gridwidth = 3;
-        c.gridheight = 1;
+        c.gridwidth = 4;
+        c.gridheight = 2;
         title = BorderFactory.createTitledBorder("Input"); //creates titled border
         this.setBorder(title);
 
