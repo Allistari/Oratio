@@ -40,11 +40,18 @@ public class Launcher {
         new Launcher();
     }
 
+    /**
+     * Launcher
+     */
     private Launcher() {
         this.preset = "Default-Female";
         DisplayContent(null);
     }
 
+    /**
+     * DisplayContent
+     * @param preset
+     */
     private void DisplayContent(String preset) {
         if (preset!=null) {
             this.preset = preset;

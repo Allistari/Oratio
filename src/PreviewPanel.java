@@ -2,19 +2,16 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.IOException;
 
 /**
  * PreviewPanel.java
  * preview panel class which holds all the components in the preview panel
  * @author Kyle To
+ * @author Angelina Zhang
  * @author Michael Tatsiopoulos
  * @author Eric Ke
- * @author Angelina
  * created 2018-11-20
  * last modified 2018-12-07
  */
@@ -30,6 +27,12 @@ public class PreviewPanel extends JPanel {
 
 
     // Constructor
+
+    /**
+     * PreviewPanel
+     * @param display
+     * @param constraints
+     */
     public PreviewPanel(OratioDisplay display, GridBagConstraints constraints) {
         super(new GridLayout());
         this.display = display;
@@ -58,6 +61,10 @@ public class PreviewPanel extends JPanel {
     }
 
 
+    /**
+     * animate
+     * @param queue
+     */
     public void animate(OratioDEQueue queue) {
         String outputPath = "output\\animation.gif";
         System.out.println(queue.size());

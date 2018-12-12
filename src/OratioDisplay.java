@@ -1,5 +1,4 @@
 import java.awt.*;
-import java.awt.MenuBar;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 
@@ -22,6 +21,11 @@ public class OratioDisplay extends JFrame{
     private JPanel contentPane;
 
     // Constructor
+
+    /**
+     * OratioDisplay
+     * @param launcher
+     */
     public OratioDisplay(Launcher launcher){
         super("Oratio");
         this.launcher = launcher;
@@ -42,14 +46,29 @@ public class OratioDisplay extends JFrame{
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
     }
+
+    /**
+     * getOratioMenuBar
+     * @return
+     */
     public OratioMenuBar getOratioMenuBar(){
         return this.oratioMenu;
     }
+
+    /**
+     * setOratioMenuBar
+     * @param menuBar
+     */
     public void setOratioMenuBar(OratioMenuBar menuBar){
         this.oratioMenu = menuBar;
     }
 
     // Method for adding components to the pane
+
+    /**
+     * addComponentsToPane
+     * @param display
+     */
     private void addComponentsToPane(OratioDisplay display) {
         GridBagConstraints c = new GridBagConstraints();
 

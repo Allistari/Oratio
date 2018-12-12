@@ -8,7 +8,7 @@ import static javax.swing.BorderFactory.createEmptyBorder;
  * GalleryPanel.java
  * gallery panel class which holds all the components in the gallery panel
  * @author Kyle To
- * @author Angelina
+ * @author Angelina Zhang
  * created 2018-11-20
  * last modified 2018-11-21
  */
@@ -24,6 +24,12 @@ public class GalleryPanel extends JPanel{
     private JScrollPane panelPane;
 
     // Constructor
+
+    /**
+     * GalleryPanel
+     * @param display
+     * @param constraints
+     */
     public GalleryPanel(OratioDisplay display, GridBagConstraints constraints){
         super(new GridLayout(0,1));
         c = constraints;
@@ -44,11 +50,21 @@ public class GalleryPanel extends JPanel{
     }
 
     // Method that sets the queue for mouth shapes
+
+    /**
+     * setQueue
+     * @param queue
+     */
     public void setQueue(OratioDEQueue<MouthShape> queue) {
         this.galleryQueue = queue;
     }
 
     // Method for displaying the frames needed for animation
+
+    /**
+     * showFrames
+     * @param panel
+     */
     public void showFrames(GalleryPanel panel){
         this.removeAll();
         for (int i = 0; i < galleryQueue.size(); i++) {
