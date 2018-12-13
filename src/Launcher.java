@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -26,7 +25,7 @@ public class Launcher {
     private String[] words;
     private String preset;
     private MouthShape avatar;
-
+    private JPanel errorMsg;
     // data structures
     private OratioTree<MouthShape> tree;
     private OratioDEQueue<MouthShape> previewQueue;
@@ -124,9 +123,16 @@ public class Launcher {
             System.out.println(s);
         }
 
-        phoneticSpellings = new String[words.length];
-        for (int i = 0; i < words.length; i++) {
-            phoneticSpellings[i] = PhoneticTranslator.getPronounce(words[i]);
+
+        try {
+            phoneticSpellings = new String[words.length];
+            for (int i = 0; i < words.length; i++) {
+                phoneticSpellings[i] = PhoneticTranslator.getPronounce(words[i]);
+            }
+        }catch (Exception e){
+            errorMsg = new JPanel();
+            JOptionPane.showMessageDialog(errorMsg, "Error getting word.", "Error", JOptionPane.ERROR_MESSAGE);
+
         }
 }
 

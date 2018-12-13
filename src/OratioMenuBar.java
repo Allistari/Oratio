@@ -78,7 +78,6 @@ public class OratioMenuBar extends JMenuBar { //implements ActionListener, KeyLi
         dialogWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         dialogWindow.setSize(300,400);
         JOptionPane.showMessageDialog(dialogWindow, "Oratio draws mouth shape animations ^^");
-
     }
 
     private void getPresetName(File file, OratioLinkedList<File> Folders){

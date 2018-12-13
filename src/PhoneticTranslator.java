@@ -36,7 +36,7 @@ public class PhoneticTranslator {
             }
             return eliminateNumbers(pronounce);
         } catch(Exception e) {
-            System.out.println("Error getting word");
+            //System.out.println("Error getting word");
             throw new IOException();
         }
     }
