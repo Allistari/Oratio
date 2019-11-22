@@ -1,11 +1,7 @@
-import javax.swing.JFrame;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
+import javax.swing.*;
 import java.io.File;
 import java.awt.event.*;
 import java.util.Arrays;
-import javax.swing.JOptionPane;
 
 /**
  * OratioMenuBar.java
@@ -77,7 +73,11 @@ public class OratioMenuBar extends JMenuBar { //implements ActionListener, KeyLi
         JFrame dialogWindow = new JFrame("About Oratio");
         dialogWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         dialogWindow.setSize(300,400);
-        JOptionPane.showMessageDialog(dialogWindow, "Oratio draws mouth shape animations ^^");
+        JOptionPane.showMessageDialog(dialogWindow, "                                Oratio       \n" +
+                "draws mouth shape animations by translating \n" +
+                "the inputted word into phonetic spelling \n" +
+                "Please make sure to check your spelling before \n" +
+                "pressing enter/animate button.");
     }
 
     private void getPresetName(File file, OratioLinkedList<File> Folders){
